@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background: theme('colors.ink');
+    color: theme('colors.paper');
+    font-family: theme('fontFamily.body');
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: theme('colors.paper');
+    color: theme('colors.ink');
+  }
+}
+
+@layer components {
+  /* Mockup B/W treatment: grayscale that partially lifts on hover */
+  .img-mono {
+    filter: grayscale(1) contrast(1.05);
+    transition: filter 300ms ease;
+  }
+  .group:hover .img-mono,
+  .img-mono:hover {
+    filter: grayscale(0.35) contrast(1.02);
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-label text-mute;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
