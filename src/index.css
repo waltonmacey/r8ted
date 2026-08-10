@@ -4,34 +4,54 @@
 
 @layer base {
   html {
-    background: theme('colors.ink');
-    color: theme('colors.paper');
+    background: theme('colors.background');
+    color: theme('colors.on-surface');
     font-family: theme('fontFamily.body');
     -webkit-font-smoothing: antialiased;
   }
+  /* Cyan selection on dark teal, per mockup body tag (spec section 8). */
   ::selection {
-    background: theme('colors.paper');
-    color: theme('colors.ink');
+    background: theme('colors.secondary.container');
+    color: theme('colors.on-secondary-container');
   }
 }
 
 @layer components {
-  /* Mockup B/W treatment: grayscale that partially lifts on hover */
-  .img-mono {
-    filter: grayscale(1) contrast(1.05);
-    transition: filter 300ms ease;
+  /* Muted color image treatment (spec section 6, owner decision 2026-08-10).
+     Color survives at rest; hover reveals full color. Supersedes grayscale. */
+  .img-muted {
+    filter: saturate(0.45) brightness(0.95);
+    transition: filter 500ms ease;
   }
-  .group:hover .img-mono,
-  .img-mono:hover {
-    filter: grayscale(0.35) contrast(1.02);
+  .group:hover .img-muted,
+  .img-muted:hover {
+    filter: saturate(1) brightness(1);
   }
 
   .eyebrow {
-    @apply font-mono text-[11px] uppercase tracking-label text-mute;
+    @apply font-mono text-label-mono uppercase tracking-widest text-on-surface-variant;
+  }
+
+  /* Hero breadcrumb chip (spec section 7). */
+  .chip-breadcrumb {
+    @apply inline-block rounded-sm border border-secondary-container/30 bg-surface/50 px-3 py-1 font-mono text-label-mono uppercase tracking-widest text-secondary-container backdrop-blur;
+  }
+
+  /* Count chip (spec section 7). */
+  .chip-count {
+    @apply inline-block rounded border border-secondary-container/30 bg-secondary-container/10 px-2 py-1 font-mono text-label-mono text-secondary-container backdrop-blur-sm;
+  }
+
+  /* Buttons (spec section 7). */
+  .btn-primary {
+    @apply rounded bg-secondary-container px-6 py-3 font-mono text-label-caps uppercase text-primary-container transition-colors hover:bg-secondary;
+  }
+  .btn-ghost {
+    @apply rounded border border-outline-variant bg-transparent px-6 py-3 font-mono text-label-caps uppercase text-on-surface transition-colors hover:bg-surface-container-high;
   }
 
   .focus-ring {
-    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper;
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-container;
   }
 }
 

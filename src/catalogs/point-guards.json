@@ -1,7 +1,7 @@
 {
   "id": "point-guards",
   "name": "NBA Point Guards",
-  "subcategories": ["sports", "goat"],
+  "subcategories": ["athletes-legends"],
   "items": [
     { "name": "Magic Johnson", "imageUrl": "", "meta": { "years": "1979-1996", "team": "Lakers" } },
     { "name": "Stephen Curry", "imageUrl": "", "meta": { "years": "2009-", "team": "Warriors" } },

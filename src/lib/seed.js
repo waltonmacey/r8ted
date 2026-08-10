@@ -18,9 +18,9 @@ export const SEED_LISTS = [
     id: 'seed-point-guards',
     title: 'Point Guards',
     tagline: 'The floor generals, ranked.',
-    domainId: 'leisure',
-    subId: 'sports',
-    scoreLabels: ['Peak', 'Longevity', 'Skill', 'Aura'],
+    domainId: 'food-sports',
+    subId: 'athletes-legends',
+    scoreLabels: ['Peak', 'Longevity', 'Accolades', 'Impact'],
     catalogId: 'point-guards',
     entries: [
       e('Magic Johnson', 'Showtime incarnate. Ran the break like nobody before or since.', '5x NBA champion', [10, 8.5, 9.5, 10]),

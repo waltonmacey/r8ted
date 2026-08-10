@@ -8,6 +8,7 @@ import { SEED_LISTS } from './seed'
 
 const LS_KEY = 'r8ted:lists:v1'
 const SEED_FLAG = 'r8ted:seeded:v1'
+const TAXONOMY_MIGRATION_FLAG = 'r8ted:migrated:taxonomy-4x4'
 
 function localAdapter() {
   function readAll() {
@@ -24,6 +25,23 @@ function localAdapter() {
   if (!localStorage.getItem(SEED_FLAG)) {
     if (readAll().length === 0) writeAll(SEED_LISTS)
     localStorage.setItem(SEED_FLAG, '1')
+  }
+  // One-time migration to the locked 4x4 taxonomy (2026-08-10 handoff).
+  // Owner decision: only the seeded Point Guards list ports (to Food & Sports >
+  // Athletes & Legends, per the handoff compatibility check). Other lists made
+  // under the old taxonomy keep their old refs and simply stop appearing.
+  if (!localStorage.getItem(TAXONOMY_MIGRATION_FLAG)) {
+    const all = readAll()
+    const pg = all.find(
+      (l) => l.id === 'seed-point-guards' || (l.catalogId === 'point-guards' && l.domainId === 'leisure')
+    )
+    if (pg) {
+      pg.domainId = 'food-sports'
+      pg.subId = 'athletes-legends'
+      pg.scoreLabels = ['Peak', 'Longevity', 'Accolades', 'Impact']
+      writeAll(all)
+    }
+    localStorage.setItem(TAXONOMY_MIGRATION_FLAG, '1')
   }
   return {
     kind: 'local',

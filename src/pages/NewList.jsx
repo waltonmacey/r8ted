@@ -29,8 +29,8 @@ export default function NewList() {
   if (!canEdit)
     return (
       <div className="py-20">
-        <h1 className="font-display text-3xl">Edit mode required.</h1>
-        <p className="mt-2 font-body text-mute">Unlock edit mode from the nav to create a list.</p>
+        <h1 className="font-display text-headline-md">Edit mode required.</h1>
+        <p className="mt-2 font-body text-on-surface-variant">Unlock edit mode from the nav to create a list.</p>
       </div>
     )
 
@@ -63,12 +63,12 @@ export default function NewList() {
   return (
     <div className="py-12">
       <p className="eyebrow">
-        <Link to={`/sub/${domainId}/${subId}`} className="focus-ring hover:text-paper">
+        <Link to={`/sub/${domainId}/${subId}`} className="focus-ring hover:text-on-surface">
           {sub.name}
         </Link>{' '}
         / New list
       </p>
-      <h1 className="mt-3 font-display text-4xl font-bold sm:text-5xl">New list</h1>
+      <h1 className="mt-3 font-display text-headline-lg-mobile sm:text-headline-lg">New list</h1>
 
       <div className="mt-10 max-w-xl space-y-6">
         <Field label="Title">
@@ -95,13 +95,13 @@ export default function NewList() {
         <div>
           <span className="eyebrow">Catalog</span>
           {catalogs.length === 0 ? (
-            <p className="mt-2 font-body text-sm text-mute">
+            <p className="mt-2 font-body text-sm text-on-surface-variant">
               No catalog is tagged to {sub.name} yet. The list will start empty; add entries with + Custom.
             </p>
           ) : (
             <div className="mt-2 space-y-2">
               {catalogs.map((c) => (
-                <label key={c.id} className="flex cursor-pointer items-center gap-3 border border-edge bg-panel px-4 py-3 hover:border-mute">
+                <label key={c.id} className="flex cursor-pointer items-center gap-3 rounded border border-outline-variant bg-surface-container px-4 py-3 hover:border-secondary-container">
                   <input
                     type="radio"
                     name="catalog"
@@ -109,13 +109,13 @@ export default function NewList() {
                     onChange={() => setCatalogId(c.id)}
                   />
                   <span className="font-ui text-sm font-medium">{c.name}</span>
-                  <span className="ml-auto font-mono text-xs text-mute">{c.items.length} items</span>
+                  <span className="ml-auto font-mono text-xs text-on-surface-variant">{c.items.length} items</span>
                 </label>
               ))}
-              <label className="flex cursor-pointer items-center gap-3 border border-edge bg-panel px-4 py-3 hover:border-mute">
+              <label className="flex cursor-pointer items-center gap-3 rounded border border-outline-variant bg-surface-container px-4 py-3 hover:border-secondary-container">
                 <input type="radio" name="catalog" checked={catalogId === ''} onChange={() => setCatalogId('')} />
                 <span className="font-ui text-sm font-medium">No catalog</span>
-                <span className="ml-auto font-mono text-xs text-mute">start empty</span>
+                <span className="ml-auto font-mono text-xs text-on-surface-variant">start empty</span>
               </label>
             </div>
           )}
@@ -123,7 +123,7 @@ export default function NewList() {
         <button
           onClick={create}
           disabled={busy || !title.trim()}
-          className="focus-ring border border-paper px-5 py-2.5 font-ui text-sm font-medium hover:bg-paper hover:text-ink disabled:opacity-40"
+          className="focus-ring btn-primary disabled:opacity-40"
         >
           {catalogId ? 'Create and start dueling' : 'Create list'}
         </button>
@@ -133,7 +133,7 @@ export default function NewList() {
 }
 
 const inp =
-  'focus-ring w-full border border-edge bg-ink px-3 py-2 font-body text-sm text-paper placeholder:text-mute'
+  'focus-ring w-full border border-outline-variant bg-background px-3 py-2 font-body text-sm text-on-surface placeholder:text-on-surface-variant'
 
 function Field({ label, children }) {
   return (

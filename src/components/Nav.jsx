@@ -1,25 +1,55 @@
-import { Link } from 'react-router-dom'
+// Nav per design spec section 7: fixed, z-50, h-16, bg-background/90 with
+// backdrop-blur-md, 1px outline-variant bottom border. Links are label-mono
+// uppercase tracking-widest in on-surface-variant, hover cyan; the active
+// link is cyan with a 2px cyan bottom border.
+
+import { Link, NavLink } from 'react-router-dom'
 import { useState } from 'react'
+import { DOMAINS } from '../lib/taxonomy'
 import { useEditMode } from '../lib/EditMode'
 import PasswordGate from './PasswordGate'
+
+const linkBase =
+  'focus-ring flex h-16 items-center border-b-2 font-mono text-label-mono uppercase tracking-widest transition-colors'
+
+function navClass({ isActive }) {
+  return `${linkBase} ${
+    isActive
+      ? 'border-secondary-container text-secondary-container'
+      : 'border-transparent text-on-surface-variant hover:text-secondary-container'
+  }`
+}
 
 export default function Nav() {
   const { canEdit, lock } = useEditMode()
   const [gateOpen, setGateOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-40 border-b border-edge bg-ink/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-outline-variant bg-background/90 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between gap-6 px-4 lg:px-16">
         <Link to="/" className="focus-ring font-ui text-xl font-bold tracking-tight">
-          R8<span className="text-mute">ted</span>
+          R8<span className="text-on-surface-variant">ted</span>
         </Link>
+        <nav className="hidden items-center gap-6 md:flex">
+          {DOMAINS.map((d) => (
+            <NavLink key={d.id} to={`/domain/${d.id}`} className={navClass}>
+              {d.name}
+            </NavLink>
+          ))}
+        </nav>
         <div className="flex items-center gap-4">
           {canEdit ? (
-            <button onClick={lock} className="eyebrow focus-ring hover:text-paper">
+            <button
+              onClick={lock}
+              className="focus-ring font-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-secondary-container"
+            >
               Lock edit mode
             </button>
           ) : (
-            <button onClick={() => setGateOpen(true)} className="eyebrow focus-ring hover:text-paper">
+            <button
+              onClick={() => setGateOpen(true)}
+              className="focus-ring font-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-secondary-container"
+            >
               Edit
             </button>
           )}

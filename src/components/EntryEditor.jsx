@@ -30,12 +30,12 @@ export default function EntryEditor({ entry, scoreLabels, onSave, onDelete, onCl
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/85 p-5" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/85 p-5" onClick={onClose}>
       <div
-        className="max-h-[90vh] w-full max-w-md overflow-y-auto border border-edge bg-panel p-6"
+        className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded border border-outline-variant bg-surface-container p-6"
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="font-display text-2xl font-semibold">{entry.id ? 'Edit entry' : 'New entry'}</h2>
+        <h2 className="font-display text-headline-md font-semibold">{entry.id ? 'Edit entry' : 'New entry'}</h2>
         <div className="mt-4 space-y-3">
           <Field label="Name">
             <input value={form.name} onChange={(e) => set('name', e.target.value)} className={inp} />
@@ -64,7 +64,7 @@ export default function EntryEditor({ entry, scoreLabels, onSave, onDelete, onCl
               </Field>
             ))}
           </div>
-          <p className="font-mono text-[11px] text-mute">
+          <p className="font-mono text-[11px] text-on-surface-variant">
             Leave all four scores blank to keep this entry on the Bench.
           </p>
         </div>
@@ -72,11 +72,11 @@ export default function EntryEditor({ entry, scoreLabels, onSave, onDelete, onCl
           <button
             onClick={save}
             disabled={!form.name.trim()}
-            className="focus-ring border border-paper px-4 py-2 font-ui text-sm font-medium hover:bg-paper hover:text-ink disabled:opacity-40"
+            className="focus-ring btn-primary disabled:opacity-40"
           >
             Save
           </button>
-          <button onClick={onClose} className="focus-ring px-3 py-2 font-ui text-sm text-mute hover:text-paper">
+          <button onClick={onClose} className="focus-ring px-3 py-2 font-ui text-sm text-on-surface-variant hover:text-on-surface">
             Cancel
           </button>
           {entry.id && onDelete && (
@@ -86,8 +86,8 @@ export default function EntryEditor({ entry, scoreLabels, onSave, onDelete, onCl
                 onDelete(entry)
                 onClose()
               }}
-              className={`focus-ring ml-auto px-3 py-2 font-mono text-[11px] uppercase tracking-label ${
-                armed ? 'bg-lifestyle text-ink' : 'text-mute hover:text-lifestyle'
+              className={`focus-ring ml-auto px-3 py-2 font-mono text-[11px] uppercase tracking-widest ${
+                armed ? 'bg-error text-primary-container' : 'text-on-surface-variant hover:text-error'
               }`}
             >
               {armed ? 'Confirm delete' : 'Delete'}
@@ -100,7 +100,7 @@ export default function EntryEditor({ entry, scoreLabels, onSave, onDelete, onCl
 }
 
 const inp =
-  'focus-ring w-full border border-edge bg-ink px-3 py-2 font-body text-sm text-paper placeholder:text-mute'
+  'focus-ring w-full border border-outline-variant bg-background px-3 py-2 font-body text-sm text-on-surface placeholder:text-on-surface-variant'
 
 function Field({ label, children }) {
   return (
