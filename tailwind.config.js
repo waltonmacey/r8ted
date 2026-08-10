@@ -36,7 +36,7 @@ export default {
         // culture/lifestyle/leisure/personal token names.
       },
       fontFamily: {
-        display: ['Fraunces', 'Georgia', 'serif'],          // page titles, section headings, entry names (locked)
+        display: ['"Grotesk Amp"', 'Fraunces', 'Georgia', 'serif'],          // page titles, section headings, entry names (locked)
         ui: ['"Space Grotesk"', 'system-ui', 'sans-serif'], // nav, browse cards, rank numerals, chrome
         body: ['"Hanken Grotesk"', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'], // labels, scores, data

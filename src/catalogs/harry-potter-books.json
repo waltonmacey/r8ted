@@ -1,0 +1,37 @@
+{
+  "id": "harry-potter-books",
+  "name": "Harry Potter Novels",
+  "subcategories": [
+    "books-comics"
+  ],
+  "items": [
+    {
+      "name": "The Sorcerer's Stone",
+      "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.Yig_mm3t1FkPZakZ16BCXgHaLG?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "name": "The Chamber of Secrets",
+      "imageUrl": "https://m.media-amazon.com/images/I/91WqeCn-PxL._SL1500_.jpg"
+    },
+    {
+      "name": "The Prisoner of Azkaban",
+      "imageUrl": "https://covers.openlibrary.org/b/id/14656700-M.jpg"
+    },
+    {
+      "name": "The Goblet of Fire",
+      "imageUrl": "https://m.media-amazon.com/images/I/91SI2owt1XL._SL1500_.jpg"
+    },
+    {
+      "name": "The Order of the Phoenix",
+      "imageUrl": "https://covers.openlibrary.org/b/id/13569581-M.jpg"
+    },
+    {
+      "name": "The Half-Blood Prince",
+      "imageUrl": "https://m.media-amazon.com/images/I/81VsN7EOBfL._SL1500_.jpg"
+    },
+    {
+      "name": "The Deathly Hallows",
+      "imageUrl": "https://i5.walmartimages.com/seo/J-K-Rowling-Harry-Potter-and-the-Deathly-Hallows-Harry-Potter-Book-7-Paperback-9781338878981_49b2d274-2ce7-49be-9beb-0b3526894575.bb69e811ae5988d2f927278f4613c4bb.jpeg"
+    }
+  ]
+}
