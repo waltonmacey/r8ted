@@ -1,20 +1,30 @@
-// Pick duel per POC tab 02 (Phase 5 rewrite). No scores are entered here;
-// the four-score entry form is gone. Two modes share the side by side layout:
+// Pick duel. Phase 6 reworks placement from the Phase 5 depth-first binary
+// insertion (each item driven to full precision before the next one dueled) to
+// breadth-first passes over landing zones, so a full defensible order exists
+// early and the session can end before completion. The zone bookkeeping lives
+// in src/lib/placement.js; this file is state, ratings, and layout.
 //
-//   Placement: each Bench item binary-inserts into the ranked order. It faces
-//     the middle of its remaining range, a tap on the winner halves the range,
-//     and it slots in when the range closes. The first item into an empty list
-//     takes the top without a pick.
-//   Ladder: an already ranked item challenges upward from its slot. A win
-//     swaps and continues, a loss stops. Entry point: tap a chip in the strip
-//     (an addition over the POC, which had no ladder UI; flagged in handover).
+//   Placement: every unplaced item carries a landing zone, the range of ranks
+//     it could still occupy. Pass 1 gives every queued item one duel before any
+//     item gets a second, and an item places the moment its zone closes,
+//     landing via the existing fitBetween rating paint. The first item into an
+//     empty list takes the top without a pick.
+//   Early exit: once every still open item has dueled twice, End session places
+//     the rest at their zone midpoints. Nothing placed that way is marked
+//     scoresEdited, so later duels, drags, and edits refine it normally.
+//   Ladder: an already ranked item challenges upward from its slot. A win swaps
+//     and continues, a loss stops. Entry point: tap a chip in the strip.
+//   Reduel: ?reduel=1 throws every entry into a fresh placement pass. Scores
+//     are not cleared up front; each item is repainted as it places, so
+//     abandoning the session leaves a scrambled but fully ranked list rather
+//     than an empty one.
 //
 // A placed or moved item lands by regenerating its placeholder rating to fit
-// between its new neighbors, preserving the one invariant: display order is
+// between its new neighbours, preserving the one invariant: display order is
 // composite order. When a placement pass finishes, every non hand-edited
 // rating regenerates top to bottom (anchor 9.5); hand edits survive.
 
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { getDomain } from '../lib/taxonomy'
 import { getStorage } from '../lib/storage'
@@ -27,23 +37,45 @@ import {
   withGeneratedScores,
   regeneratePlaceholders,
 } from '../lib/entries'
+import {
+  initPlacement,
+  advance,
+  applyPick,
+  pendingFree,
+  placeAt,
+  canEndEarly,
+  endEarly,
+  provisionalOrder,
+  zoneFor,
+  zoneSize,
+  currentPass,
+  worstRemaining,
+  worstCase,
+  EARLY_EXIT_MIN_DUELS,
+} from '../lib/placement'
 import { useEditMode } from '../lib/EditMode'
 import { NotFound } from './Domain'
 
-// Worst-case pick count for placing `placed` items into a list that started
-// with `startSize` ranked entries: inserting into a field of s costs at most
-// ceil(log2(s + 1)) picks, and a field of 0 costs nothing.
-function worstCase(startSize, placed) {
-  let total = 0
-  for (let i = 0; i < placed; i++) {
-    const s = startSize + i
-    if (s > 0) total += Math.ceil(Math.log2(s + 1))
+// Paint a run of placements. Each index is a position in the order as it stands
+// after the previous insertions, so the running order is rebuilt alongside.
+function paintPlacements(entries, orderIds, placements) {
+  let order = orderIds.slice()
+  let out = entries
+  for (const p of placements) {
+    const find = (id) => out.find((e) => e.id === id)
+    const upper = p.index > 0 ? composite(find(order[p.index - 1]).scores) : null
+    const lower = p.index < order.length ? composite(find(order[p.index]).scores) : null
+    const item = find(p.itemId)
+    const updated = withGeneratedScores(item, fitBetween(upper, lower))
+    out = out.map((e) => (e.id === item.id ? updated : e))
+    order = [...order.slice(0, p.index), p.itemId, ...order.slice(p.index)]
   }
-  return total
+  return out
 }
 
 export default function DuelSession() {
   const { listId } = useParams()
+  const [params, setParams] = useSearchParams()
   const { canEdit } = useEditMode()
   const [list, setList] = useState(undefined)
   const [session, setSession] = useState(null)
@@ -52,11 +84,17 @@ export default function DuelSession() {
     getStorage().getList(listId).then(setList)
   }, [listId])
 
-  // Auto-start a placement pass when the page opens with Bench items waiting.
+  // Auto-start: a reduel takes every entry, otherwise the Bench is the queue.
   useEffect(() => {
     if (!list || session || !canEdit) return
+    const reduel = params.get('reduel') === '1'
+    if (reduel) {
+      setParams({}, { replace: true })
+      startPlacement(list, list.entries.map((e) => e.id), [], true)
+      return
+    }
     const bench = benchEntries(list.entries)
-    if (bench.length > 0) startPlacement(list)
+    if (bench.length > 0) startPlacement(list, bench.map((e) => e.id), rankedEntries(list.entries).map((e) => e.id), false)
     else setSession({ mode: 'hub', summary: null })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [list, canEdit])
@@ -78,72 +116,76 @@ export default function DuelSession() {
 
   // ---- placement ----
 
-  function startPlacement(l) {
-    const order = rankedEntries(l.entries).map((e) => e.id)
-    const queue = benchEntries(l.entries).map((e) => e.id)
-    beginNextItem({ order, queue, picks: 0, placed: 0, startSize: order.length }, l)
+  async function startPlacement(l, queueIds, orderIds, reduel) {
+    let state = initPlacement(orderIds, queueIds)
+    let entries = l.entries
+    // Drain any zone that is already closed: on an empty list the first item
+    // takes the top slot for free.
+    let free = pendingFree(state)
+    while (free) {
+      entries = paintPlacements(entries, state.order, [{ itemId: free.id, index: free.lo }])
+      state = placeAt(state, free.id, free.lo)
+      free = pendingFree(state)
+    }
+    state = advance(state)
+    let next = l
+    if (entries !== l.entries) {
+      next = { ...l, entries }
+      await getStorage().saveList(next)
+      setList(next)
+    }
+    if (!state.current) {
+      await finishPass(next, state, { kind: 'placement', picks: 0, placed: state.placed, startSize: state.startSize })
+      return
+    }
+    setSession({ mode: 'place', state, reduel })
   }
 
-  async function beginNextItem(base, l) {
-    const { order, queue, picks, placed, startSize } = base
-    let entries = l.entries
-    if (queue.length === 0) {
-      // Pass complete: full top-to-bottom regeneration, hand edits survive.
-      entries = regeneratePlaceholders(entries)
-      const next = { ...l, entries }
-      await getStorage().saveList(next)
-      setList(next)
-      setSession({ mode: 'hub', summary: { kind: 'placement', picks, placed, startSize } })
-      return
-    }
-    if (order.length === 0) {
-      // Nothing to face yet: the first item takes the top slot for free.
-      const id = queue[0]
-      const item = entries.find((e) => e.id === id)
-      const updated = withGeneratedScores(item, fitBetween(null, null))
-      entries = entries.map((e) => (e.id === id ? updated : e))
-      const next = { ...l, entries }
-      await getStorage().saveList(next)
-      setList(next)
-      beginNextItem({ order: [id], queue: queue.slice(1), picks, placed: placed + 1, startSize }, next)
-      return
-    }
-    setSession({
-      mode: 'place',
-      itemId: queue[0],
-      queue: queue.slice(1),
-      order,
-      lo: 0,
-      hi: order.length,
-      picks,
-      placed,
-      startSize,
-    })
+  // Full top-to-bottom regeneration, then the hub summary.
+  async function finishPass(l, state, summary) {
+    const entries = regeneratePlaceholders(l.entries)
+    const next = { ...l, entries }
+    await getStorage().saveList(next)
+    setList(next)
+    setSession({ mode: 'hub', summary: { ...summary, estimated: state.estimated } })
   }
 
   async function pickPlace(winnerIsNew) {
-    const s = session
-    const picks = s.picks + 1
-    const mid = (s.lo + s.hi) >> 1
-    let { lo, hi } = s
-    if (winnerIsNew) hi = mid
-    else lo = mid + 1
-    if (lo < hi) {
-      setSession({ ...s, lo, hi, picks })
+    const before = session.state
+    const { state, placement } = applyPick(before, winnerIsNew)
+    let l = list
+    if (placement) {
+      const entries = paintPlacements(list.entries, before.order, [placement])
+      l = { ...list, entries }
+      await getStorage().saveList(l)
+      setList(l)
+    }
+    if (!state.current) {
+      await finishPass(l, state, {
+        kind: 'placement',
+        picks: state.picks,
+        placed: state.placed,
+        startSize: state.startSize,
+      })
       return
     }
-    // Range closed: land at index lo, rating fit between the new neighbors.
-    const rankedObjs = s.order.map(byId)
-    const upper = lo > 0 ? composite(rankedObjs[lo - 1].scores) : null
-    const lower = lo < rankedObjs.length ? composite(rankedObjs[lo].scores) : null
-    const item = byId(s.itemId)
-    const updated = withGeneratedScores(item, fitBetween(upper, lower))
-    const entries = list.entries.map((e) => (e.id === item.id ? updated : e))
-    const next = { ...list, entries }
-    await getStorage().saveList(next)
-    setList(next)
-    const order = [...s.order.slice(0, lo), item.id, ...s.order.slice(lo)]
-    beginNextItem({ order, queue: s.queue, picks, placed: s.placed + 1, startSize: s.startSize }, next)
+    setSession({ ...session, state })
+  }
+
+  async function endSessionEarly() {
+    const before = session.state
+    const { state, placements } = endEarly(before)
+    const entries = paintPlacements(list.entries, before.order, placements)
+    const l = { ...list, entries }
+    await getStorage().saveList(l)
+    setList(l)
+    await finishPass(l, state, {
+      kind: 'early',
+      picks: state.picks,
+      placed: state.placed,
+      startSize: state.startSize,
+      guessed: placements.length,
+    })
   }
 
   // ---- ladder ----
@@ -192,11 +234,8 @@ export default function DuelSession() {
 
   // ---- render ----
 
-  const ranked = rankedEntries(list.entries)
-  const strip =
-    session.mode === 'place' || session.mode === 'ladder'
-      ? session.order.map(byId)
-      : ranked
+  const strip = stripFor(session, list, byId)
+  const showEnd = session.mode === 'place' && canEndEarly(session.state)
 
   return (
     <div className="py-10">
@@ -207,7 +246,11 @@ export default function DuelSession() {
         / Duel session
       </p>
       <h1 className="mt-3 font-display text-headline-lg-mobile sm:text-headline-lg">
-        {session.mode === 'ladder' ? 'Climb the ladder' : 'Place the Bench'}
+        {session.mode === 'ladder'
+          ? 'Climb the ladder'
+          : session.reduel
+            ? 'Rank it all again'
+            : 'Place the Bench'}
       </h1>
 
       <StatusLine session={session} byId={byId} accent={accent} />
@@ -215,36 +258,49 @@ export default function DuelSession() {
       {session.mode === 'place' && (
         <PlaceDuel session={session} byId={byId} accent={accent} onPick={pickPlace} />
       )}
+      {showEnd && (
+        <EndSession count={session.state.open.length} accent={accent} onEnd={endSessionEarly} />
+      )}
       {session.mode === 'ladder' && (
         <LadderDuel session={session} byId={byId} accent={accent} onPick={pickLadder} />
       )}
-      {session.mode === 'hub' && (
-        <Hub list={list} summary={session.summary} rankedCount={ranked.length} />
-      )}
+      {session.mode === 'hub' && <Hub list={list} summary={session.summary} rankedCount={strip.length} />}
 
       <ChipStrip
-        entries={strip}
+        items={strip}
         accent={accent}
-        activeId={session.mode === 'place' || session.mode === 'ladder' ? session.itemId : null}
+        activeId={session.mode === 'place' ? session.state.current?.id : session.mode === 'ladder' ? session.itemId : null}
         opponentId={opponentId(session)}
-        waiting={session.mode === 'place' ? session.queue.length : 0}
         clickable={session.mode === 'hub'}
         onChip={startLadder}
+        placing={session.mode === 'place'}
       />
     </div>
   )
 }
 
-function opponentId(session) {
+// The strip always shows a complete ranking. In placement, unplaced items sit
+// at their provisional zone midpoints and render dashed, so the cost of ending
+// the session early is visible before the button is tapped. After an early
+// exit, the items that were settled by estimate stay dashed in the hub.
+function stripFor(session, list, byId) {
   if (session.mode === 'place') {
-    const mid = (session.lo + session.hi) >> 1
-    return session.order[mid]
+    return provisionalOrder(session.state)
+      .map(({ id, certain }) => ({ entry: byId(id), certain }))
+      .filter((x) => x.entry)
   }
+  if (session.mode === 'ladder') return session.order.map((id) => ({ entry: byId(id), certain: true }))
+  const guessed = new Set(session.summary?.estimated || [])
+  return rankedEntries(list.entries).map((e) => ({ entry: e, certain: !guessed.has(e.id) }))
+}
+
+function opponentId(session) {
+  if (session.mode === 'place') return session.state.order[session.state.current?.pivot]
   if (session.mode === 'ladder') return session.order[session.pos - 1]
   return null
 }
 
-// ---- status line (pick counts, per POC) ----
+// ---- status line ----
 
 function StatusLine({ session, byId, accent }) {
   const b = (text) => (
@@ -252,24 +308,30 @@ function StatusLine({ session, byId, accent }) {
       {text}
     </span>
   )
+  const rank = (n) => String(n).padStart(2, '0')
   let content = null
+
   if (session.mode === 'place') {
-    const item = byId(session.itemId)
-    const remaining = Math.ceil(Math.log2(Math.max(2, session.hi - session.lo + 1)))
+    const s = session.state
+    const item = byId(s.current.id)
+    const zone = zoneFor(s, s.current.id)
+    const size = zoneSize(zone)
+    const remaining = worstRemaining(size)
+    const others = s.open.length - 1
     content = (
       <>
-        Placing {b(item.name)} / pick {session.picks + 1} / at most {remaining} more pick
-        {remaining === 1 ? '' : 's'} for this item / {session.queue.length} item
-        {session.queue.length === 1 ? '' : 's'} waiting
+        Pass {rank(currentPass(s))} / pick {s.picks + 1} / placing {b(item.name)} / zone ranks{' '}
+        {rank(zone.lo + 1)} to {rank(zone.hi + 1)} / at most {remaining} more pick
+        {remaining === 1 ? '' : 's'} for this item
+        {others > 0 ? ` / ${others} other${others === 1 ? '' : 's'} still open` : ''}
       </>
     )
   } else if (session.mode === 'ladder') {
     const item = byId(session.itemId)
     content = (
       <>
-        Re-ranking {b(item.name)} / pick {session.picks + 1} / holding rank{' '}
-        {String(session.pos + 1).padStart(2, '0')}, challenging rank {String(session.pos).padStart(2, '0')} / a
-        loss locks the slot
+        Re-ranking {b(item.name)} / pick {session.picks + 1} / holding rank {rank(session.pos + 1)},
+        challenging rank {rank(session.pos)} / a loss locks the slot
       </>
     )
   } else if (session.summary?.kind === 'placement') {
@@ -277,43 +339,49 @@ function StatusLine({ session, byId, accent }) {
     content = (
       <>
         Placement complete in {b(`${picks} pick${picks === 1 ? '' : 's'}`)} for {placed} item
-        {placed === 1 ? '' : 's'} (worst case {worstCase(startSize, placed)})
+        {placed === 1 ? '' : 's'} (depth-first worst case {worstCase(startSize, placed)})
+      </>
+    )
+  } else if (session.summary?.kind === 'early') {
+    const { picks, guessed } = session.summary
+    content = (
+      <>
+        Session ended after {b(`${picks} pick${picks === 1 ? '' : 's'}`)} / {guessed} item
+        {guessed === 1 ? '' : 's'} placed by estimate, dashed below / duel, drag, or edit to refine
       </>
     )
   } else if (session.summary?.kind === 'ladder') {
     const { name, from, to, picks } = session.summary
     content = (
       <>
-        {b(name)} climbed rank {String(from).padStart(2, '0')} to {b(String(to).padStart(2, '0'))} in {picks} pick
-        {picks === 1 ? '' : 's'}
+        {b(name)} climbed rank {rank(from)} to {b(rank(to))} in {picks} pick{picks === 1 ? '' : 's'}
       </>
     )
   } else if (session.summary?.kind === 'ladder-hold') {
-    const { name, rank } = session.summary
+    const { name, rank: r } = session.summary
     content = (
       <>
-        {b(name)} holds rank {String(rank).padStart(2, '0')}
+        {b(name)} holds rank {rank(r)}
       </>
     )
   }
   if (!content) return null
-  return (
-    <p className="mt-4 font-mono text-xs uppercase tracking-[0.08em] text-on-surface-variant">{content}</p>
-  )
+  return <p className="mt-4 font-mono text-xs uppercase tracking-[0.08em] text-on-surface-variant">{content}</p>
 }
 
 // ---- duel layouts ----
 
 function PlaceDuel({ session, byId, accent, onPick }) {
-  const mid = (session.lo + session.hi) >> 1
-  const item = byId(session.itemId)
-  const opp = byId(session.order[mid])
+  const s = session.state
+  const item = byId(s.current.id)
+  const opp = byId(s.order[s.current.pivot])
+  if (!item || !opp) return null
   return (
     <div className="mx-auto mt-8 grid max-w-[720px] gap-5 sm:grid-cols-2">
       <DuelCard entry={item} tag="Placing" accent={accent} onPick={() => onPick(true)} />
       <DuelCard
         entry={opp}
-        tag={`Rank ${String(mid + 1).padStart(2, '0')}`}
+        tag={`Rank ${String(s.current.pivot + 1).padStart(2, '0')}`}
         accent={accent}
         onPick={() => onPick(false)}
       />
@@ -360,20 +428,43 @@ function DuelCard({ entry, tag, accent, onPick }) {
   )
 }
 
+// ---- early exit ----
+
+// Appears once every still open item has dueled EARLY_EXIT_MIN_DUELS times.
+function EndSession({ count, accent, onEnd }) {
+  return (
+    <div className="mt-7 text-center">
+      <button onClick={onEnd} className="focus-ring btn-ghost hover:border-[color:var(--accent)]" style={{ '--accent': accent }}>
+        End session
+      </button>
+      <p className="mt-2.5 font-mono text-[11px] uppercase tracking-[0.1em] text-on-surface-variant">
+        {count} item{count === 1 ? '' : 's'} would be placed by estimate, dashed below
+      </p>
+    </div>
+  )
+}
+
 // ---- hub (between sessions) ----
 
 function Hub({ list, summary, rankedCount }) {
-  const placed = summary?.kind === 'placement'
+  const kind = summary?.kind
+  const heading =
+    kind === 'placement'
+      ? 'Order locked. Ratings painted.'
+      : kind === 'early'
+        ? 'Order set. Some of it is an estimate.'
+        : 'The bench is clear.'
+  const body =
+    kind === 'placement'
+      ? 'Placeholder ratings generated from your picks.'
+      : kind === 'early'
+        ? 'Dashed chips are the items you stopped short on. None of them is marked hand set, so a later duel, drag, or edit overrides them cleanly.'
+        : 'Every entry holds a slot.'
   return (
     <div className="mt-10 rounded-lg border border-outline-variant bg-surface-container p-8 text-center">
-      <h3 className="font-display text-[2rem] font-semibold leading-tight">
-        {placed ? 'Order locked. Ratings painted.' : 'The bench is clear.'}
-      </h3>
+      <h3 className="font-display text-[2rem] font-semibold leading-tight">{heading}</h3>
       <p className="mt-2 font-body text-sm text-on-surface-variant">
-        {placed
-          ? 'Placeholder ratings generated from your picks.'
-          : 'Every entry holds a slot.'}{' '}
-        {rankedCount >= 2 ? 'Tap a chip below to re-rank an item with a ladder run, or head back.' : ''}
+        {body} {rankedCount >= 2 ? 'Tap a chip below to re-rank an item with a ladder run, or head back.' : ''}
       </p>
       <div className="mt-5 flex justify-center">
         <Link to={`/list/${list.id}`} className="focus-ring btn-primary">
@@ -384,19 +475,26 @@ function Hub({ list, summary, rankedCount }) {
   )
 }
 
-// ---- chip strip (per POC: rank + name, cut marked after the eighth) ----
+// ---- chip strip (rank + name, cut marked after the eighth) ----
 
-function ChipStrip({ entries, accent, activeId, opponentId, waiting, clickable, onChip }) {
+function ChipStrip({ items, accent, activeId, opponentId, clickable, onChip, placing }) {
+  const uncertain = items.filter((i) => !i.certain).length
   return (
     <section className="mt-10 border-t border-outline-variant pt-5">
-      <p className="eyebrow">Current ranking</p>
+      <p className="eyebrow">
+        Current ranking
+        {uncertain > 0 ? ` / ${uncertain} ${placing ? 'still uncertain' : 'placed by estimate'}` : ''}
+      </p>
       <div className="mt-3 flex flex-wrap items-center gap-1.5">
-        {entries.length === 0 && (
+        {items.length === 0 && (
           <span className="font-body text-sm text-on-surface-variant">No one ranked yet.</span>
         )}
-        {entries.map((e, i) => {
-          const cls = `flex items-center gap-1.5 rounded-sm border bg-surface-container-low px-2.5 py-1.5 font-mono text-[11px] ${
-            e.id === activeId || e.id === opponentId
+        {items.map(({ entry: e, certain }, i) => {
+          const highlighted = e.id === activeId || e.id === opponentId
+          const cls = `flex items-center gap-1.5 rounded-sm bg-surface-container-low px-2.5 py-1.5 font-mono text-[11px] border ${
+            certain ? '' : 'border-dashed'
+          } ${
+            highlighted
               ? 'border-on-surface'
               : i === 7
                 ? 'border-[color:var(--accent)]'
@@ -405,11 +503,11 @@ function ChipStrip({ entries, accent, activeId, opponentId, waiting, clickable, 
           const body = (
             <>
               <span style={{ color: accent }}>{String(i + 1).padStart(2, '0')}</span>
-              <span className="text-on-surface-variant">{e.name}</span>
+              <span className={certain ? 'text-on-surface-variant' : 'text-outline'}>{e.name}</span>
             </>
           )
           return (
-            <span key={e.id} className="contents" style={{ '--accent': accent }}>
+            <span key={e.id} className="contents">
               {clickable && i > 0 ? (
                 <button
                   onClick={() => onChip(e.id)}
@@ -420,7 +518,7 @@ function ChipStrip({ entries, accent, activeId, opponentId, waiting, clickable, 
                   {body}
                 </button>
               ) : (
-                <span className={cls} style={{ '--accent': accent }}>
+                <span className={cls} style={{ '--accent': accent }} title={certain ? undefined : 'Position still uncertain'}>
                   {body}
                 </span>
               )}
@@ -435,12 +533,14 @@ function ChipStrip({ entries, accent, activeId, opponentId, waiting, clickable, 
             </span>
           )
         })}
-        {waiting > 0 && (
-          <span className="rounded-sm border border-dashed border-outline-variant px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-widest text-on-surface-variant">
-            +{waiting} waiting
-          </span>
-        )}
       </div>
+      {uncertain > 0 && (
+        <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.1em] text-outline">
+          {placing
+            ? `Dashed = landing zone still open, shown at its midpoint. End session appears once every open item has dueled ${EARLY_EXIT_MIN_DUELS} times.`
+            : 'Dashed = position is an estimate. A later duel, drag, or edit overrides it cleanly.'}
+        </p>
+      )}
     </section>
   )
 }

@@ -11,9 +11,11 @@ import Subcategory from './pages/Subcategory'
 import ListDetail from './pages/ListDetail'
 import NewList from './pages/NewList'
 import DuelSession from './pages/DuelSession'
+import ScorePass from './pages/ScorePass'
 
 // HashRouter keeps GitHub Pages routing dead simple (no 404 fallback tricks),
-// and matches the POC's hash URL scheme: #/, #/domain/{id}, #/sub/{d}/{s}, #/list/{id}, #/session/{id}.
+// and matches the POC's hash URL scheme: #/, #/domain/{id}, #/sub/{d}/{s},
+// #/list/{id}, #/session/{id}, #/score/{id}.
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -30,6 +32,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/list/:listId" element={<ListDetail />} />
             <Route path="/new/:domainId/:subId" element={<NewList />} />
             <Route path="/session/:listId" element={<DuelSession />} />
+            <Route path="/score/:listId" element={<ScorePass />} />
           </Routes>
         </main>
         <Footer />

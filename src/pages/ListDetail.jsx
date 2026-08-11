@@ -1,8 +1,13 @@
-// List page. Phase 5: the Power of Eight renders in podium tiers per POC
-// tab 01 (1 hero / 2-4 podium row / 5-8 compact), and drag reorder is the
-// manual correction tool across every ranked slot, regenerating the moved
-// item's rating to fit its destination (sort invariant preserved). A featured
-// flag toggle feeds the home page row.
+// List page. Drag reorder is the manual correction tool across every ranked
+// slot, regenerating the moved item's rating to fit its destination (sort
+// invariant preserved). A featured flag toggle feeds the home page hero.
+//
+// Phase 6 changes the Power of Eight rendering and adds two edit mode entry
+// points. Ranks 1 to 4 are now the compact 2x2 grid (locked decision 1, second
+// amendment; r8ted-top4-poc.html variant 03), replacing the Phase 5 tier 1 hero
+// card and tier 2 podium row. Tier 3 (ranks 5 to 8) is untouched. Score pass
+// opens the dimension sweep; Full reduel throws everything back into a fresh
+// breadth-first placement pass.
 
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useCallback, useEffect, useState } from 'react'
@@ -10,8 +15,7 @@ import { getDomain, getSubcategory } from '../lib/taxonomy'
 import { getStorage } from '../lib/storage'
 import { rankedEntries, benchEntries, makeId, entryImage, moveAndRefit } from '../lib/entries'
 import { useEditMode } from '../lib/EditMode'
-import EntryCard from '../components/EntryCard'
-import { TheOneCard, CompactCard } from '../components/Podium'
+import { QuadCard, CompactCard } from '../components/Podium'
 import BeyondTable from '../components/BeyondTable'
 import EntryEditor from '../components/EntryEditor'
 import { NotFound } from './Domain'
@@ -23,6 +27,7 @@ export default function ListDetail() {
   const [list, setList] = useState(undefined)
   const [editing, setEditing] = useState(null)
   const [armed, setArmed] = useState(false)
+  const [reduelArmed, setReduelArmed] = useState(false)
   const [dragIdx, setDragIdx] = useState(null)
 
   const reload = useCallback(() => {
@@ -134,6 +139,30 @@ export default function ListDetail() {
                 Duel session
               </Link>
             )}
+            {ranked.length > 0 && (
+              <Link to={`/score/${list.id}`} className="focus-ring btn-ghost">
+                Score pass
+              </Link>
+            )}
+            {ranked.length > 1 && (
+              // Full reduel. Two-tap arm and confirm, matching the delete
+              // buttons, no browser dialogs. Scores are not cleared here: the
+              // session repaints each entry as it places, so abandoning the
+              // session mid pass leaves a scrambled but still fully ranked list
+              // rather than an empty one. Every hand-set mark is dropped as its
+              // entry places, which is the owner-accepted overwrite.
+              <button
+                onClick={() => (reduelArmed ? navigate(`/session/${list.id}?reduel=1`) : setReduelArmed(true))}
+                onBlur={() => setReduelArmed(false)}
+                className={`focus-ring rounded border px-6 py-3 font-mono text-label-caps uppercase transition-colors ${
+                  reduelArmed
+                    ? 'border-error text-error'
+                    : 'border-outline-variant text-on-surface hover:bg-surface-container-high'
+                }`}
+              >
+                {reduelArmed ? 'Confirm full reduel, scores reset' : 'Full reduel'}
+              </button>
+            )}
             <button onClick={toggleFeatured} className="focus-ring btn-ghost">
               {list.featured ? 'Unfeature' : 'Feature on home'}
             </button>
@@ -163,36 +192,22 @@ export default function ListDetail() {
           </p>
         ) : (
           <>
-            <p className="eyebrow mt-5">Tier 1 / The One</p>
-            <div className="mt-3">
-              <TheOneCard
-                entry={eight[0]}
-                scoreLabels={list.scoreLabels}
-                accent={accent}
-                canEdit={canEdit}
-                onEdit={() => setEditing(eight[0])}
-                dragProps={dragProps(0)}
-              />
+            {/* Ranks 1 to 4: compact 2x2 grid on desktop, one stack on mobile.
+                POC gap is 10px and the breakpoint is 640px. */}
+            <p className="eyebrow mt-5">Ranks 1 to 4</p>
+            <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
+              {eight.slice(0, 4).map((e, i) => (
+                <QuadCard
+                  key={e.id}
+                  entry={e}
+                  rank={i + 1}
+                  accent={accent}
+                  canEdit={canEdit}
+                  onEdit={() => setEditing(e)}
+                  dragProps={dragProps(i)}
+                />
+              ))}
             </div>
-            {eight.length > 1 && (
-              <>
-                <p className="eyebrow mt-7">Tier 2 / The Podium</p>
-                <div className="mt-3 grid gap-4 sm:grid-cols-3">
-                  {eight.slice(1, 4).map((e, i) => (
-                    <EntryCard
-                      key={e.id}
-                      entry={e}
-                      rank={i + 2}
-                      scoreLabels={list.scoreLabels}
-                      accent={accent}
-                      canEdit={canEdit}
-                      onEdit={() => setEditing(e)}
-                      dragProps={dragProps(i + 1)}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
             {eight.length > 4 && (
               <>
                 <p className="eyebrow mt-7">Tier 3 / The Contenders</p>
