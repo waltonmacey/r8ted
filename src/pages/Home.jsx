@@ -56,7 +56,7 @@ export default function Home() {
               <img
                 src={entryImage(leader)}
                 alt=""
-                className="h-full w-full object-cover opacity-25 brightness-90 saturate-[.4]"
+                className="h-full w-full object-cover opacity-50 brightness-95 saturate-[.55]"
                 style={{ objectPosition: 'center 22%' }}
               />
             </div>
@@ -65,7 +65,7 @@ export default function Home() {
         {featured.length > 0 && (
           <>
             <div
-              className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/30"
+              className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/45 to-background/10"
               aria-hidden="true"
             />
             <div
