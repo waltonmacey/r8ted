@@ -6,7 +6,7 @@
 
 import { compositeText } from '../lib/entries'
 
-export default function BeyondTable({ entries, startRank, scoreLabels, accent, canEdit, onEdit }) {
+export default function BeyondTable({ entries, startRank, scoreLabels, accent, canEdit, onEdit, dragPropsFor }) {
   if (entries.length === 0) return null
   return (
     <section className="mt-14">
@@ -34,6 +34,7 @@ export default function BeyondTable({ entries, startRank, scoreLabels, accent, c
                 key={e.id}
                 className="group border-b border-outline-variant transition-colors last:border-0 hover:bg-surface-variant"
                 style={{ '--accent': accent }}
+                {...(dragPropsFor ? dragPropsFor(i) : {})}
               >
                 <td className="px-3 py-4 font-mono text-label-mono text-on-surface-variant">
                   {String(startRank + i).padStart(2, '0')}

@@ -25,7 +25,21 @@ export default function EntryEditor({ entry, scoreLabels, onSave, onDelete, onCl
     const scores = form.scores.every((s) => s !== '' && s !== null)
       ? form.scores.map(clampScore)
       : null
-    onSave({ ...entry, ...form, scores })
+    // Phase 5: hand-set scores are marked so they survive placeholder
+    // regeneration. The mark is only added when the numbers actually changed
+    // (editing a blurb on a placeholder-scored entry keeps it a placeholder),
+    // and never removed here once earned. Blank scores return the entry to
+    // the Bench and drop the mark.
+    const payload = { ...entry, ...form, scores }
+    if (scores === null) {
+      delete payload.scoresEdited
+    } else {
+      const changed =
+        !isScored(entry.scores) || entry.scores.some((s, i) => Number(s) !== scores[i])
+      if (changed || entry.scoresEdited) payload.scoresEdited = true
+      else delete payload.scoresEdited
+    }
+    onSave(payload)
     onClose()
   }
 

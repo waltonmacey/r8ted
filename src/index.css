@@ -63,6 +63,15 @@
   .focus-ring {
     @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-container;
   }
+
+  /* Drag reorder affordance (Phase 5): ranked slots become draggable in
+     edit mode; the attribute is only set there. */
+  [draggable='true'] {
+    cursor: grab;
+  }
+  [draggable='true']:active {
+    cursor: grabbing;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

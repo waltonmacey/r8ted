@@ -6,7 +6,7 @@
 import { firebaseEnabled, getFirebase } from './firebase'
 import { SEED_LISTS } from './seed'
 
-const LS_KEY = 'r8ted:lists:v1'
+export const LS_KEY = 'r8ted:lists:v1'
 const SEED_FLAG = 'r8ted:seeded:v1'
 const TAXONOMY_MIGRATION_FLAG = 'r8ted:migrated:taxonomy-4x4'
 

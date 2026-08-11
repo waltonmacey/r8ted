@@ -1,19 +1,19 @@
-// Power of Eight card. Locked decision: big composite numeral plus four thin
-// labeled barcode stripe rows, one per dimension, with optional free-text keyStat.
-// (Flagged departure from the literal mockup's single hero stat.)
-// Framing, rank numeral, hover behavior per design spec section 7; image
-// treatment per section 6 (muted color at rest, full color on hover).
-// The spec's cyan hover border and cyan numerals generalize to the domain
-// accent, set as a CSS variable (cyan on Culture pages, matching the mockup).
+// Tier 2 podium card (ranks 2-4) per POC tab 01, Phase 5 reshape of the
+// original Power of Eight card. Rank numeral and composite overlay the image;
+// name plus the four labeled barcode rows below. Blurb and keyStat no longer
+// render at this tier (POC); both stay editable in EntryEditor. Framing,
+// hover, and image treatment per design spec sections 6 and 7, with the
+// cyan generalized to the domain accent as before.
 
 import { compositeText, entryImage } from '../lib/entries'
 import BarcodeRow from './BarcodeRow'
 
-export default function EntryCard({ entry, rank, scoreLabels, accent, onEdit, canEdit }) {
+export default function EntryCard({ entry, rank, scoreLabels, accent, onEdit, canEdit, dragProps = {} }) {
   return (
     <article
-      className="group relative flex flex-col gap-4 rounded border border-outline-variant bg-surface-container p-4 transition-colors hover:border-[color:var(--accent)]"
+      className="group relative flex flex-col gap-3 rounded-lg border border-outline-variant bg-surface-container p-4 transition-colors hover:border-[color:var(--accent)]"
       style={{ '--accent': accent }}
+      {...dragProps}
     >
       <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-surface-variant">
         <img
@@ -23,31 +23,23 @@ export default function EntryCard({ entry, rank, scoreLabels, accent, onEdit, ca
           loading="lazy"
         />
         <span
-          className="absolute left-2 top-2 font-ui text-headline-lg font-black leading-none drop-shadow-md"
+          className="absolute left-2 top-1.5 font-ui text-[2.5rem] font-black leading-none drop-shadow-md"
           style={{ color: accent }}
         >
           {String(rank).padStart(2, '0')}
         </span>
         <span
-          className="absolute bottom-2 right-3 font-mono text-3xl font-bold leading-none"
+          className="absolute bottom-2 right-2.5 font-mono text-[1.75rem] font-bold leading-none"
           style={{ color: accent, textShadow: '0 1px 8px rgba(0,0,0,0.8)' }}
         >
           {compositeText(entry.scores)}
         </span>
       </div>
-      <div>
-        <h3 className="font-display text-headline-lg-mobile leading-tight">{entry.name}</h3>
-        {entry.blurb && <p className="mt-1 font-body text-body-md text-on-surface-variant">{entry.blurb}</p>}
-      </div>
-      <div className="mt-auto space-y-1.5 border-t border-outline-variant pt-3">
+      <h3 className="font-display text-[1.6rem] font-semibold leading-[1.15]">{entry.name}</h3>
+      <div className="mt-auto space-y-1.5 border-t border-outline-variant pt-2.5">
         {entry.scores.map((s, i) => (
           <BarcodeRow key={i} label={scoreLabels[i]} score={s} accent={accent} />
         ))}
-        {entry.keyStat && (
-          <p className="pt-2 font-mono text-[11px] uppercase tracking-widest text-on-surface-variant">
-            {entry.keyStat}
-          </p>
-        )}
       </div>
       {canEdit && (
         <button
