@@ -10,12 +10,14 @@ import Domain from './pages/Domain'
 import Subcategory from './pages/Subcategory'
 import ListDetail from './pages/ListDetail'
 import NewList from './pages/NewList'
+import ContenderPicker from './pages/ContenderPicker'
 import DuelSession from './pages/DuelSession'
 import ScorePass from './pages/ScorePass'
 
 // HashRouter keeps GitHub Pages routing dead simple (no 404 fallback tricks),
 // and matches the POC's hash URL scheme: #/, #/domain/{id}, #/sub/{d}/{s},
-// #/list/{id}, #/session/{id}, #/score/{id}.
+// #/list/{id}, #/session/{id}, #/score/{id}. Phase 8 adds #/pick/{id}, the
+// contender selection step between the catalog picker and the duel.
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -31,6 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/sub/:domainId/:subId" element={<Subcategory />} />
             <Route path="/list/:listId" element={<ListDetail />} />
             <Route path="/new/:domainId/:subId" element={<NewList />} />
+            <Route path="/pick/:listId" element={<ContenderPicker />} />
             <Route path="/session/:listId" element={<DuelSession />} />
             <Route path="/score/:listId" element={<ScorePass />} />
           </Routes>

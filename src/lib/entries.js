@@ -52,6 +52,19 @@ export function makeId() {
 
 // Monochrome placeholder: initials on a dark gradient, as an SVG data URI.
 // Used until a catalog supplies real imagery.
+// Up to two initials, the same rule placeholderImage uses. Exported so a
+// surface that cannot use the 400x500 placeholder SVG (a full bleed half, where
+// object-cover crops the SVG into unreadable letter fragments) can draw the
+// same initials at its own aspect ratio.
+export function initials(name) {
+  return (name || '?')
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0].toUpperCase())
+    .join('')
+}
+
 export function placeholderImage(name) {
   const initials = (name || '?')
     .split(/\s+/)
@@ -76,6 +89,24 @@ export function placeholderImage(name) {
 
 export function entryImage(entry) {
   return entry.imageUrl || placeholderImage(entry.name)
+}
+
+// An imageUrl that 404s, rots, or is blocked renders the browser's broken image
+// icon, which looks like a bug rather than a missing asset. This falls back to
+// the same initials placeholder an item with no URL gets. The data attribute
+// guards against a loop if the placeholder itself somehow fails.
+//
+// Phase 8 applies this on the surfaces it touches: the contender grid and every
+// duel layout. QuadCard, TheOneCard, EntryCard, BeyondTable and the home hero
+// still show the broken icon and should pick this up in a follow up; 61 of 865
+// items carry a URL today, so the exposure is small but real.
+export function onImageError(entry) {
+  return (ev) => {
+    const img = ev.currentTarget
+    if (img.dataset.fallback) return
+    img.dataset.fallback = '1'
+    img.src = placeholderImage(entry.name)
+  }
 }
 
 // ---- Phase 5: pick-based ranking and placeholder ratings ----

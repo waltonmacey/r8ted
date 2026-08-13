@@ -1,6 +1,13 @@
 // Catalog-first list creation (core commitment). Setup form: title, tagline,
 // 4 score labels inherited from subcategory defaults (editable), catalog picker.
-// Then straight into a duel session. Catalog items land on the Bench until scored.
+// Catalog items land on the Bench until scored.
+//
+// PHASE 8 amends locked decision 4, which sent this form straight into a duel
+// session. A catalog of MIN_CONTENDERS or more now routes through
+// #/pick/{listId} first, so the user chooses which 8 to 15 items are worth
+// ranking rather than being handed the whole catalog as a queue. A catalog
+// smaller than the floor has nothing to choose and goes straight to the duel as
+// before; harry-potter-books, at 7, is the only one in the library.
 
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useState } from 'react'
@@ -8,6 +15,7 @@ import { getDomain, getSubcategory } from '../lib/taxonomy'
 import { catalogsForSubcategory, suggestKeyStat } from '../lib/catalogLoader'
 import { getStorage } from '../lib/storage'
 import { makeId } from '../lib/entries'
+import { MIN_CONTENDERS } from '../lib/placement'
 import { useEditMode } from '../lib/EditMode'
 import { NotFound } from './Domain'
 
@@ -57,7 +65,9 @@ export default function NewList() {
       entries,
     }
     await getStorage().saveList(list)
-    navigate(entries.length >= 2 ? `/session/${list.id}` : `/list/${list.id}`)
+    if (entries.length >= MIN_CONTENDERS) navigate(`/pick/${list.id}`)
+    else if (entries.length >= 2) navigate(`/session/${list.id}`)
+    else navigate(`/list/${list.id}`)
   }
 
   return (
@@ -125,7 +135,11 @@ export default function NewList() {
           disabled={busy || !title.trim()}
           className="focus-ring btn-primary disabled:opacity-40"
         >
-          {catalogId ? 'Create and start dueling' : 'Create list'}
+          {!catalogId
+            ? 'Create list'
+            : (catalogs.find((c) => c.id === catalogId)?.items.length ?? 0) >= MIN_CONTENDERS
+              ? 'Create and pick contenders'
+              : 'Create and start dueling'}
         </button>
       </div>
     </div>

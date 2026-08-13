@@ -96,6 +96,92 @@ export const PIVOT_MIN_WINDOW = 2
 // regimes, so a flat constant is the honest form.
 export const EARLY_EXIT_MIN_DUELS = 3
 
+// ---- contender selection bounds (Phase 8) ----
+//
+// The list page is built around ranks 1 to 8, so 8 is the floor: a session that
+// produces fewer than eight items cannot fill the podium. 15 is the ceiling
+// because 15 is where the session stops being one sitting. Measured on the
+// shipped engine over 40,000 random preference orders per size, the range spans
+// 17 to 46 picks, a 2.7x spread. At 15 selected, 8 make the podium and 7 go
+// straight to Beyond the Eight; that is the argument for allowing the range at
+// all, not a defect.
+export const MIN_CONTENDERS = 8
+export const MAX_CONTENDERS = 15
+
+// Mean picks to build a list of this size from scratch, rounded to the nearest
+// pick. Measured, not modelled, though the n log n model does hold: it predicts
+// 16.9 at the floor and 45.6 at the ceiling against 16.9 and 45.8 measured. A
+// lookup rather than a formula because the curve is not worth approximating
+// over eight values.
+export const SESSION_ESTIMATE = { 8: 17, 9: 21, 10: 24, 11: 28, 12: 32, 13: 37, 14: 41, 15: 46 }
+
+// Outside 8 to 15 the confirm step does not run, but the estimate is still
+// useful to anything that wants to quote a session length. Falls back to the
+// measured 4.8 picks per item slope past the ceiling.
+export function sessionEstimate(n) {
+  if (SESSION_ESTIMATE[n]) return SESSION_ESTIMATE[n]
+  if (n < 8) return Math.max(0, Math.round(n * 2.1))
+  return Math.round(46 + (n - 15) * 4.8)
+}
+
+// ---- early exit suppression (Phase 8) ----
+//
+// The gate at 3 duels is not the whole rule. Measured on the shipped engine,
+// the gate FIRES in 87.1% of eight item sessions, which contradicts the Phase 7
+// reading that it would rarely fire at all. The real problem is that when it
+// fires at 8 it appears at pick 15.0 of a mean 16.9 and offers to save 2.4
+// picks, in exchange for 1.9 items landing in the wrong place. That is a
+// control asking for a decision worth less than the decision costs.
+//
+// Queue size is the wrong thing to key the suppression on: it is not available
+// once a session mixes queued items into an already ranked list, and it is not
+// what makes the button worth showing. Picks remaining is.
+//
+// Picks remaining is estimable at runtime from the open zones alone. Three
+// candidates were fitted against actual picks to completion over 155,841 gate
+// snapshots at queue sizes 8 to 15, least squares through the origin:
+//
+//   estimator                    scalar   mean |error|
+//   open item count               1.833      1.35 picks
+//   sum worstRemaining(zoneSize)  1.123      1.30 picks
+//   sum log2(zoneSize)            1.379      1.12 picks
+//
+// The log2 sum wins and has the more honest story: log2(zoneSize) is the picks
+// a perfect binary search would need on that zone, and the 1.38 multiplier is
+// what off centre pivots and zone growth actually cost on top of it. It over
+// predicts by 0.44 picks at a queue of 8 and under predicts by 0.42 at 15, so
+// it is a threshold instrument, not a precise readout.
+export const PICKS_LEFT_K = 1.38
+
+// The floor, in estimated picks, below which End session is withheld. Swept as
+// a precision problem over every state from the gate onward, not just the first
+// one, with DEAD = shown with fewer than 4 picks actually left and MISSED =
+// withheld with 8 or more actually left:
+//
+//   floor   shown   dead offers   missed offers   mean saving when shown
+//     none   100%        42.7%            0.0%              5.0 picks
+//        3     70%        12.7%            0.0%              6.5
+//        4     62%         6.1%            0.0%              7.0
+//        5     46%         0.4%            0.0%              8.1
+//        6     38%         0.0%            0.2%              8.7
+//        8     21%         0.0%            3.9%             10.4
+//
+// 5 is the knee: dead offers fall from 42.7% to 0.4% and nothing is missed yet.
+// 6 buys the last 0.4% at the cost of starting to hide real savings.
+//
+// What it does per queue size, at the first firing: the button is withheld in
+// 98% of eight item sessions and 86% of nine item ones, and appears in 98% of
+// fifteen item ones. On three items added to an already ranked twelve it never
+// appears, correctly, because that whole session is 11.3 picks.
+//
+// NOT LATCHED, deliberately. The estimate falls as zones close, so the button
+// appears and then withdraws when finishing outright becomes cheaper than
+// deciding. Measured, it never comes back: the flicker rate (shown, hidden,
+// shown again) is 0.0% at every queue size from 8 to 15. Latching would keep it
+// on screen through 26% to 35% of states with fewer than 4 picks left, which is
+// the dead UI this rule exists to remove.
+export const EARLY_EXIT_MIN_SAVING = 5
+
 // Completion policy, one line to flip. 'passes' is the Phase 6 spec: passes
 // continue until every zone closes. 'passes-then-depth' runs the same passes up
 // to the early exit gate, then finishes one item at a time.
@@ -311,11 +397,35 @@ export function applyPick(state, winnerIsNew, rng = Math.random) {
 
 // ---- early exit ----
 
-// The End session affordance appears once every still-open item has dueled at
-// least EARLY_EXIT_MIN_DUELS times. Under the fairness rule that also
-// guarantees every queued item has dueled at least once, since no item gets a
-// second duel while another is still on zero.
+// Estimated picks still to run if the session is carried through to completion.
+// Sum of log2 zone sizes, scaled by the measured cost of off centre pivots and
+// zone growth. See PICKS_LEFT_K for the fit and its error.
+export function estimatedPicksLeft(state) {
+  let sum = 0
+  for (const z of state.open) sum += Math.log2(zoneSize(z))
+  return Math.round(PICKS_LEFT_K * sum)
+}
+
+// The End session affordance appears once BOTH hold:
+//
+//   every still-open item has dueled at least EARLY_EXIT_MIN_DUELS times, so
+//     the estimate it would settle on is worth having. Under the fairness rule
+//     that also guarantees every queued item has dueled at least once, since no
+//     item gets a second duel while another is still on zero.
+//   at least EARLY_EXIT_MIN_SAVING picks are estimated to remain, so the offer
+//     is worth more than the decision it asks for.
+//
+// The second clause is Phase 8. It is what keeps the button off screen in a
+// short session, where the gate fires reliably and saves almost nothing.
 export function canEndEarly(state) {
+  if (state.open.length === 0) return false
+  if (!state.open.every((z) => z.duels >= EARLY_EXIT_MIN_DUELS)) return false
+  return estimatedPicksLeft(state) >= EARLY_EXIT_MIN_SAVING
+}
+
+// The raw duel gate on its own, without the saving floor. Kept separate so the
+// chip strip can explain accurately why the button is not there yet.
+export function pastDuelGate(state) {
   return state.open.length > 0 && state.open.every((z) => z.duels >= EARLY_EXIT_MIN_DUELS)
 }
 
