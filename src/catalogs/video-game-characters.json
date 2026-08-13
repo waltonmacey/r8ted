@@ -1,0 +1,105 @@
+{
+  "id": "video-game-characters",
+  "name": "Video Game Characters",
+  "subcategories": [
+    "characters"
+  ],
+  "items": [
+    {
+      "name": "Mario",
+      "imageUrl": "",
+      "meta": {
+        "franchise": "Super Mario",
+        "debut": "1981"
+      }
+    },
+    {
+      "name": "Link",
+      "imageUrl": "",
+      "meta": {
+        "franchise": "The Legend of Zelda",
+        "debut": "1986"
+      }
+    },
+    {
+      "name": "Master Chief",
+      "imageUrl": "",
+      "meta": {
+        "franchise": "Halo",
+        "debut": "2001"
+      }
+    },
+    {
+      "name": "Kratos",
+      "imageUrl": "",
+      "meta": {
+        "franchise": "God of War",
+        "debut": "2005"
+      }
+    },
+    {
+      "name": "Sonic the Hedgehog",
+      "imageUrl": "",
+      "meta": {
+        "franchise": "Sonic",
+        "debut": "1991"
+      }
+    },
+    {
+      "name": "Lara Croft",
+      "imageUrl": "",
+      "meta": {
+        "franchise": "Tomb Raider",
+        "debut": "1996"
+      }
+    },
+    {
+      "name": "Solid Snake",
+      "imageUrl": "",
+      "meta": {
+        "franchise": "Metal Gear",
+        "debut": "1987"
+      }
+    },
+    {
+      "name": "Samus Aran",
+      "imageUrl": "",
+      "meta": {
+        "franchise": "Metroid",
+        "debut": "1986"
+      }
+    },
+    {
+      "name": "Pikachu",
+      "imageUrl": "",
+      "meta": {
+        "franchise": "Pokemon",
+        "debut": "1996"
+      }
+    },
+    {
+      "name": "Geralt of Rivia",
+      "imageUrl": "",
+      "meta": {
+        "franchise": "The Witcher",
+        "debut": "2007"
+      }
+    },
+    {
+      "name": "Arthur Morgan",
+      "imageUrl": "",
+      "meta": {
+        "franchise": "Red Dead Redemption 2",
+        "debut": "2018"
+      }
+    },
+    {
+      "name": "Donkey Kong",
+      "imageUrl": "",
+      "meta": {
+        "franchise": "Donkey Kong",
+        "debut": "1981"
+      }
+    }
+  ]
+}

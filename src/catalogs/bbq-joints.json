@@ -1,0 +1,105 @@
+{
+  "id": "bbq-joints",
+  "name": "BBQ Joints",
+  "subcategories": [
+    "restaurants"
+  ],
+  "items": [
+    {
+      "name": "Central BBQ",
+      "imageUrl": "",
+      "meta": {
+        "city": "Memphis, TN",
+        "specialty": "Dry rub ribs"
+      }
+    },
+    {
+      "name": "Charlie Vergos Rendezvous",
+      "imageUrl": "",
+      "meta": {
+        "city": "Memphis, TN",
+        "specialty": "Dry rub ribs"
+      }
+    },
+    {
+      "name": "Cozy Corner",
+      "imageUrl": "",
+      "meta": {
+        "city": "Memphis, TN",
+        "specialty": "Barbecue cornish hen"
+      }
+    },
+    {
+      "name": "Payne's Bar-B-Que",
+      "imageUrl": "",
+      "meta": {
+        "city": "Memphis, TN",
+        "specialty": "Chopped pork sandwich"
+      }
+    },
+    {
+      "name": "Franklin Barbecue",
+      "imageUrl": "",
+      "meta": {
+        "city": "Austin, TX",
+        "specialty": "Brisket"
+      }
+    },
+    {
+      "name": "Snow's BBQ",
+      "imageUrl": "",
+      "meta": {
+        "city": "Lexington, TX",
+        "specialty": "Brisket"
+      }
+    },
+    {
+      "name": "Skylight Inn",
+      "imageUrl": "",
+      "meta": {
+        "city": "Ayden, NC",
+        "specialty": "Whole hog"
+      }
+    },
+    {
+      "name": "Rodney Scott's BBQ",
+      "imageUrl": "",
+      "meta": {
+        "city": "Charleston, SC",
+        "specialty": "Whole hog"
+      }
+    },
+    {
+      "name": "Arthur Bryant's",
+      "imageUrl": "",
+      "meta": {
+        "city": "Kansas City, MO",
+        "specialty": "Burnt ends"
+      }
+    },
+    {
+      "name": "Joe's Kansas City",
+      "imageUrl": "",
+      "meta": {
+        "city": "Kansas City, KS",
+        "specialty": "Z-Man sandwich"
+      }
+    },
+    {
+      "name": "Lexington Barbecue",
+      "imageUrl": "",
+      "meta": {
+        "city": "Lexington, NC",
+        "specialty": "Pork shoulder"
+      }
+    },
+    {
+      "name": "Martin's Bar-B-Que",
+      "imageUrl": "",
+      "meta": {
+        "city": "Nashville, TN",
+        "specialty": "Whole hog"
+      }
+    }
+  ]
+}

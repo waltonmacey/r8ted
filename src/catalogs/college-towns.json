@@ -1,0 +1,105 @@
+{
+  "id": "college-towns",
+  "name": "College Towns",
+  "subcategories": [
+    "cities-travel"
+  ],
+  "items": [
+    {
+      "name": "Athens",
+      "imageUrl": "",
+      "meta": {
+        "school": "University of Georgia",
+        "state": "Georgia"
+      }
+    },
+    {
+      "name": "Ann Arbor",
+      "imageUrl": "",
+      "meta": {
+        "school": "University of Michigan",
+        "state": "Michigan"
+      }
+    },
+    {
+      "name": "Madison",
+      "imageUrl": "",
+      "meta": {
+        "school": "University of Wisconsin",
+        "state": "Wisconsin"
+      }
+    },
+    {
+      "name": "Austin",
+      "imageUrl": "",
+      "meta": {
+        "school": "University of Texas",
+        "state": "Texas"
+      }
+    },
+    {
+      "name": "Chapel Hill",
+      "imageUrl": "",
+      "meta": {
+        "school": "UNC",
+        "state": "North Carolina"
+      }
+    },
+    {
+      "name": "Boulder",
+      "imageUrl": "",
+      "meta": {
+        "school": "University of Colorado",
+        "state": "Colorado"
+      }
+    },
+    {
+      "name": "Oxford",
+      "imageUrl": "",
+      "meta": {
+        "school": "Ole Miss",
+        "state": "Mississippi"
+      }
+    },
+    {
+      "name": "Knoxville",
+      "imageUrl": "",
+      "meta": {
+        "school": "University of Tennessee",
+        "state": "Tennessee"
+      }
+    },
+    {
+      "name": "Charlottesville",
+      "imageUrl": "",
+      "meta": {
+        "school": "University of Virginia",
+        "state": "Virginia"
+      }
+    },
+    {
+      "name": "Tuscaloosa",
+      "imageUrl": "",
+      "meta": {
+        "school": "University of Alabama",
+        "state": "Alabama"
+      }
+    },
+    {
+      "name": "Bloomington",
+      "imageUrl": "",
+      "meta": {
+        "school": "Indiana University",
+        "state": "Indiana"
+      }
+    },
+    {
+      "name": "State College",
+      "imageUrl": "",
+      "meta": {
+        "school": "Penn State",
+        "state": "Pennsylvania"
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "world-cities",
+  "name": "World Cities",
+  "subcategories": [
+    "cities-travel"
+  ],
+  "items": [
+    {
+      "name": "Tokyo",
+      "imageUrl": "",
+      "meta": {
+        "country": "Japan",
+        "metro population": "37M"
+      }
+    },
+    {
+      "name": "Paris",
+      "imageUrl": "",
+      "meta": {
+        "country": "France",
+        "metro population": "11M"
+      }
+    },
+    {
+      "name": "London",
+      "imageUrl": "",
+      "meta": {
+        "country": "United Kingdom",
+        "metro population": "9.6M"
+      }
+    },
+    {
+      "name": "Rome",
+      "imageUrl": "",
+      "meta": {
+        "country": "Italy",
+        "metro population": "4.3M"
+      }
+    },
+    {
+      "name": "Barcelona",
+      "imageUrl": "",
+      "meta": {
+        "country": "Spain",
+        "metro population": "5.6M"
+      }
+    },
+    {
+      "name": "Cape Town",
+      "imageUrl": "",
+      "meta": {
+        "country": "South Africa",
+        "metro population": "4.8M"
+      }
+    },
+    {
+      "name": "Sydney",
+      "imageUrl": "",
+      "meta": {
+        "country": "Australia",
+        "metro population": "5.3M"
+      }
+    },
+    {
+      "name": "Istanbul",
+      "imageUrl": "",
+      "meta": {
+        "country": "Turkey",
+        "metro population": "15.8M"
+      }
+    },
+    {
+      "name": "Mexico City",
+      "imageUrl": "",
+      "meta": {
+        "country": "Mexico",
+        "metro population": "22M"
+      }
+    },
+    {
+      "name": "Kyoto",
+      "imageUrl": "",
+      "meta": {
+        "country": "Japan",
+        "metro population": "1.5M"
+      }
+    },
+    {
+      "name": "Buenos Aires",
+      "imageUrl": "",
+      "meta": {
+        "country": "Argentina",
+        "metro population": "15.4M"
+      }
+    },
+    {
+      "name": "Lisbon",
+      "imageUrl": "",
+      "meta": {
+        "country": "Portugal",
+        "metro population": "2.9M"
+      }
+    }
+  ]
+}

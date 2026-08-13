@@ -1,0 +1,105 @@
+{
+  "id": "sitcom-characters",
+  "name": "Sitcom Characters",
+  "subcategories": [
+    "characters"
+  ],
+  "items": [
+    {
+      "name": "Michael Scott",
+      "imageUrl": "",
+      "meta": {
+        "show": "The Office",
+        "actor": "Steve Carell"
+      }
+    },
+    {
+      "name": "Dwight Schrute",
+      "imageUrl": "",
+      "meta": {
+        "show": "The Office",
+        "actor": "Rainn Wilson"
+      }
+    },
+    {
+      "name": "Cosmo Kramer",
+      "imageUrl": "",
+      "meta": {
+        "show": "Seinfeld",
+        "actor": "Michael Richards"
+      }
+    },
+    {
+      "name": "George Costanza",
+      "imageUrl": "",
+      "meta": {
+        "show": "Seinfeld",
+        "actor": "Jason Alexander"
+      }
+    },
+    {
+      "name": "Barney Stinson",
+      "imageUrl": "",
+      "meta": {
+        "show": "How I Met Your Mother",
+        "actor": "Neil Patrick Harris"
+      }
+    },
+    {
+      "name": "Ron Swanson",
+      "imageUrl": "",
+      "meta": {
+        "show": "Parks and Recreation",
+        "actor": "Nick Offerman"
+      }
+    },
+    {
+      "name": "Leslie Knope",
+      "imageUrl": "",
+      "meta": {
+        "show": "Parks and Recreation",
+        "actor": "Amy Poehler"
+      }
+    },
+    {
+      "name": "Charlie Kelly",
+      "imageUrl": "",
+      "meta": {
+        "show": "It's Always Sunny",
+        "actor": "Charlie Day"
+      }
+    },
+    {
+      "name": "Phoebe Buffay",
+      "imageUrl": "",
+      "meta": {
+        "show": "Friends",
+        "actor": "Lisa Kudrow"
+      }
+    },
+    {
+      "name": "Jack Donaghy",
+      "imageUrl": "",
+      "meta": {
+        "show": "30 Rock",
+        "actor": "Alec Baldwin"
+      }
+    },
+    {
+      "name": "Abed Nadir",
+      "imageUrl": "",
+      "meta": {
+        "show": "Community",
+        "actor": "Danny Pudi"
+      }
+    },
+    {
+      "name": "Gob Bluth",
+      "imageUrl": "",
+      "meta": {
+        "show": "Arrested Development",
+        "actor": "Will Arnett"
+      }
+    }
+  ]
+}

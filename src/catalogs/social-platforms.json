@@ -1,0 +1,105 @@
+{
+  "id": "social-platforms",
+  "name": "Social Platforms",
+  "subcategories": [
+    "internet-apps"
+  ],
+  "items": [
+    {
+      "name": "Facebook",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2004",
+        "peak": "2010s"
+      }
+    },
+    {
+      "name": "Instagram",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2010",
+        "peak": "2016-present"
+      }
+    },
+    {
+      "name": "Twitter / X",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2006",
+        "peak": "2012-2020"
+      }
+    },
+    {
+      "name": "TikTok",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2016",
+        "peak": "2020-present"
+      }
+    },
+    {
+      "name": "Snapchat",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2011",
+        "peak": "2015-2018"
+      }
+    },
+    {
+      "name": "MySpace",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2003",
+        "peak": "2005-2008"
+      }
+    },
+    {
+      "name": "Reddit",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2005",
+        "peak": "2015-present"
+      }
+    },
+    {
+      "name": "LinkedIn",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2003",
+        "peak": "Steady"
+      }
+    },
+    {
+      "name": "Vine",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2013",
+        "peak": "2014-2016"
+      }
+    },
+    {
+      "name": "Tumblr",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2007",
+        "peak": "2012-2014"
+      }
+    },
+    {
+      "name": "Pinterest",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2010",
+        "peak": "2013-2016"
+      }
+    },
+    {
+      "name": "YouTube",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2005",
+        "peak": "Still climbing"
+      }
+    }
+  ]
+}

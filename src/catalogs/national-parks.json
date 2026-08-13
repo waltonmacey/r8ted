@@ -1,0 +1,105 @@
+{
+  "id": "national-parks",
+  "name": "National Parks",
+  "subcategories": [
+    "outdoors-parks"
+  ],
+  "items": [
+    {
+      "name": "Yellowstone",
+      "imageUrl": "",
+      "meta": {
+        "state": "Wyoming",
+        "established": "1872"
+      }
+    },
+    {
+      "name": "Yosemite",
+      "imageUrl": "",
+      "meta": {
+        "state": "California",
+        "established": "1890"
+      }
+    },
+    {
+      "name": "Grand Canyon",
+      "imageUrl": "",
+      "meta": {
+        "state": "Arizona",
+        "established": "1919"
+      }
+    },
+    {
+      "name": "Zion",
+      "imageUrl": "",
+      "meta": {
+        "state": "Utah",
+        "established": "1919"
+      }
+    },
+    {
+      "name": "Glacier",
+      "imageUrl": "",
+      "meta": {
+        "state": "Montana",
+        "established": "1910"
+      }
+    },
+    {
+      "name": "Great Smoky Mountains",
+      "imageUrl": "",
+      "meta": {
+        "state": "Tennessee / NC",
+        "established": "1934"
+      }
+    },
+    {
+      "name": "Rocky Mountain",
+      "imageUrl": "",
+      "meta": {
+        "state": "Colorado",
+        "established": "1915"
+      }
+    },
+    {
+      "name": "Acadia",
+      "imageUrl": "",
+      "meta": {
+        "state": "Maine",
+        "established": "1919"
+      }
+    },
+    {
+      "name": "Arches",
+      "imageUrl": "",
+      "meta": {
+        "state": "Utah",
+        "established": "1971"
+      }
+    },
+    {
+      "name": "Olympic",
+      "imageUrl": "",
+      "meta": {
+        "state": "Washington",
+        "established": "1938"
+      }
+    },
+    {
+      "name": "Grand Teton",
+      "imageUrl": "",
+      "meta": {
+        "state": "Wyoming",
+        "established": "1929"
+      }
+    },
+    {
+      "name": "Big Bend",
+      "imageUrl": "",
+      "meta": {
+        "state": "Texas",
+        "established": "1944"
+      }
+    }
+  ]
+}

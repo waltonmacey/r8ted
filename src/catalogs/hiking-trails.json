@@ -1,0 +1,105 @@
+{
+  "id": "hiking-trails",
+  "name": "Hiking Trails",
+  "subcategories": [
+    "outdoors-parks"
+  ],
+  "items": [
+    {
+      "name": "Appalachian Trail",
+      "imageUrl": "",
+      "meta": {
+        "location": "Georgia to Maine",
+        "length": "2,197 miles"
+      }
+    },
+    {
+      "name": "Pacific Crest Trail",
+      "imageUrl": "",
+      "meta": {
+        "location": "California to Washington",
+        "length": "2,650 miles"
+      }
+    },
+    {
+      "name": "John Muir Trail",
+      "imageUrl": "",
+      "meta": {
+        "location": "California",
+        "length": "211 miles"
+      }
+    },
+    {
+      "name": "Angels Landing",
+      "imageUrl": "",
+      "meta": {
+        "location": "Zion, Utah",
+        "length": "5.4 miles"
+      }
+    },
+    {
+      "name": "Half Dome",
+      "imageUrl": "",
+      "meta": {
+        "location": "Yosemite, California",
+        "length": "14-16 miles"
+      }
+    },
+    {
+      "name": "Continental Divide Trail",
+      "imageUrl": "",
+      "meta": {
+        "location": "New Mexico to Montana",
+        "length": "3,100 miles"
+      }
+    },
+    {
+      "name": "Alum Cave to Mount LeConte",
+      "imageUrl": "",
+      "meta": {
+        "location": "Great Smoky Mountains",
+        "length": "11 miles"
+      }
+    },
+    {
+      "name": "Kalalau Trail",
+      "imageUrl": "",
+      "meta": {
+        "location": "Kauai, Hawaii",
+        "length": "22 miles"
+      }
+    },
+    {
+      "name": "The Narrows",
+      "imageUrl": "",
+      "meta": {
+        "location": "Zion, Utah",
+        "length": "9.4 miles"
+      }
+    },
+    {
+      "name": "Grinnell Glacier",
+      "imageUrl": "",
+      "meta": {
+        "location": "Glacier, Montana",
+        "length": "10.3 miles"
+      }
+    },
+    {
+      "name": "Bright Angel Trail",
+      "imageUrl": "",
+      "meta": {
+        "location": "Grand Canyon, Arizona",
+        "length": "19 miles"
+      }
+    },
+    {
+      "name": "Art Loeb Trail",
+      "imageUrl": "",
+      "meta": {
+        "location": "Pisgah, North Carolina",
+        "length": "30 miles"
+      }
+    }
+  ]
+}

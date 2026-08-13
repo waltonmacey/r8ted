@@ -7,7 +7,7 @@
 //   Placement: every unplaced item carries a landing zone, the range of ranks
 //     it could still occupy. Pass 1 gives every queued item one duel before any
 //     item gets a second, and an item places the moment its zone closes,
-//     landing via the existing fitBetween rating paint. The first item into an
+//     landing via the chain repaint in paintPlacements. The first item into an
 //     empty list takes the top without a pick.
 //   Early exit: once every still open item has dueled twice, End session places
 //     the rest at their zone midpoints. Nothing placed that way is marked
@@ -31,10 +31,8 @@ import { getStorage } from '../lib/storage'
 import {
   rankedEntries,
   benchEntries,
-  composite,
   entryImage,
-  fitBetween,
-  withGeneratedScores,
+  regenerateFromOrder,
   regeneratePlaceholders,
 } from '../lib/entries'
 import {
@@ -57,20 +55,19 @@ import { useEditMode } from '../lib/EditMode'
 import { NotFound } from './Domain'
 
 // Paint a run of placements. Each index is a position in the order as it stands
-// after the previous insertions, so the running order is rebuilt alongside.
+// after the previous insertions, so the running order is rebuilt alongside, then
+// the whole chain is repainted from that order.
+//
+// Phase 7 changed this from squeezing each new entry between its two neighbours
+// to repainting the chain. Ratings are a rendering of rank order, and on the
+// half point grid there is not always a value between two neighbours to squeeze
+// into. See regenerateFromOrder for the measurements.
 function paintPlacements(entries, orderIds, placements) {
   let order = orderIds.slice()
-  let out = entries
   for (const p of placements) {
-    const find = (id) => out.find((e) => e.id === id)
-    const upper = p.index > 0 ? composite(find(order[p.index - 1]).scores) : null
-    const lower = p.index < order.length ? composite(find(order[p.index]).scores) : null
-    const item = find(p.itemId)
-    const updated = withGeneratedScores(item, fitBetween(upper, lower))
-    out = out.map((e) => (e.id === item.id ? updated : e))
     order = [...order.slice(0, p.index), p.itemId, ...order.slice(p.index)]
   }
-  return out
+  return regenerateFromOrder(entries, order)
 }
 
 export default function DuelSession() {
@@ -217,12 +214,8 @@ export default function DuelSession() {
       setSession({ mode: 'hub', summary: { kind: 'ladder-hold', name: byId(s.itemId).name, rank: s.pos + 1 } })
       return
     }
-    const rankedObjs = s.order.map(byId)
-    const upper = s.pos > 0 ? composite(rankedObjs[s.pos - 1].scores) : null
-    const lower = s.pos + 1 < rankedObjs.length ? composite(rankedObjs[s.pos + 1].scores) : null
     const item = byId(s.itemId)
-    const updated = withGeneratedScores(item, fitBetween(upper, lower))
-    const entries = list.entries.map((e) => (e.id === item.id ? updated : e))
+    const entries = regenerateFromOrder(list.entries, s.order)
     const next = { ...list, entries }
     await getStorage().saveList(next)
     setList(next)

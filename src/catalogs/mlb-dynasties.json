@@ -1,0 +1,105 @@
+{
+  "id": "mlb-dynasties",
+  "name": "MLB Dynasties",
+  "subcategories": [
+    "teams-dynasties"
+  ],
+  "items": [
+    {
+      "name": "1949-1953 New York Yankees",
+      "imageUrl": "",
+      "meta": {
+        "span": "1949-1953",
+        "titles": "5 straight World Series"
+      }
+    },
+    {
+      "name": "1927-1932 New York Yankees",
+      "imageUrl": "",
+      "meta": {
+        "span": "1927-1932",
+        "titles": "Murderers' Row"
+      }
+    },
+    {
+      "name": "1996-2000 New York Yankees",
+      "imageUrl": "",
+      "meta": {
+        "span": "1996-2000",
+        "titles": "4 World Series"
+      }
+    },
+    {
+      "name": "1972-1974 Oakland Athletics",
+      "imageUrl": "",
+      "meta": {
+        "span": "1972-1974",
+        "titles": "3 straight titles"
+      }
+    },
+    {
+      "name": "1975-1976 Cincinnati Reds",
+      "imageUrl": "",
+      "meta": {
+        "span": "1975-1976",
+        "titles": "Big Red Machine"
+      }
+    },
+    {
+      "name": "1955-1966 Los Angeles Dodgers",
+      "imageUrl": "",
+      "meta": {
+        "span": "1955-1966",
+        "titles": "4 World Series"
+      }
+    },
+    {
+      "name": "1910-1914 Philadelphia Athletics",
+      "imageUrl": "",
+      "meta": {
+        "span": "1910-1914",
+        "titles": "3 World Series"
+      }
+    },
+    {
+      "name": "1990s Atlanta Braves",
+      "imageUrl": "",
+      "meta": {
+        "span": "1991-2005",
+        "titles": "14 straight division titles"
+      }
+    },
+    {
+      "name": "2004-2018 Boston Red Sox",
+      "imageUrl": "",
+      "meta": {
+        "span": "2004-2018",
+        "titles": "4 World Series"
+      }
+    },
+    {
+      "name": "2010-2014 San Francisco Giants",
+      "imageUrl": "",
+      "meta": {
+        "span": "2010-2014",
+        "titles": "3 World Series"
+      }
+    },
+    {
+      "name": "1906-1908 Chicago Cubs",
+      "imageUrl": "",
+      "meta": {
+        "span": "1906-1908",
+        "titles": "116-win season"
+      }
+    },
+    {
+      "name": "2017-2022 Houston Astros",
+      "imageUrl": "",
+      "meta": {
+        "span": "2017-2022",
+        "titles": "2 World Series"
+      }
+    }
+  ]
+}

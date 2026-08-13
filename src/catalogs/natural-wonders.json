@@ -1,0 +1,105 @@
+{
+  "id": "natural-wonders",
+  "name": "Natural Wonders",
+  "subcategories": [
+    "outdoors-parks"
+  ],
+  "items": [
+    {
+      "name": "Grand Canyon",
+      "imageUrl": "",
+      "meta": {
+        "location": "Arizona",
+        "note": "277 river miles"
+      }
+    },
+    {
+      "name": "Niagara Falls",
+      "imageUrl": "",
+      "meta": {
+        "location": "New York / Ontario",
+        "note": "3,160 tons per second"
+      }
+    },
+    {
+      "name": "Yellowstone Geysers",
+      "imageUrl": "",
+      "meta": {
+        "location": "Wyoming",
+        "note": "Half the world's geysers"
+      }
+    },
+    {
+      "name": "Northern Lights",
+      "imageUrl": "",
+      "meta": {
+        "location": "Arctic latitudes",
+        "note": "Aurora borealis"
+      }
+    },
+    {
+      "name": "Mount Everest",
+      "imageUrl": "",
+      "meta": {
+        "location": "Nepal / Tibet",
+        "note": "29,032 feet"
+      }
+    },
+    {
+      "name": "Great Barrier Reef",
+      "imageUrl": "",
+      "meta": {
+        "location": "Australia",
+        "note": "1,400 miles long"
+      }
+    },
+    {
+      "name": "Victoria Falls",
+      "imageUrl": "",
+      "meta": {
+        "location": "Zambia / Zimbabwe",
+        "note": "354-foot drop"
+      }
+    },
+    {
+      "name": "Antelope Canyon",
+      "imageUrl": "",
+      "meta": {
+        "location": "Arizona",
+        "note": "Slot canyon"
+      }
+    },
+    {
+      "name": "Iguazu Falls",
+      "imageUrl": "",
+      "meta": {
+        "location": "Argentina / Brazil",
+        "note": "275 falls"
+      }
+    },
+    {
+      "name": "Redwood Forests",
+      "imageUrl": "",
+      "meta": {
+        "location": "California",
+        "note": "Tallest trees on earth"
+      }
+    },
+    {
+      "name": "Ha Long Bay",
+      "imageUrl": "",
+      "meta": {
+        "location": "Vietnam",
+        "note": "1,600 limestone islands"
+      }
+    },
+    {
+      "name": "Denali",
+      "imageUrl": "",
+      "meta": {
+        "location": "Alaska",
+        "note": "20,310 feet"
+      }
+    }
+  ]
+}

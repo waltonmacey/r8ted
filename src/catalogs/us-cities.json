@@ -1,0 +1,105 @@
+{
+  "id": "us-cities",
+  "name": "US Cities",
+  "subcategories": [
+    "cities-travel"
+  ],
+  "items": [
+    {
+      "name": "New York",
+      "imageUrl": "",
+      "meta": {
+        "state": "New York",
+        "metro population": "19.5M"
+      }
+    },
+    {
+      "name": "Chicago",
+      "imageUrl": "",
+      "meta": {
+        "state": "Illinois",
+        "metro population": "9.3M"
+      }
+    },
+    {
+      "name": "Austin",
+      "imageUrl": "",
+      "meta": {
+        "state": "Texas",
+        "metro population": "2.5M"
+      }
+    },
+    {
+      "name": "Nashville",
+      "imageUrl": "",
+      "meta": {
+        "state": "Tennessee",
+        "metro population": "2.1M"
+      }
+    },
+    {
+      "name": "Memphis",
+      "imageUrl": "",
+      "meta": {
+        "state": "Tennessee",
+        "metro population": "1.3M"
+      }
+    },
+    {
+      "name": "Denver",
+      "imageUrl": "",
+      "meta": {
+        "state": "Colorado",
+        "metro population": "3.0M"
+      }
+    },
+    {
+      "name": "Seattle",
+      "imageUrl": "",
+      "meta": {
+        "state": "Washington",
+        "metro population": "4.0M"
+      }
+    },
+    {
+      "name": "New Orleans",
+      "imageUrl": "",
+      "meta": {
+        "state": "Louisiana",
+        "metro population": "1.3M"
+      }
+    },
+    {
+      "name": "San Francisco",
+      "imageUrl": "",
+      "meta": {
+        "state": "California",
+        "metro population": "4.6M"
+      }
+    },
+    {
+      "name": "Charleston",
+      "imageUrl": "",
+      "meta": {
+        "state": "South Carolina",
+        "metro population": "0.8M"
+      }
+    },
+    {
+      "name": "Portland",
+      "imageUrl": "",
+      "meta": {
+        "state": "Oregon",
+        "metro population": "2.5M"
+      }
+    },
+    {
+      "name": "Savannah",
+      "imageUrl": "",
+      "meta": {
+        "state": "Georgia",
+        "metro population": "0.4M"
+      }
+    }
+  ]
+}

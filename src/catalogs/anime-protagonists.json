@@ -1,0 +1,105 @@
+{
+  "id": "anime-protagonists",
+  "name": "Anime Protagonists",
+  "subcategories": [
+    "characters"
+  ],
+  "items": [
+    {
+      "name": "Goku",
+      "imageUrl": "",
+      "meta": {
+        "series": "Dragon Ball",
+        "note": "Saiyan benchmark"
+      }
+    },
+    {
+      "name": "Naruto Uzumaki",
+      "imageUrl": "",
+      "meta": {
+        "series": "Naruto",
+        "note": "Nine-tails host"
+      }
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "imageUrl": "",
+      "meta": {
+        "series": "One Piece",
+        "note": "Straw Hat captain"
+      }
+    },
+    {
+      "name": "Edward Elric",
+      "imageUrl": "",
+      "meta": {
+        "series": "Fullmetal Alchemist",
+        "note": "Youngest state alchemist"
+      }
+    },
+    {
+      "name": "Ichigo Kurosaki",
+      "imageUrl": "",
+      "meta": {
+        "series": "Bleach",
+        "note": "Substitute Soul Reaper"
+      }
+    },
+    {
+      "name": "Gon Freecss",
+      "imageUrl": "",
+      "meta": {
+        "series": "Hunter x Hunter",
+        "note": "Rookie Hunter"
+      }
+    },
+    {
+      "name": "Eren Yeager",
+      "imageUrl": "",
+      "meta": {
+        "series": "Attack on Titan",
+        "note": "Attack Titan"
+      }
+    },
+    {
+      "name": "Tanjiro Kamado",
+      "imageUrl": "",
+      "meta": {
+        "series": "Demon Slayer",
+        "note": "Water breathing"
+      }
+    },
+    {
+      "name": "Yusuke Urameshi",
+      "imageUrl": "",
+      "meta": {
+        "series": "Yu Yu Hakusho",
+        "note": "Spirit Detective"
+      }
+    },
+    {
+      "name": "Izuku Midoriya",
+      "imageUrl": "",
+      "meta": {
+        "series": "My Hero Academia",
+        "note": "One For All"
+      }
+    },
+    {
+      "name": "Yuji Itadori",
+      "imageUrl": "",
+      "meta": {
+        "series": "Jujutsu Kaisen",
+        "note": "Sukuna's vessel"
+      }
+    },
+    {
+      "name": "Spike Spiegel",
+      "imageUrl": "",
+      "meta": {
+        "series": "Cowboy Bebop",
+        "note": "Bounty hunter"
+      }
+    }
+  ]
+}

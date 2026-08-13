@@ -1,0 +1,105 @@
+{
+  "id": "burger-chains",
+  "name": "Burger Chains",
+  "subcategories": [
+    "restaurants"
+  ],
+  "items": [
+    {
+      "name": "In-N-Out Burger",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1948",
+        "home": "Baldwin Park, CA"
+      }
+    },
+    {
+      "name": "Whataburger",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1950",
+        "home": "Corpus Christi, TX"
+      }
+    },
+    {
+      "name": "Five Guys",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1986",
+        "home": "Arlington, VA"
+      }
+    },
+    {
+      "name": "Shake Shack",
+      "imageUrl": "",
+      "meta": {
+        "founded": "2004",
+        "home": "New York, NY"
+      }
+    },
+    {
+      "name": "Culver's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1984",
+        "home": "Sauk City, WI"
+      }
+    },
+    {
+      "name": "Steak 'n Shake",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1934",
+        "home": "Normal, IL"
+      }
+    },
+    {
+      "name": "Wendy's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1969",
+        "home": "Columbus, OH"
+      }
+    },
+    {
+      "name": "McDonald's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1940",
+        "home": "San Bernardino, CA"
+      }
+    },
+    {
+      "name": "Burger King",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1953",
+        "home": "Miami, FL"
+      }
+    },
+    {
+      "name": "Smashburger",
+      "imageUrl": "",
+      "meta": {
+        "founded": "2007",
+        "home": "Denver, CO"
+      }
+    },
+    {
+      "name": "Freddy's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "2002",
+        "home": "Wichita, KS"
+      }
+    },
+    {
+      "name": "Krystal",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1932",
+        "home": "Chattanooga, TN"
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "card-games",
+  "name": "Card Games",
+  "subcategories": [
+    "hobbies-activities"
+  ],
+  "items": [
+    {
+      "name": "Texas Hold'em",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Early 1900s, Texas",
+        "players": "2-10"
+      }
+    },
+    {
+      "name": "Spades",
+      "imageUrl": "",
+      "meta": {
+        "origin": "1930s, US",
+        "players": "4"
+      }
+    },
+    {
+      "name": "Uno",
+      "imageUrl": "",
+      "meta": {
+        "origin": "1971, Ohio",
+        "players": "2-10"
+      }
+    },
+    {
+      "name": "Hearts",
+      "imageUrl": "",
+      "meta": {
+        "origin": "1850s, Europe",
+        "players": "3-6"
+      }
+    },
+    {
+      "name": "Rummy",
+      "imageUrl": "",
+      "meta": {
+        "origin": "1900s, US",
+        "players": "2-6"
+      }
+    },
+    {
+      "name": "Euchre",
+      "imageUrl": "",
+      "meta": {
+        "origin": "1800s, US Midwest",
+        "players": "4"
+      }
+    },
+    {
+      "name": "Blackjack",
+      "imageUrl": "",
+      "meta": {
+        "origin": "1700s, France",
+        "players": "2-7"
+      }
+    },
+    {
+      "name": "Solitaire",
+      "imageUrl": "",
+      "meta": {
+        "origin": "1700s, Europe",
+        "players": "1"
+      }
+    },
+    {
+      "name": "Magic: The Gathering",
+      "imageUrl": "",
+      "meta": {
+        "origin": "1993, Wizards",
+        "players": "2+"
+      }
+    },
+    {
+      "name": "Cards Against Humanity",
+      "imageUrl": "",
+      "meta": {
+        "origin": "2011, Chicago",
+        "players": "4-20"
+      }
+    },
+    {
+      "name": "Go Fish",
+      "imageUrl": "",
+      "meta": {
+        "origin": "1800s, US",
+        "players": "2-6"
+      }
+    },
+    {
+      "name": "Bridge",
+      "imageUrl": "",
+      "meta": {
+        "origin": "1900s, England",
+        "players": "4"
+      }
+    }
+  ]
+}

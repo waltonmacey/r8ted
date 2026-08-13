@@ -1,0 +1,105 @@
+{
+  "id": "pickup-sports",
+  "name": "Pickup Sports",
+  "subcategories": [
+    "hobbies-activities"
+  ],
+  "items": [
+    {
+      "name": "Basketball",
+      "imageUrl": "",
+      "meta": {
+        "players": "3v3 or 5v5",
+        "setting": "Blacktop / gym"
+      }
+    },
+    {
+      "name": "Flag Football",
+      "imageUrl": "",
+      "meta": {
+        "players": "5v5 or 7v7",
+        "setting": "Open field"
+      }
+    },
+    {
+      "name": "Soccer",
+      "imageUrl": "",
+      "meta": {
+        "players": "5v5 up",
+        "setting": "Pitch / park"
+      }
+    },
+    {
+      "name": "Volleyball",
+      "imageUrl": "",
+      "meta": {
+        "players": "6v6 or 2v2",
+        "setting": "Sand / gym"
+      }
+    },
+    {
+      "name": "Ultimate Frisbee",
+      "imageUrl": "",
+      "meta": {
+        "players": "7v7",
+        "setting": "Open field"
+      }
+    },
+    {
+      "name": "Softball",
+      "imageUrl": "",
+      "meta": {
+        "players": "9v9",
+        "setting": "Diamond"
+      }
+    },
+    {
+      "name": "Pickleball",
+      "imageUrl": "",
+      "meta": {
+        "players": "Singles or doubles",
+        "setting": "Court"
+      }
+    },
+    {
+      "name": "Tennis",
+      "imageUrl": "",
+      "meta": {
+        "players": "Singles or doubles",
+        "setting": "Court"
+      }
+    },
+    {
+      "name": "Golf",
+      "imageUrl": "",
+      "meta": {
+        "players": "1-4",
+        "setting": "Course"
+      }
+    },
+    {
+      "name": "Kickball",
+      "imageUrl": "",
+      "meta": {
+        "players": "9v9",
+        "setting": "Diamond"
+      }
+    },
+    {
+      "name": "Spikeball",
+      "imageUrl": "",
+      "meta": {
+        "players": "2v2",
+        "setting": "Anywhere"
+      }
+    },
+    {
+      "name": "Cornhole",
+      "imageUrl": "",
+      "meta": {
+        "players": "1v1 or 2v2",
+        "setting": "Anywhere"
+      }
+    }
+  ]
+}

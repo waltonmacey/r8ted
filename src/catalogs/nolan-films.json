@@ -7,51 +7,99 @@
   "items": [
     {
       "name": "Interstellar",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "meta": {
+        "year": "2014",
+        "note": "Space / relativity"
+      }
     },
     {
       "name": "Inception",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "meta": {
+        "year": "2010",
+        "note": "Dream heist"
+      }
     },
     {
       "name": "The Dark Knight",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+      "meta": {
+        "year": "2008",
+        "note": "Ledger Oscar"
+      }
     },
     {
       "name": "The Dark Knight Rises",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/hr0L2aueqlP2BYUblTTjmtn0hw4.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/hr0L2aueqlP2BYUblTTjmtn0hw4.jpg",
+      "meta": {
+        "year": "2012",
+        "note": "Trilogy close"
+      }
     },
     {
       "name": "Batman Begins",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/sPX89Td70IDDjVr85jdSBb4rWGr.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/sPX89Td70IDDjVr85jdSBb4rWGr.jpg",
+      "meta": {
+        "year": "2005",
+        "note": "Origin reboot"
+      }
     },
     {
       "name": "The Prestige",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/Ag2B2KHKQPukjH7WutmgnnSNurZ.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/Ag2B2KHKQPukjH7WutmgnnSNurZ.jpg",
+      "meta": {
+        "year": "2006",
+        "note": "Rival magicians"
+      }
     },
     {
       "name": "Dunkirk",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/b4Oe15CGLL61Ped0RAS9JpqdmCt.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/b4Oe15CGLL61Ped0RAS9JpqdmCt.jpg",
+      "meta": {
+        "year": "2017",
+        "note": "Three timelines"
+      }
     },
     {
       "name": "Memento",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/nzlv62aC0octS5AklAiWpXLX9Z0.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/nzlv62aC0octS5AklAiWpXLX9Z0.jpg",
+      "meta": {
+        "year": "2000",
+        "note": "Reverse order"
+      }
     },
     {
       "name": "Insomnia",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/riVXh3EimGO0y5dgQxEWPRy5Itg.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/riVXh3EimGO0y5dgQxEWPRy5Itg.jpg",
+      "meta": {
+        "year": "2002",
+        "note": "Alaska remake"
+      }
     },
     {
-      "name": "Teneet",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/aCIFMriQh8rvhxpN1IWGgvH0Tlg.jpg"
+      "name": "Tenet",
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/aCIFMriQh8rvhxpN1IWGgvH0Tlg.jpg",
+      "meta": {
+        "year": "2020",
+        "note": "Inverted time"
+      }
     },
     {
       "name": "Oppenheimer",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+      "meta": {
+        "year": "2023",
+        "note": "Best Picture"
+      }
     },
     {
       "name": "The Odyssey",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg",
+      "meta": {
+        "year": "2026",
+        "note": "Upcoming epic"
+      }
     }
   ]
 }

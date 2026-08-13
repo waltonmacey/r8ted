@@ -1,0 +1,105 @@
+{
+  "id": "pizza-chains",
+  "name": "Pizza Chains",
+  "subcategories": [
+    "restaurants"
+  ],
+  "items": [
+    {
+      "name": "Domino's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1960",
+        "home": "Ypsilanti, MI"
+      }
+    },
+    {
+      "name": "Papa John's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1984",
+        "home": "Jeffersonville, IN"
+      }
+    },
+    {
+      "name": "Pizza Hut",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1958",
+        "home": "Wichita, KS"
+      }
+    },
+    {
+      "name": "Little Caesars",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1959",
+        "home": "Garden City, MI"
+      }
+    },
+    {
+      "name": "Marco's Pizza",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1978",
+        "home": "Toledo, OH"
+      }
+    },
+    {
+      "name": "Blaze Pizza",
+      "imageUrl": "",
+      "meta": {
+        "founded": "2011",
+        "home": "Pasadena, CA"
+      }
+    },
+    {
+      "name": "MOD Pizza",
+      "imageUrl": "",
+      "meta": {
+        "founded": "2008",
+        "home": "Seattle, WA"
+      }
+    },
+    {
+      "name": "Jet's Pizza",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1978",
+        "home": "Sterling Heights, MI"
+      }
+    },
+    {
+      "name": "Casey's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1968",
+        "home": "Ankeny, IA"
+      }
+    },
+    {
+      "name": "Mellow Mushroom",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1974",
+        "home": "Atlanta, GA"
+      }
+    },
+    {
+      "name": "Round Table Pizza",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1959",
+        "home": "Menlo Park, CA"
+      }
+    },
+    {
+      "name": "Cicis",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1985",
+        "home": "Plano, TX"
+      }
+    }
+  ]
+}

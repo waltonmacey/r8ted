@@ -1,0 +1,105 @@
+{
+  "id": "sci-fi-novels",
+  "name": "Sci-Fi Novels",
+  "subcategories": [
+    "books-comics"
+  ],
+  "items": [
+    {
+      "name": "Dune",
+      "imageUrl": "",
+      "meta": {
+        "author": "Frank Herbert",
+        "year": "1965"
+      }
+    },
+    {
+      "name": "Ender's Game",
+      "imageUrl": "",
+      "meta": {
+        "author": "Orson Scott Card",
+        "year": "1985"
+      }
+    },
+    {
+      "name": "Neuromancer",
+      "imageUrl": "",
+      "meta": {
+        "author": "William Gibson",
+        "year": "1984"
+      }
+    },
+    {
+      "name": "Foundation",
+      "imageUrl": "",
+      "meta": {
+        "author": "Isaac Asimov",
+        "year": "1951"
+      }
+    },
+    {
+      "name": "Snow Crash",
+      "imageUrl": "",
+      "meta": {
+        "author": "Neal Stephenson",
+        "year": "1992"
+      }
+    },
+    {
+      "name": "Hyperion",
+      "imageUrl": "",
+      "meta": {
+        "author": "Dan Simmons",
+        "year": "1989"
+      }
+    },
+    {
+      "name": "The Left Hand of Darkness",
+      "imageUrl": "",
+      "meta": {
+        "author": "Ursula K. Le Guin",
+        "year": "1969"
+      }
+    },
+    {
+      "name": "The Three-Body Problem",
+      "imageUrl": "",
+      "meta": {
+        "author": "Liu Cixin",
+        "year": "2008"
+      }
+    },
+    {
+      "name": "Do Androids Dream of Electric Sheep?",
+      "imageUrl": "",
+      "meta": {
+        "author": "Philip K. Dick",
+        "year": "1968"
+      }
+    },
+    {
+      "name": "The Martian",
+      "imageUrl": "",
+      "meta": {
+        "author": "Andy Weir",
+        "year": "2011"
+      }
+    },
+    {
+      "name": "A Fire Upon the Deep",
+      "imageUrl": "",
+      "meta": {
+        "author": "Vernor Vinge",
+        "year": "1992"
+      }
+    },
+    {
+      "name": "Blindsight",
+      "imageUrl": "",
+      "meta": {
+        "author": "Peter Watts",
+        "year": "2006"
+      }
+    }
+  ]
+}

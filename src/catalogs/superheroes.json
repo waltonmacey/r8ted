@@ -1,0 +1,105 @@
+{
+  "id": "superheroes",
+  "name": "Superheroes",
+  "subcategories": [
+    "characters"
+  ],
+  "items": [
+    {
+      "name": "Batman",
+      "imageUrl": "",
+      "meta": {
+        "publisher": "DC",
+        "debut": "1939"
+      }
+    },
+    {
+      "name": "Superman",
+      "imageUrl": "",
+      "meta": {
+        "publisher": "DC",
+        "debut": "1938"
+      }
+    },
+    {
+      "name": "Spider-Man",
+      "imageUrl": "",
+      "meta": {
+        "publisher": "Marvel",
+        "debut": "1962"
+      }
+    },
+    {
+      "name": "Iron Man",
+      "imageUrl": "",
+      "meta": {
+        "publisher": "Marvel",
+        "debut": "1963"
+      }
+    },
+    {
+      "name": "Wolverine",
+      "imageUrl": "",
+      "meta": {
+        "publisher": "Marvel",
+        "debut": "1974"
+      }
+    },
+    {
+      "name": "Wonder Woman",
+      "imageUrl": "",
+      "meta": {
+        "publisher": "DC",
+        "debut": "1941"
+      }
+    },
+    {
+      "name": "Captain America",
+      "imageUrl": "",
+      "meta": {
+        "publisher": "Marvel",
+        "debut": "1941"
+      }
+    },
+    {
+      "name": "The Hulk",
+      "imageUrl": "",
+      "meta": {
+        "publisher": "Marvel",
+        "debut": "1962"
+      }
+    },
+    {
+      "name": "Black Panther",
+      "imageUrl": "",
+      "meta": {
+        "publisher": "Marvel",
+        "debut": "1966"
+      }
+    },
+    {
+      "name": "The Flash",
+      "imageUrl": "",
+      "meta": {
+        "publisher": "DC",
+        "debut": "1940"
+      }
+    },
+    {
+      "name": "Deadpool",
+      "imageUrl": "",
+      "meta": {
+        "publisher": "Marvel",
+        "debut": "1991"
+      }
+    },
+    {
+      "name": "Invincible",
+      "imageUrl": "",
+      "meta": {
+        "publisher": "Image",
+        "debut": "2003"
+      }
+    }
+  ]
+}

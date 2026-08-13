@@ -1,0 +1,105 @@
+{
+  "id": "nfl-running-backs",
+  "name": "NFL Running Backs",
+  "subcategories": [
+    "athletes-legends"
+  ],
+  "items": [
+    {
+      "name": "Jim Brown",
+      "imageUrl": "",
+      "meta": {
+        "years": "1957-1965",
+        "teams": "Browns"
+      }
+    },
+    {
+      "name": "Barry Sanders",
+      "imageUrl": "",
+      "meta": {
+        "years": "1989-1998",
+        "teams": "Lions"
+      }
+    },
+    {
+      "name": "Walter Payton",
+      "imageUrl": "",
+      "meta": {
+        "years": "1975-1987",
+        "teams": "Bears"
+      }
+    },
+    {
+      "name": "Emmitt Smith",
+      "imageUrl": "",
+      "meta": {
+        "years": "1990-2004",
+        "teams": "Cowboys / Cardinals"
+      }
+    },
+    {
+      "name": "Adrian Peterson",
+      "imageUrl": "",
+      "meta": {
+        "years": "2007-2021",
+        "teams": "Vikings"
+      }
+    },
+    {
+      "name": "LaDainian Tomlinson",
+      "imageUrl": "",
+      "meta": {
+        "years": "2001-2011",
+        "teams": "Chargers / Jets"
+      }
+    },
+    {
+      "name": "Marshall Faulk",
+      "imageUrl": "",
+      "meta": {
+        "years": "1994-2005",
+        "teams": "Colts / Rams"
+      }
+    },
+    {
+      "name": "Eric Dickerson",
+      "imageUrl": "",
+      "meta": {
+        "years": "1983-1993",
+        "teams": "Rams / Colts"
+      }
+    },
+    {
+      "name": "Derrick Henry",
+      "imageUrl": "",
+      "meta": {
+        "years": "2016-",
+        "teams": "Titans / Ravens"
+      }
+    },
+    {
+      "name": "Marcus Allen",
+      "imageUrl": "",
+      "meta": {
+        "years": "1982-1997",
+        "teams": "Raiders / Chiefs"
+      }
+    },
+    {
+      "name": "Tony Dorsett",
+      "imageUrl": "",
+      "meta": {
+        "years": "1977-1988",
+        "teams": "Cowboys / Broncos"
+      }
+    },
+    {
+      "name": "Earl Campbell",
+      "imageUrl": "",
+      "meta": {
+        "years": "1978-1985",
+        "teams": "Oilers / Saints"
+      }
+    }
+  ]
+}

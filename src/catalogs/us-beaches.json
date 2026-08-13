@@ -1,0 +1,105 @@
+{
+  "id": "us-beaches",
+  "name": "US Beaches",
+  "subcategories": [
+    "outdoors-parks"
+  ],
+  "items": [
+    {
+      "name": "Siesta Key",
+      "imageUrl": "",
+      "meta": {
+        "state": "Florida",
+        "known for": "Quartz sand"
+      }
+    },
+    {
+      "name": "Cannon Beach",
+      "imageUrl": "",
+      "meta": {
+        "state": "Oregon",
+        "known for": "Haystack Rock"
+      }
+    },
+    {
+      "name": "Coronado Beach",
+      "imageUrl": "",
+      "meta": {
+        "state": "California",
+        "known for": "Wide, Hotel del"
+      }
+    },
+    {
+      "name": "Kaanapali Beach",
+      "imageUrl": "",
+      "meta": {
+        "state": "Hawaii",
+        "known for": "Snorkeling, cliff dive"
+      }
+    },
+    {
+      "name": "Cape Hatteras",
+      "imageUrl": "",
+      "meta": {
+        "state": "North Carolina",
+        "known for": "Outer Banks, surf"
+      }
+    },
+    {
+      "name": "Gulf Shores",
+      "imageUrl": "",
+      "meta": {
+        "state": "Alabama",
+        "known for": "White sand, family"
+      }
+    },
+    {
+      "name": "30A / Seaside",
+      "imageUrl": "",
+      "meta": {
+        "state": "Florida",
+        "known for": "Panhandle towns"
+      }
+    },
+    {
+      "name": "Myrtle Beach",
+      "imageUrl": "",
+      "meta": {
+        "state": "South Carolina",
+        "known for": "Boardwalk"
+      }
+    },
+    {
+      "name": "Hilton Head",
+      "imageUrl": "",
+      "meta": {
+        "state": "South Carolina",
+        "known for": "Bike paths, golf"
+      }
+    },
+    {
+      "name": "Pfeiffer Beach",
+      "imageUrl": "",
+      "meta": {
+        "state": "California",
+        "known for": "Big Sur, purple sand"
+      }
+    },
+    {
+      "name": "Nantucket",
+      "imageUrl": "",
+      "meta": {
+        "state": "Massachusetts",
+        "known for": "Island, cottages"
+      }
+    },
+    {
+      "name": "Padre Island",
+      "imageUrl": "",
+      "meta": {
+        "state": "Texas",
+        "known for": "Longest barrier island"
+      }
+    }
+  ]
+}

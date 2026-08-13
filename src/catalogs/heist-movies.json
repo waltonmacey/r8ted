@@ -7,63 +7,123 @@
   "items": [
     {
       "name": "Inception",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "meta": {
+        "year": "2010",
+        "director": "Christopher Nolan"
+      }
     },
     {
       "name": "Crime 101",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/tVvpFIoteRHNnoZMhdnwIVwJpCA.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/tVvpFIoteRHNnoZMhdnwIVwJpCA.jpg",
+      "meta": {
+        "year": "2025",
+        "director": "Bart Layton"
+      }
     },
     {
       "name": "Now You See Me",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/tWsNYbrqy1p1w6K9zRk0mSchztT.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/tWsNYbrqy1p1w6K9zRk0mSchztT.jpg",
+      "meta": {
+        "year": "2013",
+        "director": "Louis Leterrier"
+      }
     },
     {
       "name": "Heat",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/umSVjVdbVwtx5ryCA2QXL44Durm.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/umSVjVdbVwtx5ryCA2QXL44Durm.jpg",
+      "meta": {
+        "year": "1995",
+        "director": "Michael Mann"
+      }
     },
     {
       "name": "Ocean's Eleven",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/hQQCdZrsHtZyR6NbKH2YyCqd2fR.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/hQQCdZrsHtZyR6NbKH2YyCqd2fR.jpg",
+      "meta": {
+        "year": "2001",
+        "director": "Steven Soderbergh"
+      }
     },
     {
       "name": "The Usual Suspects",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/99X2SgyFunJFXGAYnDv3sb9pnUD.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/99X2SgyFunJFXGAYnDv3sb9pnUD.jpg",
+      "meta": {
+        "year": "1995",
+        "director": "Bryan Singer"
+      }
     },
     {
       "name": "Baby Driver",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/tYzFuYXmT8LOYASlFCkaPiAFAl0.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/tYzFuYXmT8LOYASlFCkaPiAFAl0.jpg",
+      "meta": {
+        "year": "2017",
+        "director": "Edgar Wright"
+      }
     },
     {
       "name": "Den of Thieves",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/dAP5NpkrMMczir5dUPjRR6ywqgz.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/dAP5NpkrMMczir5dUPjRR6ywqgz.jpg",
+      "meta": {
+        "year": "2018",
+        "director": "Christian Gudegast"
+      }
     },
     {
       "name": "Logan Lucky",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/mQrhrBaaHvRfBQq0Px3HtVbH9iE.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/mQrhrBaaHvRfBQq0Px3HtVbH9iE.jpg",
+      "meta": {
+        "year": "2017",
+        "director": "Steven Soderbergh"
+      }
     },
     {
-      "name": "Italian Job",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/eSkjK4kctyrWpFhxl35GPvSs6tI.jpg"
+      "name": "The Italian Job",
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/eSkjK4kctyrWpFhxl35GPvSs6tI.jpg",
+      "meta": {
+        "year": "2003",
+        "director": "F. Gary Gray"
+      }
     },
     {
       "name": "The Town",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/3NIzyXkfylsjflRKSz8Fts3lXzm.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/3NIzyXkfylsjflRKSz8Fts3lXzm.jpg",
+      "meta": {
+        "year": "2010",
+        "director": "Ben Affleck"
+      }
     },
     {
       "name": "Inside Man",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/ffMUgkDZICNiyaws1Jkv8qG8uFW.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/ffMUgkDZICNiyaws1Jkv8qG8uFW.jpg",
+      "meta": {
+        "year": "2006",
+        "director": "Spike Lee"
+      }
     },
     {
       "name": "The Thomas Crown Affair",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/5yqs1MVlqdIg1DY5adC5jFx3d7j.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/5yqs1MVlqdIg1DY5adC5jFx3d7j.jpg",
+      "meta": {
+        "year": "1999",
+        "director": "John McTiernan"
+      }
     },
     {
       "name": "The Sting",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/ckmYng37zey8INYf6d10cVgIG93.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/ckmYng37zey8INYf6d10cVgIG93.jpg",
+      "meta": {
+        "year": "1973",
+        "director": "George Roy Hill"
+      }
     },
     {
       "name": "Ronin",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/AirrhRJjHwytOV0pdLu7YZ4DEyr.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/AirrhRJjHwytOV0pdLu7YZ4DEyr.jpg",
+      "meta": {
+        "year": "1998",
+        "director": "John Frankenheimer"
+      }
     }
   ]
 }

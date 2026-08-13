@@ -1,0 +1,105 @@
+{
+  "id": "sodas",
+  "name": "Sodas",
+  "subcategories": [
+    "food-drink"
+  ],
+  "items": [
+    {
+      "name": "Coca-Cola",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Coca-Cola Co.",
+        "introduced": "1886"
+      }
+    },
+    {
+      "name": "Pepsi",
+      "imageUrl": "",
+      "meta": {
+        "maker": "PepsiCo",
+        "introduced": "1893"
+      }
+    },
+    {
+      "name": "Dr Pepper",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Keurig Dr Pepper",
+        "introduced": "1885"
+      }
+    },
+    {
+      "name": "Mountain Dew",
+      "imageUrl": "",
+      "meta": {
+        "maker": "PepsiCo",
+        "introduced": "1940"
+      }
+    },
+    {
+      "name": "Sprite",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Coca-Cola Co.",
+        "introduced": "1961"
+      }
+    },
+    {
+      "name": "Root Beer (A&W)",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Keurig Dr Pepper",
+        "introduced": "1919"
+      }
+    },
+    {
+      "name": "Cheerwine",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Carolina Beverage",
+        "introduced": "1917"
+      }
+    },
+    {
+      "name": "Fanta Orange",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Coca-Cola Co.",
+        "introduced": "1940"
+      }
+    },
+    {
+      "name": "Sunkist",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Keurig Dr Pepper",
+        "introduced": "1979"
+      }
+    },
+    {
+      "name": "Barq's",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Coca-Cola Co.",
+        "introduced": "1898"
+      }
+    },
+    {
+      "name": "Big Red",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Keurig Dr Pepper",
+        "introduced": "1937"
+      }
+    },
+    {
+      "name": "Ale-8-One",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Ale-8-One Bottling",
+        "introduced": "1926"
+      }
+    }
+  ]
+}

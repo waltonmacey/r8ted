@@ -1,0 +1,105 @@
+{
+  "id": "candy",
+  "name": "Candy",
+  "subcategories": [
+    "food-drink"
+  ],
+  "items": [
+    {
+      "name": "Reese's Peanut Butter Cups",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Hershey",
+        "introduced": "1928"
+      }
+    },
+    {
+      "name": "Snickers",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Mars",
+        "introduced": "1930"
+      }
+    },
+    {
+      "name": "Kit Kat",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Nestle / Hershey",
+        "introduced": "1935"
+      }
+    },
+    {
+      "name": "Twix",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Mars",
+        "introduced": "1967"
+      }
+    },
+    {
+      "name": "M&M's",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Mars",
+        "introduced": "1941"
+      }
+    },
+    {
+      "name": "Sour Patch Kids",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Mondelez",
+        "introduced": "1985"
+      }
+    },
+    {
+      "name": "Skittles",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Mars",
+        "introduced": "1974"
+      }
+    },
+    {
+      "name": "Milky Way",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Mars",
+        "introduced": "1923"
+      }
+    },
+    {
+      "name": "Butterfinger",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Ferrara",
+        "introduced": "1923"
+      }
+    },
+    {
+      "name": "Starburst",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Mars",
+        "introduced": "1960"
+      }
+    },
+    {
+      "name": "Almond Joy",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Hershey",
+        "introduced": "1946"
+      }
+    },
+    {
+      "name": "Nerds",
+      "imageUrl": "",
+      "meta": {
+        "maker": "Ferrara",
+        "introduced": "1983"
+      }
+    }
+  ]
+}

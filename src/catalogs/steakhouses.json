@@ -1,0 +1,105 @@
+{
+  "id": "steakhouses",
+  "name": "Steakhouses",
+  "subcategories": [
+    "restaurants"
+  ],
+  "items": [
+    {
+      "name": "Peter Luger",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1887",
+        "home": "Brooklyn, NY"
+      }
+    },
+    {
+      "name": "Ruth's Chris",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1965",
+        "home": "New Orleans, LA"
+      }
+    },
+    {
+      "name": "Morton's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1978",
+        "home": "Chicago, IL"
+      }
+    },
+    {
+      "name": "The Capital Grille",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1990",
+        "home": "Providence, RI"
+      }
+    },
+    {
+      "name": "Del Frisco's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1981",
+        "home": "Dallas, TX"
+      }
+    },
+    {
+      "name": "Texas Roadhouse",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1993",
+        "home": "Clarksville, IN"
+      }
+    },
+    {
+      "name": "Outback Steakhouse",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1988",
+        "home": "Tampa, FL"
+      }
+    },
+    {
+      "name": "LongHorn Steakhouse",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1981",
+        "home": "Atlanta, GA"
+      }
+    },
+    {
+      "name": "Fogo de Chao",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1979",
+        "home": "Porto Alegre, Brazil"
+      }
+    },
+    {
+      "name": "St. Elmo Steak House",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1902",
+        "home": "Indianapolis, IN"
+      }
+    },
+    {
+      "name": "Folks Folly",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1977",
+        "home": "Memphis, TN"
+      }
+    },
+    {
+      "name": "Gibsons",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1989",
+        "home": "Chicago, IL"
+      }
+    }
+  ]
+}

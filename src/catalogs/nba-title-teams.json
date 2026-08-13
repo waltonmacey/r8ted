@@ -1,0 +1,105 @@
+{
+  "id": "nba-title-teams",
+  "name": "NBA Championship Teams",
+  "subcategories": [
+    "teams-dynasties"
+  ],
+  "items": [
+    {
+      "name": "1995-96 Chicago Bulls",
+      "imageUrl": "",
+      "meta": {
+        "record": "72-10",
+        "note": "Jordan, Pippen, Rodman"
+      }
+    },
+    {
+      "name": "2016-17 Golden State Warriors",
+      "imageUrl": "",
+      "meta": {
+        "record": "67-15",
+        "note": "Durant added"
+      }
+    },
+    {
+      "name": "1986-87 Los Angeles Lakers",
+      "imageUrl": "",
+      "meta": {
+        "record": "65-17",
+        "note": "Showtime peak"
+      }
+    },
+    {
+      "name": "1985-86 Boston Celtics",
+      "imageUrl": "",
+      "meta": {
+        "record": "67-15",
+        "note": "Bird, McHale, Walton"
+      }
+    },
+    {
+      "name": "1971-72 Los Angeles Lakers",
+      "imageUrl": "",
+      "meta": {
+        "record": "69-13",
+        "note": "33-game win streak"
+      }
+    },
+    {
+      "name": "1966-67 Philadelphia 76ers",
+      "imageUrl": "",
+      "meta": {
+        "record": "68-13",
+        "note": "Wilt's title"
+      }
+    },
+    {
+      "name": "2000-01 Los Angeles Lakers",
+      "imageUrl": "",
+      "meta": {
+        "record": "56-26",
+        "note": "15-1 playoff run"
+      }
+    },
+    {
+      "name": "2012-13 Miami Heat",
+      "imageUrl": "",
+      "meta": {
+        "record": "66-16",
+        "note": "27-game win streak"
+      }
+    },
+    {
+      "name": "1988-89 Detroit Pistons",
+      "imageUrl": "",
+      "meta": {
+        "record": "63-19",
+        "note": "Bad Boys"
+      }
+    },
+    {
+      "name": "2013-14 San Antonio Spurs",
+      "imageUrl": "",
+      "meta": {
+        "record": "62-20",
+        "note": "Beautiful game"
+      }
+    },
+    {
+      "name": "1961-62 Boston Celtics",
+      "imageUrl": "",
+      "meta": {
+        "record": "60-20",
+        "note": "Russell dynasty"
+      }
+    },
+    {
+      "name": "2007-08 Boston Celtics",
+      "imageUrl": "",
+      "meta": {
+        "record": "66-16",
+        "note": "Big Three formed"
+      }
+    }
+  ]
+}

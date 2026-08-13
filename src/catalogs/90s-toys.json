@@ -1,0 +1,105 @@
+{
+  "id": "90s-toys",
+  "name": "90s Toys",
+  "subcategories": [
+    "gaming-nostalgia"
+  ],
+  "items": [
+    {
+      "name": "Super Soaker 50",
+      "imageUrl": "",
+      "meta": {
+        "released": "1990",
+        "maker": "Larami"
+      }
+    },
+    {
+      "name": "Tamagotchi",
+      "imageUrl": "",
+      "meta": {
+        "released": "1996",
+        "maker": "Bandai"
+      }
+    },
+    {
+      "name": "Beanie Babies",
+      "imageUrl": "",
+      "meta": {
+        "released": "1993",
+        "maker": "Ty"
+      }
+    },
+    {
+      "name": "Furby",
+      "imageUrl": "",
+      "meta": {
+        "released": "1998",
+        "maker": "Tiger Electronics"
+      }
+    },
+    {
+      "name": "Pokemon Trading Cards",
+      "imageUrl": "",
+      "meta": {
+        "released": "1996",
+        "maker": "Wizards of the Coast"
+      }
+    },
+    {
+      "name": "Nerf Blasters",
+      "imageUrl": "",
+      "meta": {
+        "released": "1989",
+        "maker": "Hasbro"
+      }
+    },
+    {
+      "name": "Game Boy Pocket",
+      "imageUrl": "",
+      "meta": {
+        "released": "1996",
+        "maker": "Nintendo"
+      }
+    },
+    {
+      "name": "Bop It",
+      "imageUrl": "",
+      "meta": {
+        "released": "1996",
+        "maker": "Hasbro"
+      }
+    },
+    {
+      "name": "Skip-It",
+      "imageUrl": "",
+      "meta": {
+        "released": "1990",
+        "maker": "Tiger Electronics"
+      }
+    },
+    {
+      "name": "Polly Pocket",
+      "imageUrl": "",
+      "meta": {
+        "released": "1989",
+        "maker": "Bluebird Toys"
+      }
+    },
+    {
+      "name": "Sky Dancers",
+      "imageUrl": "",
+      "meta": {
+        "released": "1994",
+        "maker": "Galoob"
+      }
+    },
+    {
+      "name": "Yo-Yo (Yomega Brain)",
+      "imageUrl": "",
+      "meta": {
+        "released": "1992",
+        "maker": "Yomega"
+      }
+    }
+  ]
+}

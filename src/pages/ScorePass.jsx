@@ -7,16 +7,17 @@
 // Three flagged adaptations of the POC:
 //
 //  1. The POC tracks hand edits per dimension (an overrides[name][dim] map).
-//     Our model marks them per entry (scoresEdited), per the Phase 6 scope. So a
-//     solid chip means "this entry is hand set and this dimension sits exactly
-//     on the chip"; where an entry is hand set but the dimension still holds its
-//     placeholder value, the nearest chip shows outlined instead. Nothing is
-//     hidden by that: the exact current value is always in the readout on the
-//     right.
-//  2. The POC matches a chip to a placeholder within 0.26. Placeholder subscores
-//     live on the 0.1 grid and the scale steps by 0.5, so an exact match is rare
-//     by design. We highlight the nearest 0.5 step instead, which is the same
-//     intent stated exactly.
+//     Our model marks them per entry (scoresEdited), per the Phase 6 scope. The
+//     hand set against placeholder distinction lives in the caption under the
+//     name rather than in the chip, so the chip can say one thing only: this is
+//     where the value sits right now.
+//  2. The POC matches a chip to a placeholder within 0.26, because its
+//     placeholders did not line up with its own scale. Since Phase 7 every
+//     stored subscore is a multiple of 0.5, which is exactly the scale's step,
+//     so every row opens with its chip already filled at its current value and
+//     no tolerance is needed. That is the point of the half point rule: the
+//     sweep starts from where the list already stands rather than from blank,
+//     and a tap is a correction rather than an entry.
 //  3. The scale runs 5.0 to 10.0 per the POC. A long list's placeholder chain
 //     can walk below 5.0 (anchor 9.5 stepping down 0.25 on average reaches 5.0
 //     around rank 19), and such a value has no chip. The readout still shows it
@@ -39,7 +40,9 @@ import { NotFound } from './Domain'
 // 5.0 to 10.0 in half points, per the POC.
 export const TAP_SCALE = Array.from({ length: 11 }, (_, i) => 5 + i * 0.5)
 
-// The chip a value sits on, or null when it falls off the scale.
+// The chip a value sits on, or null when it falls off the scale. Since Phase 7
+// stored subscores are already multiples of 0.5, so the rounding is a guard for
+// legacy data written before that rule, not a routine approximation.
 export function chipFor(value) {
   const nearest = Math.round(value * 2) / 2
   if (nearest < TAP_SCALE[0] || nearest > TAP_SCALE[TAP_SCALE.length - 1]) return null
@@ -115,7 +118,8 @@ export default function ScorePass() {
       </p>
       <h1 className="mt-3 font-display text-headline-lg-mobile sm:text-headline-lg">Score pass</h1>
       <p className="mt-2 font-body text-on-surface-variant">
-        One dimension at a time, all items in one sweep.
+        One dimension at a time, all items in one sweep. Every row opens on its
+        current value, so a tap is a correction, not an entry.
       </p>
       <p className="mt-3 font-mono text-xs uppercase tracking-[0.08em] text-on-surface-variant">
         {taps} tap{taps === 1 ? '' : 's'} this pass
@@ -211,7 +215,10 @@ function ScoreRow({ entry, dim, accent, rank, sweepRank, onTap }) {
           label so the whole numbers read as the scale. */}
       <div className="order-last flex w-full gap-[3px] sm:order-none sm:w-auto sm:flex-1">
         {TAP_SCALE.map((v) => {
-          const solid = edited && on === v
+          // Filled means "the value is here now", whether it was hand set or
+          // generated. Outlined is reserved for a value that has fallen off the
+          // scale, where the nearest chip is shown as an approximation.
+          const solid = on === v && value >= TAP_SCALE[0] && value <= TAP_SCALE[TAP_SCALE.length - 1]
           const outline = !solid && on === v
           return (
             <button

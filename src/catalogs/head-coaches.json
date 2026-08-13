@@ -1,0 +1,105 @@
+{
+  "id": "head-coaches",
+  "name": "Head Coaches",
+  "subcategories": [
+    "athletes-legends"
+  ],
+  "items": [
+    {
+      "name": "Bill Belichick",
+      "imageUrl": "",
+      "meta": {
+        "sport": "NFL",
+        "accolades": "6 Super Bowls"
+      }
+    },
+    {
+      "name": "Vince Lombardi",
+      "imageUrl": "",
+      "meta": {
+        "sport": "NFL",
+        "accolades": "5 NFL titles"
+      }
+    },
+    {
+      "name": "Phil Jackson",
+      "imageUrl": "",
+      "meta": {
+        "sport": "NBA",
+        "accolades": "11 titles"
+      }
+    },
+    {
+      "name": "Gregg Popovich",
+      "imageUrl": "",
+      "meta": {
+        "sport": "NBA",
+        "accolades": "5 titles"
+      }
+    },
+    {
+      "name": "Nick Saban",
+      "imageUrl": "",
+      "meta": {
+        "sport": "College football",
+        "accolades": "7 national titles"
+      }
+    },
+    {
+      "name": "John Wooden",
+      "imageUrl": "",
+      "meta": {
+        "sport": "College basketball",
+        "accolades": "10 national titles"
+      }
+    },
+    {
+      "name": "Red Auerbach",
+      "imageUrl": "",
+      "meta": {
+        "sport": "NBA",
+        "accolades": "9 titles"
+      }
+    },
+    {
+      "name": "Bear Bryant",
+      "imageUrl": "",
+      "meta": {
+        "sport": "College football",
+        "accolades": "6 national titles"
+      }
+    },
+    {
+      "name": "Don Shula",
+      "imageUrl": "",
+      "meta": {
+        "sport": "NFL",
+        "accolades": "2 Super Bowls, 347 wins"
+      }
+    },
+    {
+      "name": "Mike Krzyzewski",
+      "imageUrl": "",
+      "meta": {
+        "sport": "College basketball",
+        "accolades": "5 national titles"
+      }
+    },
+    {
+      "name": "Chuck Noll",
+      "imageUrl": "",
+      "meta": {
+        "sport": "NFL",
+        "accolades": "4 Super Bowls"
+      }
+    },
+    {
+      "name": "Bill Walsh",
+      "imageUrl": "",
+      "meta": {
+        "sport": "NFL",
+        "accolades": "3 Super Bowls"
+      }
+    }
+  ]
+}

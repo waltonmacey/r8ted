@@ -1,0 +1,105 @@
+{
+  "id": "sneaker-silhouettes",
+  "name": "Sneaker Silhouettes",
+  "subcategories": [
+    "style-brands"
+  ],
+  "items": [
+    {
+      "name": "Air Jordan 1",
+      "imageUrl": "",
+      "meta": {
+        "released": "1985",
+        "brand": "Nike"
+      }
+    },
+    {
+      "name": "Nike Air Force 1",
+      "imageUrl": "",
+      "meta": {
+        "released": "1982",
+        "brand": "Nike"
+      }
+    },
+    {
+      "name": "Air Jordan 4",
+      "imageUrl": "",
+      "meta": {
+        "released": "1989",
+        "brand": "Nike"
+      }
+    },
+    {
+      "name": "New Balance 550",
+      "imageUrl": "",
+      "meta": {
+        "released": "1989",
+        "brand": "New Balance"
+      }
+    },
+    {
+      "name": "New Balance 990",
+      "imageUrl": "",
+      "meta": {
+        "released": "1982",
+        "brand": "New Balance"
+      }
+    },
+    {
+      "name": "Adidas Samba",
+      "imageUrl": "",
+      "meta": {
+        "released": "1950",
+        "brand": "Adidas"
+      }
+    },
+    {
+      "name": "Adidas Stan Smith",
+      "imageUrl": "",
+      "meta": {
+        "released": "1965",
+        "brand": "Adidas"
+      }
+    },
+    {
+      "name": "Converse Chuck Taylor",
+      "imageUrl": "",
+      "meta": {
+        "released": "1917",
+        "brand": "Converse"
+      }
+    },
+    {
+      "name": "Vans Old Skool",
+      "imageUrl": "",
+      "meta": {
+        "released": "1977",
+        "brand": "Vans"
+      }
+    },
+    {
+      "name": "Nike Dunk",
+      "imageUrl": "",
+      "meta": {
+        "released": "1985",
+        "brand": "Nike"
+      }
+    },
+    {
+      "name": "Air Jordan 11",
+      "imageUrl": "",
+      "meta": {
+        "released": "1995",
+        "brand": "Nike"
+      }
+    },
+    {
+      "name": "Nike Air Max 1",
+      "imageUrl": "",
+      "meta": {
+        "released": "1987",
+        "brand": "Nike"
+      }
+    }
+  ]
+}

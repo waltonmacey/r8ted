@@ -1,0 +1,105 @@
+{
+  "id": "classic-rock-bands",
+  "name": "Classic Rock Bands",
+  "subcategories": [
+    "music-audio"
+  ],
+  "items": [
+    {
+      "name": "The Beatles",
+      "imageUrl": "",
+      "meta": {
+        "formed": "1960",
+        "origin": "Liverpool, England"
+      }
+    },
+    {
+      "name": "Led Zeppelin",
+      "imageUrl": "",
+      "meta": {
+        "formed": "1968",
+        "origin": "London, England"
+      }
+    },
+    {
+      "name": "Pink Floyd",
+      "imageUrl": "",
+      "meta": {
+        "formed": "1965",
+        "origin": "London, England"
+      }
+    },
+    {
+      "name": "The Rolling Stones",
+      "imageUrl": "",
+      "meta": {
+        "formed": "1962",
+        "origin": "London, England"
+      }
+    },
+    {
+      "name": "Queen",
+      "imageUrl": "",
+      "meta": {
+        "formed": "1970",
+        "origin": "London, England"
+      }
+    },
+    {
+      "name": "The Who",
+      "imageUrl": "",
+      "meta": {
+        "formed": "1964",
+        "origin": "London, England"
+      }
+    },
+    {
+      "name": "AC/DC",
+      "imageUrl": "",
+      "meta": {
+        "formed": "1973",
+        "origin": "Sydney, Australia"
+      }
+    },
+    {
+      "name": "Fleetwood Mac",
+      "imageUrl": "",
+      "meta": {
+        "formed": "1967",
+        "origin": "London, England"
+      }
+    },
+    {
+      "name": "Creedence Clearwater Revival",
+      "imageUrl": "",
+      "meta": {
+        "formed": "1967",
+        "origin": "El Cerrito, CA"
+      }
+    },
+    {
+      "name": "Lynyrd Skynyrd",
+      "imageUrl": "",
+      "meta": {
+        "formed": "1964",
+        "origin": "Jacksonville, FL"
+      }
+    },
+    {
+      "name": "The Eagles",
+      "imageUrl": "",
+      "meta": {
+        "formed": "1971",
+        "origin": "Los Angeles, CA"
+      }
+    },
+    {
+      "name": "Aerosmith",
+      "imageUrl": "",
+      "meta": {
+        "formed": "1970",
+        "origin": "Boston, MA"
+      }
+    }
+  ]
+}

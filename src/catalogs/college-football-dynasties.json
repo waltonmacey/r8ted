@@ -1,0 +1,105 @@
+{
+  "id": "college-football-dynasties",
+  "name": "College Football Dynasties",
+  "subcategories": [
+    "teams-dynasties"
+  ],
+  "items": [
+    {
+      "name": "2009-2020 Alabama",
+      "imageUrl": "",
+      "meta": {
+        "span": "2009-2020",
+        "titles": "6 national titles"
+      }
+    },
+    {
+      "name": "1983-2001 Miami",
+      "imageUrl": "",
+      "meta": {
+        "span": "1983-2001",
+        "titles": "5 national titles"
+      }
+    },
+    {
+      "name": "1990s Nebraska",
+      "imageUrl": "",
+      "meta": {
+        "span": "1994-1997",
+        "titles": "3 national titles"
+      }
+    },
+    {
+      "name": "2000s USC",
+      "imageUrl": "",
+      "meta": {
+        "span": "2003-2005",
+        "titles": "2 national titles"
+      }
+    },
+    {
+      "name": "1940s Notre Dame",
+      "imageUrl": "",
+      "meta": {
+        "span": "1943-1949",
+        "titles": "4 national titles"
+      }
+    },
+    {
+      "name": "1960s Alabama (Bryant)",
+      "imageUrl": "",
+      "meta": {
+        "span": "1961-1965",
+        "titles": "3 national titles"
+      }
+    },
+    {
+      "name": "1970s Oklahoma",
+      "imageUrl": "",
+      "meta": {
+        "span": "1974-1975",
+        "titles": "2 national titles"
+      }
+    },
+    {
+      "name": "1990s Florida State",
+      "imageUrl": "",
+      "meta": {
+        "span": "1987-2000",
+        "titles": "2 titles, 14 top-5 finishes"
+      }
+    },
+    {
+      "name": "1930s Minnesota",
+      "imageUrl": "",
+      "meta": {
+        "span": "1934-1941",
+        "titles": "5 national titles"
+      }
+    },
+    {
+      "name": "2010s Clemson",
+      "imageUrl": "",
+      "meta": {
+        "span": "2015-2019",
+        "titles": "2 national titles"
+      }
+    },
+    {
+      "name": "1970s Pittsburgh (Dorsett)",
+      "imageUrl": "",
+      "meta": {
+        "span": "1976",
+        "titles": "1 national title"
+      }
+    },
+    {
+      "name": "1950s Oklahoma",
+      "imageUrl": "",
+      "meta": {
+        "span": "1953-1957",
+        "titles": "47-game win streak"
+      }
+    }
+  ]
+}

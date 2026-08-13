@@ -1,0 +1,105 @@
+{
+  "id": "youtube-channels",
+  "name": "YouTube Channels",
+  "subcategories": [
+    "internet-apps"
+  ],
+  "items": [
+    {
+      "name": "MrBeast",
+      "imageUrl": "",
+      "meta": {
+        "started": "2012",
+        "lane": "Stunts"
+      }
+    },
+    {
+      "name": "Mark Rober",
+      "imageUrl": "",
+      "meta": {
+        "started": "2011",
+        "lane": "Engineering"
+      }
+    },
+    {
+      "name": "Veritasium",
+      "imageUrl": "",
+      "meta": {
+        "started": "2011",
+        "lane": "Science"
+      }
+    },
+    {
+      "name": "Kurzgesagt",
+      "imageUrl": "",
+      "meta": {
+        "started": "2013",
+        "lane": "Animation / science"
+      }
+    },
+    {
+      "name": "Marques Brownlee",
+      "imageUrl": "",
+      "meta": {
+        "started": "2008",
+        "lane": "Tech reviews"
+      }
+    },
+    {
+      "name": "Dude Perfect",
+      "imageUrl": "",
+      "meta": {
+        "started": "2009",
+        "lane": "Trick shots"
+      }
+    },
+    {
+      "name": "Smarter Every Day",
+      "imageUrl": "",
+      "meta": {
+        "started": "2007",
+        "lane": "Science"
+      }
+    },
+    {
+      "name": "Tom Scott",
+      "imageUrl": "",
+      "meta": {
+        "started": "2006",
+        "lane": "Explainers"
+      }
+    },
+    {
+      "name": "Binging with Babish",
+      "imageUrl": "",
+      "meta": {
+        "started": "2016",
+        "lane": "Cooking"
+      }
+    },
+    {
+      "name": "Linus Tech Tips",
+      "imageUrl": "",
+      "meta": {
+        "started": "2008",
+        "lane": "PC hardware"
+      }
+    },
+    {
+      "name": "Practical Engineering",
+      "imageUrl": "",
+      "meta": {
+        "started": "2016",
+        "lane": "Infrastructure"
+      }
+    },
+    {
+      "name": "Defunctland",
+      "imageUrl": "",
+      "meta": {
+        "started": "2017",
+        "lane": "Theme park history"
+      }
+    }
+  ]
+}

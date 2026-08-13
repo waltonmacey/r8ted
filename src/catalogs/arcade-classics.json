@@ -1,0 +1,105 @@
+{
+  "id": "arcade-classics",
+  "name": "Arcade Classics",
+  "subcategories": [
+    "gaming-nostalgia"
+  ],
+  "items": [
+    {
+      "name": "Pac-Man",
+      "imageUrl": "",
+      "meta": {
+        "year": "1980",
+        "maker": "Namco"
+      }
+    },
+    {
+      "name": "Donkey Kong",
+      "imageUrl": "",
+      "meta": {
+        "year": "1981",
+        "maker": "Nintendo"
+      }
+    },
+    {
+      "name": "Street Fighter II",
+      "imageUrl": "",
+      "meta": {
+        "year": "1991",
+        "maker": "Capcom"
+      }
+    },
+    {
+      "name": "Space Invaders",
+      "imageUrl": "",
+      "meta": {
+        "year": "1978",
+        "maker": "Taito"
+      }
+    },
+    {
+      "name": "Galaga",
+      "imageUrl": "",
+      "meta": {
+        "year": "1981",
+        "maker": "Namco"
+      }
+    },
+    {
+      "name": "Mortal Kombat",
+      "imageUrl": "",
+      "meta": {
+        "year": "1992",
+        "maker": "Midway"
+      }
+    },
+    {
+      "name": "NBA Jam",
+      "imageUrl": "",
+      "meta": {
+        "year": "1993",
+        "maker": "Midway"
+      }
+    },
+    {
+      "name": "Ms. Pac-Man",
+      "imageUrl": "",
+      "meta": {
+        "year": "1982",
+        "maker": "Midway"
+      }
+    },
+    {
+      "name": "Asteroids",
+      "imageUrl": "",
+      "meta": {
+        "year": "1979",
+        "maker": "Atari"
+      }
+    },
+    {
+      "name": "Frogger",
+      "imageUrl": "",
+      "meta": {
+        "year": "1981",
+        "maker": "Konami"
+      }
+    },
+    {
+      "name": "Centipede",
+      "imageUrl": "",
+      "meta": {
+        "year": "1981",
+        "maker": "Atari"
+      }
+    },
+    {
+      "name": "Dance Dance Revolution",
+      "imageUrl": "",
+      "meta": {
+        "year": "1998",
+        "maker": "Konami"
+      }
+    }
+  ]
+}

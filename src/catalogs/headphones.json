@@ -1,0 +1,105 @@
+{
+  "id": "headphones",
+  "name": "Headphones",
+  "subcategories": [
+    "gear-tech"
+  ],
+  "items": [
+    {
+      "name": "Sony WH-1000XM5",
+      "imageUrl": "",
+      "meta": {
+        "type": "Over-ear ANC",
+        "maker": "Sony"
+      }
+    },
+    {
+      "name": "Apple AirPods Pro",
+      "imageUrl": "",
+      "meta": {
+        "type": "In-ear ANC",
+        "maker": "Apple"
+      }
+    },
+    {
+      "name": "Bose QuietComfort",
+      "imageUrl": "",
+      "meta": {
+        "type": "Over-ear ANC",
+        "maker": "Bose"
+      }
+    },
+    {
+      "name": "Sennheiser HD 600",
+      "imageUrl": "",
+      "meta": {
+        "type": "Open-back wired",
+        "maker": "Sennheiser"
+      }
+    },
+    {
+      "name": "Audio-Technica ATH-M50x",
+      "imageUrl": "",
+      "meta": {
+        "type": "Closed-back wired",
+        "maker": "Audio-Technica"
+      }
+    },
+    {
+      "name": "Beats Studio Pro",
+      "imageUrl": "",
+      "meta": {
+        "type": "Over-ear ANC",
+        "maker": "Beats"
+      }
+    },
+    {
+      "name": "AirPods Max",
+      "imageUrl": "",
+      "meta": {
+        "type": "Over-ear ANC",
+        "maker": "Apple"
+      }
+    },
+    {
+      "name": "Sennheiser HD 800S",
+      "imageUrl": "",
+      "meta": {
+        "type": "Open-back wired",
+        "maker": "Sennheiser"
+      }
+    },
+    {
+      "name": "Shure SE535",
+      "imageUrl": "",
+      "meta": {
+        "type": "In-ear monitor",
+        "maker": "Shure"
+      }
+    },
+    {
+      "name": "Beyerdynamic DT 770",
+      "imageUrl": "",
+      "meta": {
+        "type": "Closed-back wired",
+        "maker": "Beyerdynamic"
+      }
+    },
+    {
+      "name": "Jabra Elite 85t",
+      "imageUrl": "",
+      "meta": {
+        "type": "In-ear ANC",
+        "maker": "Jabra"
+      }
+    },
+    {
+      "name": "Koss Porta Pro",
+      "imageUrl": "",
+      "meta": {
+        "type": "On-ear wired",
+        "maker": "Koss"
+      }
+    }
+  ]
+}

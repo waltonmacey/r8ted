@@ -1,0 +1,105 @@
+{
+  "id": "world-cuisines",
+  "name": "World Cuisines",
+  "subcategories": [
+    "food-drink"
+  ],
+  "items": [
+    {
+      "name": "Italian",
+      "imageUrl": "",
+      "meta": {
+        "region": "Southern Europe",
+        "staple": "Pasta, olive oil"
+      }
+    },
+    {
+      "name": "Mexican",
+      "imageUrl": "",
+      "meta": {
+        "region": "North America",
+        "staple": "Corn, chiles"
+      }
+    },
+    {
+      "name": "Japanese",
+      "imageUrl": "",
+      "meta": {
+        "region": "East Asia",
+        "staple": "Rice, dashi"
+      }
+    },
+    {
+      "name": "Thai",
+      "imageUrl": "",
+      "meta": {
+        "region": "Southeast Asia",
+        "staple": "Rice, fish sauce"
+      }
+    },
+    {
+      "name": "Indian",
+      "imageUrl": "",
+      "meta": {
+        "region": "South Asia",
+        "staple": "Rice, lentils, spice"
+      }
+    },
+    {
+      "name": "Chinese (Sichuan)",
+      "imageUrl": "",
+      "meta": {
+        "region": "East Asia",
+        "staple": "Chile, peppercorn"
+      }
+    },
+    {
+      "name": "French",
+      "imageUrl": "",
+      "meta": {
+        "region": "Western Europe",
+        "staple": "Butter, stock"
+      }
+    },
+    {
+      "name": "Greek",
+      "imageUrl": "",
+      "meta": {
+        "region": "Mediterranean",
+        "staple": "Olive oil, lamb"
+      }
+    },
+    {
+      "name": "Korean",
+      "imageUrl": "",
+      "meta": {
+        "region": "East Asia",
+        "staple": "Rice, gochujang"
+      }
+    },
+    {
+      "name": "Vietnamese",
+      "imageUrl": "",
+      "meta": {
+        "region": "Southeast Asia",
+        "staple": "Herbs, broth"
+      }
+    },
+    {
+      "name": "Spanish",
+      "imageUrl": "",
+      "meta": {
+        "region": "Iberia",
+        "staple": "Olive oil, paprika"
+      }
+    },
+    {
+      "name": "Southern US",
+      "imageUrl": "",
+      "meta": {
+        "region": "American South",
+        "staple": "Pork, corn, greens"
+      }
+    }
+  ]
+}

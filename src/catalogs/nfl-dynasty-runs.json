@@ -1,0 +1,105 @@
+{
+  "id": "nfl-dynasty-runs",
+  "name": "NFL Dynasty Runs",
+  "subcategories": [
+    "teams-dynasties"
+  ],
+  "items": [
+    {
+      "name": "1980s San Francisco 49ers",
+      "imageUrl": "",
+      "meta": {
+        "span": "1981-1989",
+        "titles": "4 Super Bowls"
+      }
+    },
+    {
+      "name": "2001-2019 New England Patriots",
+      "imageUrl": "",
+      "meta": {
+        "span": "2001-2019",
+        "titles": "6 Super Bowls"
+      }
+    },
+    {
+      "name": "1970s Pittsburgh Steelers",
+      "imageUrl": "",
+      "meta": {
+        "span": "1974-1979",
+        "titles": "4 Super Bowls"
+      }
+    },
+    {
+      "name": "1960s Green Bay Packers",
+      "imageUrl": "",
+      "meta": {
+        "span": "1961-1967",
+        "titles": "5 NFL titles"
+      }
+    },
+    {
+      "name": "1990s Dallas Cowboys",
+      "imageUrl": "",
+      "meta": {
+        "span": "1992-1995",
+        "titles": "3 Super Bowls"
+      }
+    },
+    {
+      "name": "1970s Miami Dolphins",
+      "imageUrl": "",
+      "meta": {
+        "span": "1971-1973",
+        "titles": "2 Super Bowls, 17-0"
+      }
+    },
+    {
+      "name": "1980s Washington Redskins",
+      "imageUrl": "",
+      "meta": {
+        "span": "1982-1991",
+        "titles": "3 Super Bowls"
+      }
+    },
+    {
+      "name": "1990s Denver Broncos",
+      "imageUrl": "",
+      "meta": {
+        "span": "1997-1998",
+        "titles": "2 Super Bowls"
+      }
+    },
+    {
+      "name": "2020s Kansas City Chiefs",
+      "imageUrl": "",
+      "meta": {
+        "span": "2019-",
+        "titles": "3 Super Bowls"
+      }
+    },
+    {
+      "name": "1980s New York Giants",
+      "imageUrl": "",
+      "meta": {
+        "span": "1986-1990",
+        "titles": "2 Super Bowls"
+      }
+    },
+    {
+      "name": "1950s-60s Cleveland Browns",
+      "imageUrl": "",
+      "meta": {
+        "span": "1950-1964",
+        "titles": "4 titles, Graham to Brown"
+      }
+    },
+    {
+      "name": "2000s Indianapolis Colts",
+      "imageUrl": "",
+      "meta": {
+        "span": "2003-2010",
+        "titles": "1 Super Bowl, 7 straight 12-win"
+      }
+    }
+  ]
+}

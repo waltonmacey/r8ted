@@ -7,31 +7,99 @@
   "items": [
     {
       "name": "Hans Gruber",
-      "imageUrl": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2023/07/alan-rickman-in-die-hard.jpg?q=49&fit=crop&w=800&dpr=2"
+      "imageUrl": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2023/07/alan-rickman-in-die-hard.jpg?q=49&fit=crop&w=800&dpr=2",
+      "meta": {
+        "film": "Die Hard",
+        "actor": "Alan Rickman"
+      }
     },
     {
       "name": "Scar",
-      "imageUrl": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2023/08/lion_king.jpg?q=70&fit=crop&w=800&dpr=1"
+      "imageUrl": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2023/08/lion_king.jpg?q=70&fit=crop&w=800&dpr=1",
+      "meta": {
+        "film": "The Lion King",
+        "actor": "Jeremy Irons"
+      }
     },
     {
       "name": "Commodus",
-      "imageUrl": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2024/03/gladiator-2000-1.jpg?q=49&fit=crop&w=800&dpr=2"
+      "imageUrl": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2024/03/gladiator-2000-1.jpg?q=49&fit=crop&w=800&dpr=2",
+      "meta": {
+        "film": "Gladiator",
+        "actor": "Joaquin Phoenix"
+      }
     },
     {
       "name": "Green Goblin",
-      "imageUrl": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2024/05/goblin-holding-spider-man-by-the-head.jpg?q=70&fit=crop&w=800&dpr=1"
+      "imageUrl": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2024/05/goblin-holding-spider-man-by-the-head.jpg?q=70&fit=crop&w=800&dpr=1",
+      "meta": {
+        "film": "Spider-Man",
+        "actor": "Willem Dafoe"
+      }
     },
     {
       "name": "Dr. Evil",
-      "imageUrl": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2022/01/Austin-Powers-International-Man-of-mystery.jpeg?q=70&fit=crop&w=800&dpr=1"
+      "imageUrl": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2022/01/Austin-Powers-International-Man-of-mystery.jpeg?q=70&fit=crop&w=800&dpr=1",
+      "meta": {
+        "film": "Austin Powers",
+        "actor": "Mike Myers"
+      }
     },
     {
       "name": "Emperor Palpatine",
-      "imageUrl": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2024/11/return-of-the-jedi-the-emperor-lightsabers.jpg?q=49&fit=crop&w=800&dpr=2"
+      "imageUrl": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2024/11/return-of-the-jedi-the-emperor-lightsabers.jpg?q=49&fit=crop&w=800&dpr=2",
+      "meta": {
+        "film": "Star Wars",
+        "actor": "Ian McDiarmid"
+      }
     },
     {
       "name": "Alonzo Harris",
-      "imageUrl": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2022/12/training-day-denzel-washington.jpg?q=70&fit=crop&w=800&dpr=1"
+      "imageUrl": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2022/12/training-day-denzel-washington.jpg?q=70&fit=crop&w=800&dpr=1",
+      "meta": {
+        "film": "Training Day",
+        "actor": "Denzel Washington"
+      }
+    },
+    {
+      "name": "Darth Vader",
+      "imageUrl": "",
+      "meta": {
+        "film": "Star Wars",
+        "actor": "James Earl Jones"
+      }
+    },
+    {
+      "name": "The Joker",
+      "imageUrl": "",
+      "meta": {
+        "film": "The Dark Knight",
+        "actor": "Heath Ledger"
+      }
+    },
+    {
+      "name": "Hannibal Lecter",
+      "imageUrl": "",
+      "meta": {
+        "film": "The Silence of the Lambs",
+        "actor": "Anthony Hopkins"
+      }
+    },
+    {
+      "name": "Anton Chigurh",
+      "imageUrl": "",
+      "meta": {
+        "film": "No Country for Old Men",
+        "actor": "Javier Bardem"
+      }
+    },
+    {
+      "name": "Nurse Ratched",
+      "imageUrl": "",
+      "meta": {
+        "film": "One Flew Over the Cuckoo's Nest",
+        "actor": "Louise Fletcher"
+      }
     }
   ]
 }

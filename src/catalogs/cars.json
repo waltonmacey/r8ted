@@ -1,0 +1,105 @@
+{
+  "id": "cars",
+  "name": "Cars",
+  "subcategories": [
+    "gear-tech"
+  ],
+  "items": [
+    {
+      "name": "Ford Bronco (1966-1977)",
+      "imageUrl": "",
+      "meta": {
+        "years": "1966-1977",
+        "maker": "Ford"
+      }
+    },
+    {
+      "name": "Toyota Land Cruiser FJ40",
+      "imageUrl": "",
+      "meta": {
+        "years": "1960-1984",
+        "maker": "Toyota"
+      }
+    },
+    {
+      "name": "Jeep Wrangler",
+      "imageUrl": "",
+      "meta": {
+        "years": "1986-",
+        "maker": "Jeep"
+      }
+    },
+    {
+      "name": "Ford F-150",
+      "imageUrl": "",
+      "meta": {
+        "years": "1975-",
+        "maker": "Ford"
+      }
+    },
+    {
+      "name": "Porsche 911",
+      "imageUrl": "",
+      "meta": {
+        "years": "1964-",
+        "maker": "Porsche"
+      }
+    },
+    {
+      "name": "Chevrolet Corvette C2",
+      "imageUrl": "",
+      "meta": {
+        "years": "1963-1967",
+        "maker": "Chevrolet"
+      }
+    },
+    {
+      "name": "Ford Mustang (1965)",
+      "imageUrl": "",
+      "meta": {
+        "years": "1964-1973",
+        "maker": "Ford"
+      }
+    },
+    {
+      "name": "Toyota Tacoma",
+      "imageUrl": "",
+      "meta": {
+        "years": "1995-",
+        "maker": "Toyota"
+      }
+    },
+    {
+      "name": "Honda Civic",
+      "imageUrl": "",
+      "meta": {
+        "years": "1972-",
+        "maker": "Honda"
+      }
+    },
+    {
+      "name": "Tesla Model 3",
+      "imageUrl": "",
+      "meta": {
+        "years": "2017-",
+        "maker": "Tesla"
+      }
+    },
+    {
+      "name": "Land Rover Defender",
+      "imageUrl": "",
+      "meta": {
+        "years": "1983-2016",
+        "maker": "Land Rover"
+      }
+    },
+    {
+      "name": "Subaru Outback",
+      "imageUrl": "",
+      "meta": {
+        "years": "1994-",
+        "maker": "Subaru"
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "heavyweight-boxers",
+  "name": "Heavyweight Boxers",
+  "subcategories": [
+    "athletes-legends"
+  ],
+  "items": [
+    {
+      "name": "Muhammad Ali",
+      "imageUrl": "",
+      "meta": {
+        "years": "1960-1981",
+        "record": "56-5"
+      }
+    },
+    {
+      "name": "Mike Tyson",
+      "imageUrl": "",
+      "meta": {
+        "years": "1985-2005",
+        "record": "50-6"
+      }
+    },
+    {
+      "name": "Joe Louis",
+      "imageUrl": "",
+      "meta": {
+        "years": "1934-1951",
+        "record": "66-3"
+      }
+    },
+    {
+      "name": "George Foreman",
+      "imageUrl": "",
+      "meta": {
+        "years": "1969-1997",
+        "record": "76-5"
+      }
+    },
+    {
+      "name": "Rocky Marciano",
+      "imageUrl": "",
+      "meta": {
+        "years": "1947-1955",
+        "record": "49-0"
+      }
+    },
+    {
+      "name": "Lennox Lewis",
+      "imageUrl": "",
+      "meta": {
+        "years": "1989-2003",
+        "record": "41-2-1"
+      }
+    },
+    {
+      "name": "Evander Holyfield",
+      "imageUrl": "",
+      "meta": {
+        "years": "1984-2011",
+        "record": "44-10-2"
+      }
+    },
+    {
+      "name": "Joe Frazier",
+      "imageUrl": "",
+      "meta": {
+        "years": "1965-1981",
+        "record": "32-4-1"
+      }
+    },
+    {
+      "name": "Larry Holmes",
+      "imageUrl": "",
+      "meta": {
+        "years": "1973-2002",
+        "record": "69-6"
+      }
+    },
+    {
+      "name": "Jack Johnson",
+      "imageUrl": "",
+      "meta": {
+        "years": "1898-1938",
+        "record": "73-13-10"
+      }
+    },
+    {
+      "name": "Wladimir Klitschko",
+      "imageUrl": "",
+      "meta": {
+        "years": "1996-2017",
+        "record": "64-5"
+      }
+    },
+    {
+      "name": "Tyson Fury",
+      "imageUrl": "",
+      "meta": {
+        "years": "2008-",
+        "record": "34-2-1"
+      }
+    }
+  ]
+}

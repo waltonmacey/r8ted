@@ -1,0 +1,105 @@
+{
+  "id": "nfl-quarterbacks",
+  "name": "NFL Quarterbacks",
+  "subcategories": [
+    "athletes-legends"
+  ],
+  "items": [
+    {
+      "name": "Tom Brady",
+      "imageUrl": "",
+      "meta": {
+        "years": "2000-2022",
+        "accolades": "7 rings, 3 MVP"
+      }
+    },
+    {
+      "name": "Peyton Manning",
+      "imageUrl": "",
+      "meta": {
+        "years": "1998-2015",
+        "accolades": "2 rings, 5 MVP"
+      }
+    },
+    {
+      "name": "Joe Montana",
+      "imageUrl": "",
+      "meta": {
+        "years": "1979-1994",
+        "accolades": "4 rings, 2 MVP"
+      }
+    },
+    {
+      "name": "Patrick Mahomes",
+      "imageUrl": "",
+      "meta": {
+        "years": "2017-",
+        "accolades": "3 rings, 2 MVP"
+      }
+    },
+    {
+      "name": "John Elway",
+      "imageUrl": "",
+      "meta": {
+        "years": "1983-1998",
+        "accolades": "2 rings, 1 MVP"
+      }
+    },
+    {
+      "name": "Aaron Rodgers",
+      "imageUrl": "",
+      "meta": {
+        "years": "2005-",
+        "accolades": "1 ring, 4 MVP"
+      }
+    },
+    {
+      "name": "Brett Favre",
+      "imageUrl": "",
+      "meta": {
+        "years": "1991-2010",
+        "accolades": "1 ring, 3 MVP"
+      }
+    },
+    {
+      "name": "Dan Marino",
+      "imageUrl": "",
+      "meta": {
+        "years": "1983-1999",
+        "accolades": "0 rings, 1 MVP"
+      }
+    },
+    {
+      "name": "Johnny Unitas",
+      "imageUrl": "",
+      "meta": {
+        "years": "1956-1973",
+        "accolades": "3 titles, 3 MVP"
+      }
+    },
+    {
+      "name": "Drew Brees",
+      "imageUrl": "",
+      "meta": {
+        "years": "2001-2020",
+        "accolades": "1 ring, all-time yards"
+      }
+    },
+    {
+      "name": "Steve Young",
+      "imageUrl": "",
+      "meta": {
+        "years": "1985-1999",
+        "accolades": "3 rings, 2 MVP"
+      }
+    },
+    {
+      "name": "Roger Staubach",
+      "imageUrl": "",
+      "meta": {
+        "years": "1969-1979",
+        "accolades": "2 rings, 1 MVP"
+      }
+    }
+  ]
+}

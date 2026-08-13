@@ -1,0 +1,105 @@
+{
+  "id": "countries",
+  "name": "Countries",
+  "subcategories": [
+    "cities-travel"
+  ],
+  "items": [
+    {
+      "name": "Japan",
+      "imageUrl": "",
+      "meta": {
+        "region": "East Asia",
+        "population": "123M"
+      }
+    },
+    {
+      "name": "Italy",
+      "imageUrl": "",
+      "meta": {
+        "region": "Southern Europe",
+        "population": "59M"
+      }
+    },
+    {
+      "name": "New Zealand",
+      "imageUrl": "",
+      "meta": {
+        "region": "Oceania",
+        "population": "5.2M"
+      }
+    },
+    {
+      "name": "Portugal",
+      "imageUrl": "",
+      "meta": {
+        "region": "Iberia",
+        "population": "10.6M"
+      }
+    },
+    {
+      "name": "Norway",
+      "imageUrl": "",
+      "meta": {
+        "region": "Scandinavia",
+        "population": "5.5M"
+      }
+    },
+    {
+      "name": "Costa Rica",
+      "imageUrl": "",
+      "meta": {
+        "region": "Central America",
+        "population": "5.2M"
+      }
+    },
+    {
+      "name": "Iceland",
+      "imageUrl": "",
+      "meta": {
+        "region": "North Atlantic",
+        "population": "0.4M"
+      }
+    },
+    {
+      "name": "Thailand",
+      "imageUrl": "",
+      "meta": {
+        "region": "Southeast Asia",
+        "population": "72M"
+      }
+    },
+    {
+      "name": "Switzerland",
+      "imageUrl": "",
+      "meta": {
+        "region": "Central Europe",
+        "population": "8.8M"
+      }
+    },
+    {
+      "name": "Morocco",
+      "imageUrl": "",
+      "meta": {
+        "region": "North Africa",
+        "population": "37M"
+      }
+    },
+    {
+      "name": "Ireland",
+      "imageUrl": "",
+      "meta": {
+        "region": "Western Europe",
+        "population": "5.3M"
+      }
+    },
+    {
+      "name": "Peru",
+      "imageUrl": "",
+      "meta": {
+        "region": "South America",
+        "population": "34M"
+      }
+    }
+  ]
+}

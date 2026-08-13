@@ -1,0 +1,105 @@
+{
+  "id": "everyday-apps",
+  "name": "Everyday Apps",
+  "subcategories": [
+    "internet-apps"
+  ],
+  "items": [
+    {
+      "name": "Google Maps",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2005",
+        "category": "Navigation"
+      }
+    },
+    {
+      "name": "Spotify",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2008",
+        "category": "Music"
+      }
+    },
+    {
+      "name": "YouTube",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2005",
+        "category": "Video"
+      }
+    },
+    {
+      "name": "Gmail",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2004",
+        "category": "Email"
+      }
+    },
+    {
+      "name": "Instagram",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2010",
+        "category": "Social"
+      }
+    },
+    {
+      "name": "WhatsApp",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2009",
+        "category": "Messaging"
+      }
+    },
+    {
+      "name": "Slack",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2013",
+        "category": "Work chat"
+      }
+    },
+    {
+      "name": "Notion",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2016",
+        "category": "Notes"
+      }
+    },
+    {
+      "name": "Venmo",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2009",
+        "category": "Payments"
+      }
+    },
+    {
+      "name": "Uber",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2010",
+        "category": "Rides"
+      }
+    },
+    {
+      "name": "Strava",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2009",
+        "category": "Fitness"
+      }
+    },
+    {
+      "name": "Duolingo",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2012",
+        "category": "Learning"
+      }
+    }
+  ]
+}

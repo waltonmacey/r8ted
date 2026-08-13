@@ -1,0 +1,105 @@
+{
+  "id": "sunglasses-brands",
+  "name": "Sunglasses Brands",
+  "subcategories": [
+    "style-brands"
+  ],
+  "items": [
+    {
+      "name": "Ray-Ban",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1936",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Oakley",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1975",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Persol",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1917",
+        "country": "Italy"
+      }
+    },
+    {
+      "name": "Costa Del Mar",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1983",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Maui Jim",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1980",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Warby Parker",
+      "imageUrl": "",
+      "meta": {
+        "founded": "2010",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Goodr",
+      "imageUrl": "",
+      "meta": {
+        "founded": "2015",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Knockaround",
+      "imageUrl": "",
+      "meta": {
+        "founded": "2005",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Smith Optics",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1965",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Native Eyewear",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1997",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Electric",
+      "imageUrl": "",
+      "meta": {
+        "founded": "2000",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Vuarnet",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1957",
+        "country": "France"
+      }
+    }
+  ]
+}

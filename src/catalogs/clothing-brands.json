@@ -1,0 +1,105 @@
+{
+  "id": "clothing-brands",
+  "name": "Clothing Brands",
+  "subcategories": [
+    "style-brands"
+  ],
+  "items": [
+    {
+      "name": "Levi's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1853",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Patagonia",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1973",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Nike",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1964",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Ralph Lauren",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1967",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Carhartt",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1889",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Uniqlo",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1984",
+        "country": "Japan"
+      }
+    },
+    {
+      "name": "The North Face",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1966",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "L.L. Bean",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1912",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "J.Crew",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1983",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Filson",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1897",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Adidas",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1949",
+        "country": "Germany"
+      }
+    },
+    {
+      "name": "Lululemon",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1998",
+        "country": "Canada"
+      }
+    }
+  ]
+}

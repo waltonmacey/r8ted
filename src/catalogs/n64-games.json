@@ -7,23 +7,99 @@
   "items": [
     {
       "name": "Mario Kart 64",
-      "imageUrl": "https://assets-prd.ignimgs.com/2024/04/10/mario-kart-64-object-1712717134928.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80"
+      "imageUrl": "https://assets-prd.ignimgs.com/2024/04/10/mario-kart-64-object-1712717134928.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80",
+      "meta": {
+        "year": "1996",
+        "developer": "Nintendo EAD"
+      }
     },
     {
       "name": "GoldenEye 007",
-      "imageUrl": "https://assets-prd.ignimgs.com/2021/12/06/goldeneye-rare-1638823499676.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80"
+      "imageUrl": "https://assets-prd.ignimgs.com/2021/12/06/goldeneye-rare-1638823499676.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80",
+      "meta": {
+        "year": "1997",
+        "developer": "Rare"
+      }
     },
     {
       "name": "Mario Golf",
-      "imageUrl": "https://assets1.ignimgs.com/2019/05/31/mario-golf-64---button-1559263987465.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80"
+      "imageUrl": "https://assets1.ignimgs.com/2019/05/31/mario-golf-64---button-1559263987465.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80",
+      "meta": {
+        "year": "1999",
+        "developer": "Camelot"
+      }
     },
     {
-      "name": "Super Smash Bros",
-      "imageUrl": "https://assets-prd.ignimgs.com/2022/02/28/ssb-ignedit-dontsteal-1646008911034.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80"
+      "name": "Super Smash Bros.",
+      "imageUrl": "https://assets-prd.ignimgs.com/2022/02/28/ssb-ignedit-dontsteal-1646008911034.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80",
+      "meta": {
+        "year": "1999",
+        "developer": "HAL Laboratory"
+      }
     },
     {
       "name": "Banjo-Kazooie",
-      "imageUrl": "https://assets-prd.ignimgs.com/2021/12/07/bk1-1638903458812.jpeg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80"
+      "imageUrl": "https://assets-prd.ignimgs.com/2021/12/07/bk1-1638903458812.jpeg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80",
+      "meta": {
+        "year": "1998",
+        "developer": "Rare"
+      }
+    },
+    {
+      "name": "Super Mario 64",
+      "imageUrl": "",
+      "meta": {
+        "year": "1996",
+        "developer": "Nintendo EAD"
+      }
+    },
+    {
+      "name": "The Legend of Zelda: Ocarina of Time",
+      "imageUrl": "",
+      "meta": {
+        "year": "1998",
+        "developer": "Nintendo EAD"
+      }
+    },
+    {
+      "name": "Perfect Dark",
+      "imageUrl": "",
+      "meta": {
+        "year": "2000",
+        "developer": "Rare"
+      }
+    },
+    {
+      "name": "Star Fox 64",
+      "imageUrl": "",
+      "meta": {
+        "year": "1997",
+        "developer": "Nintendo EAD"
+      }
+    },
+    {
+      "name": "Donkey Kong 64",
+      "imageUrl": "",
+      "meta": {
+        "year": "1999",
+        "developer": "Rare"
+      }
+    },
+    {
+      "name": "Paper Mario",
+      "imageUrl": "",
+      "meta": {
+        "year": "2000",
+        "developer": "Intelligent Systems"
+      }
+    },
+    {
+      "name": "Diddy Kong Racing",
+      "imageUrl": "",
+      "meta": {
+        "year": "1997",
+        "developer": "Rare"
+      }
     }
   ]
 }

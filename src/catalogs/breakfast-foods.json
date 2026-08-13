@@ -1,0 +1,105 @@
+{
+  "id": "breakfast-foods",
+  "name": "Breakfast Foods",
+  "subcategories": [
+    "food-drink"
+  ],
+  "items": [
+    {
+      "name": "Biscuits and Gravy",
+      "imageUrl": "",
+      "meta": {
+        "type": "Savory",
+        "effort": "Medium"
+      }
+    },
+    {
+      "name": "Pancakes",
+      "imageUrl": "",
+      "meta": {
+        "type": "Sweet",
+        "effort": "Medium"
+      }
+    },
+    {
+      "name": "Bacon",
+      "imageUrl": "",
+      "meta": {
+        "type": "Savory",
+        "effort": "Low"
+      }
+    },
+    {
+      "name": "Waffles",
+      "imageUrl": "",
+      "meta": {
+        "type": "Sweet",
+        "effort": "Medium"
+      }
+    },
+    {
+      "name": "Breakfast Burrito",
+      "imageUrl": "",
+      "meta": {
+        "type": "Savory",
+        "effort": "Medium"
+      }
+    },
+    {
+      "name": "French Toast",
+      "imageUrl": "",
+      "meta": {
+        "type": "Sweet",
+        "effort": "Medium"
+      }
+    },
+    {
+      "name": "Eggs Benedict",
+      "imageUrl": "",
+      "meta": {
+        "type": "Savory",
+        "effort": "High"
+      }
+    },
+    {
+      "name": "Omelette",
+      "imageUrl": "",
+      "meta": {
+        "type": "Savory",
+        "effort": "Medium"
+      }
+    },
+    {
+      "name": "Cinnamon Roll",
+      "imageUrl": "",
+      "meta": {
+        "type": "Sweet",
+        "effort": "High"
+      }
+    },
+    {
+      "name": "Bagel and Cream Cheese",
+      "imageUrl": "",
+      "meta": {
+        "type": "Savory",
+        "effort": "Low"
+      }
+    },
+    {
+      "name": "Chicken and Waffles",
+      "imageUrl": "",
+      "meta": {
+        "type": "Both",
+        "effort": "High"
+      }
+    },
+    {
+      "name": "Cereal",
+      "imageUrl": "",
+      "meta": {
+        "type": "Sweet",
+        "effort": "None"
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "pizza-styles",
+  "name": "Pizza Styles",
+  "subcategories": [
+    "food-drink"
+  ],
+  "items": [
+    {
+      "name": "New York Slice",
+      "imageUrl": "",
+      "meta": {
+        "origin": "New York City",
+        "signature": "Foldable, wide"
+      }
+    },
+    {
+      "name": "Chicago Deep Dish",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Chicago",
+        "signature": "Sauce on top"
+      }
+    },
+    {
+      "name": "Detroit Style",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Detroit",
+        "signature": "Crispy cheese edge"
+      }
+    },
+    {
+      "name": "Neapolitan",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Naples, Italy",
+        "signature": "Charred, soft center"
+      }
+    },
+    {
+      "name": "Sicilian",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Sicily / NYC",
+        "signature": "Thick square"
+      }
+    },
+    {
+      "name": "St. Louis Style",
+      "imageUrl": "",
+      "meta": {
+        "origin": "St. Louis",
+        "signature": "Provel, cracker crust"
+      }
+    },
+    {
+      "name": "New Haven Apizza",
+      "imageUrl": "",
+      "meta": {
+        "origin": "New Haven, CT",
+        "signature": "Coal-fired, charred"
+      }
+    },
+    {
+      "name": "California Style",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Berkeley, CA",
+        "signature": "Nontraditional toppings"
+      }
+    },
+    {
+      "name": "Grandma Pie",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Long Island, NY",
+        "signature": "Thin square, pan"
+      }
+    },
+    {
+      "name": "Tavern Style",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Chicago",
+        "signature": "Cracker thin, party cut"
+      }
+    },
+    {
+      "name": "Roman Al Taglio",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Rome",
+        "signature": "Rectangular, by weight"
+      }
+    },
+    {
+      "name": "Greek Style",
+      "imageUrl": "",
+      "meta": {
+        "origin": "New England",
+        "signature": "Oiled pan, chewy"
+      }
+    }
+  ]
+}

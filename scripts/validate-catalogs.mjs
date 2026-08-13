@@ -1,6 +1,8 @@
 // Validates every catalog JSON in src/catalogs/ against the catalog format.
 // Usage: node scripts/validate-catalogs.mjs [--urls]
 // --urls also checks that every imageUrl actually resolves.
+// Items may carry an optional `meta` object, a flat map of label to string,
+// which suggestKeyStat joins into the key stat line on ranks 1 to 8.
 // Exit code 1 on any error so this can gate a deploy script.
 
 import fs from 'node:fs';
@@ -21,6 +23,7 @@ let errors = 0, warnings = 0, missingImages = 0;
 const seenIds = new Set();
 const subsCovered = new Set();
 const allItems = [];
+const metaKeyTally = new Map();
 
 const err = (f, msg) => { console.error(`ERROR ${f}: ${msg}`); errors++; };
 const warn = (f, msg) => { console.warn(`warn  ${f}: ${msg}`); warnings++; };
@@ -56,6 +59,8 @@ for (const f of files) {
   if (cat.items.length < 10) warn(f, `only ${cat.items.length} items (guide says 10 to 20)`);
   if (cat.items.length > 25) err(f, `${cat.items.length} items exceeds hard ceiling of 25`);
   const names = new Set();
+  let withMeta = 0;
+  const metaKeys = new Set();
   for (const it of cat.items) {
     if (!it.name) { err(f, 'item missing name'); continue; }
     if (names.has(it.name)) err(f, `duplicate item name "${it.name}"`);
@@ -64,7 +69,34 @@ for (const f of files) {
     else if (it.imageUrl === '') missingImages++;
     else if (!/^https:\/\//.test(it.imageUrl)) err(f, `item "${it.name}" imageUrl is not https`);
     else if (checkUrls) allItems.push({ f, name: it.name, url: it.imageUrl });
+
+    // meta is optional, but when present it has to be a flat object of
+    // non-empty strings, because suggestKeyStat joins its values straight into
+    // the card. A nested object or a number would render as [object Object].
+    if (it.meta !== undefined) {
+      if (it.meta === null || typeof it.meta !== 'object' || Array.isArray(it.meta)) {
+        err(f, `item "${it.name}" meta is not an object`);
+      } else {
+        const keys = Object.keys(it.meta);
+        if (keys.length === 0) err(f, `item "${it.name}" has an empty meta object, omit the key instead`);
+        for (const k of keys) {
+          metaKeys.add(k);
+          const v = it.meta[k];
+          if (typeof v !== 'string') err(f, `item "${it.name}" meta.${k} is ${typeof v}, expected string`);
+          else if (v.trim() === '') err(f, `item "${it.name}" meta.${k} is blank`);
+        }
+        if (keys.length > 0) withMeta++;
+      }
+    }
   }
+
+  // A catalog where only some items carry meta produces a list where some
+  // cards show a key stat and some do not, which reads as a bug rather than as
+  // missing data. Warn rather than error so a part filled catalog still ships.
+  if (withMeta > 0 && withMeta < cat.items.length) {
+    warn(f, `${withMeta} of ${cat.items.length} items carry meta, so key stats will be uneven`);
+  }
+  if (metaKeys.size > 0) metaKeyTally.set(f, [...metaKeys].join(', '));
 }
 
 if (checkUrls) {
@@ -79,6 +111,7 @@ if (checkUrls) {
 }
 
 console.log(`\n${files.length} catalog file(s), ${errors} error(s), ${warnings} warning(s), ${missingImages} item(s) missing images`);
+console.log(`${metaKeyTally.size} catalog(s) carry meta`);
 const uncovered = VALID_SUBS.filter(s => !subsCovered.has(s));
 if (uncovered.length) console.log(`subcategories with zero catalogs: ${uncovered.join(', ')}`);
 process.exit(errors ? 1 : 0);

@@ -73,13 +73,11 @@ export default function ListDetail() {
     setList(next)
   }
 
-  // Drag reorder: drop on a slot to take that rank. The moved item's rating
-  // regenerates to fit between its destination neighbors, so the composite
-  // sort invariant produces the new order; nothing else changes.
+  // Drag reorder: drop on a slot to take that rank. The placeholder chain is
+  // repainted from the new order, so the composite sort invariant produces it.
   async function dropOn(targetIdx) {
     if (dragIdx === null || dragIdx === targetIdx) return
-    const updated = moveAndRefit(ranked, dragIdx, targetIdx)
-    const entries = list.entries.map((e) => (e.id === updated.id ? updated : e))
+    const entries = moveAndRefit(list.entries, ranked, dragIdx, targetIdx)
     const next = { ...list, entries }
     await getStorage().saveList(next)
     setList(next)

@@ -1,0 +1,105 @@
+{
+  "id": "memphis-neighborhoods",
+  "name": "Memphis Neighborhoods",
+  "subcategories": [
+    "cities-travel"
+  ],
+  "items": [
+    {
+      "name": "Downtown",
+      "imageUrl": "",
+      "meta": {
+        "side of town": "Core",
+        "known for": "River, Beale, Redbirds"
+      }
+    },
+    {
+      "name": "Cooper-Young",
+      "imageUrl": "",
+      "meta": {
+        "side of town": "Midtown",
+        "known for": "Restaurants, festival"
+      }
+    },
+    {
+      "name": "Overton Square",
+      "imageUrl": "",
+      "meta": {
+        "side of town": "Midtown",
+        "known for": "Theaters, patios"
+      }
+    },
+    {
+      "name": "Central Gardens",
+      "imageUrl": "",
+      "meta": {
+        "side of town": "Midtown",
+        "known for": "Historic homes"
+      }
+    },
+    {
+      "name": "Harbor Town",
+      "imageUrl": "",
+      "meta": {
+        "side of town": "Mud Island",
+        "known for": "Walkable, riverfront"
+      }
+    },
+    {
+      "name": "East Memphis",
+      "imageUrl": "",
+      "meta": {
+        "side of town": "East",
+        "known for": "Shopping, Poplar corridor"
+      }
+    },
+    {
+      "name": "Germantown",
+      "imageUrl": "",
+      "meta": {
+        "side of town": "Suburb",
+        "known for": "Schools, parks"
+      }
+    },
+    {
+      "name": "Collierville",
+      "imageUrl": "",
+      "meta": {
+        "side of town": "Suburb",
+        "known for": "Historic town square"
+      }
+    },
+    {
+      "name": "Binghampton",
+      "imageUrl": "",
+      "meta": {
+        "side of town": "Midtown-East",
+        "known for": "Greenline, arts"
+      }
+    },
+    {
+      "name": "Chickasaw Gardens",
+      "imageUrl": "",
+      "meta": {
+        "side of town": "East",
+        "known for": "Lake, estate homes"
+      }
+    },
+    {
+      "name": "South Main",
+      "imageUrl": "",
+      "meta": {
+        "side of town": "Downtown",
+        "known for": "Arts district, trolley"
+      }
+    },
+    {
+      "name": "Bartlett",
+      "imageUrl": "",
+      "meta": {
+        "side of town": "Suburb",
+        "known for": "Quiet, residential"
+      }
+    }
+  ]
+}

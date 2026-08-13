@@ -1,0 +1,105 @@
+{
+  "id": "outdoor-activities",
+  "name": "Outdoor Activities",
+  "subcategories": [
+    "hobbies-activities"
+  ],
+  "items": [
+    {
+      "name": "Hiking",
+      "imageUrl": "",
+      "meta": {
+        "gear load": "Light",
+        "season": "Year round"
+      }
+    },
+    {
+      "name": "Backpacking",
+      "imageUrl": "",
+      "meta": {
+        "gear load": "Heavy",
+        "season": "Spring to fall"
+      }
+    },
+    {
+      "name": "Camping",
+      "imageUrl": "",
+      "meta": {
+        "gear load": "Medium",
+        "season": "Spring to fall"
+      }
+    },
+    {
+      "name": "Fishing",
+      "imageUrl": "",
+      "meta": {
+        "gear load": "Medium",
+        "season": "Year round"
+      }
+    },
+    {
+      "name": "Kayaking",
+      "imageUrl": "",
+      "meta": {
+        "gear load": "Heavy",
+        "season": "Warm months"
+      }
+    },
+    {
+      "name": "Mountain Biking",
+      "imageUrl": "",
+      "meta": {
+        "gear load": "Medium",
+        "season": "Year round"
+      }
+    },
+    {
+      "name": "Rock Climbing",
+      "imageUrl": "",
+      "meta": {
+        "gear load": "Heavy",
+        "season": "Year round"
+      }
+    },
+    {
+      "name": "Trail Running",
+      "imageUrl": "",
+      "meta": {
+        "gear load": "Light",
+        "season": "Year round"
+      }
+    },
+    {
+      "name": "Hunting",
+      "imageUrl": "",
+      "meta": {
+        "gear load": "Heavy",
+        "season": "Fall / winter"
+      }
+    },
+    {
+      "name": "Skiing",
+      "imageUrl": "",
+      "meta": {
+        "gear load": "Heavy",
+        "season": "Winter"
+      }
+    },
+    {
+      "name": "Canoeing",
+      "imageUrl": "",
+      "meta": {
+        "gear load": "Heavy",
+        "season": "Warm months"
+      }
+    },
+    {
+      "name": "Birding",
+      "imageUrl": "",
+      "meta": {
+        "gear load": "Light",
+        "season": "Year round"
+      }
+    }
+  ]
+}

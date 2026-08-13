@@ -1,0 +1,105 @@
+{
+  "id": "olympic-basketball-teams",
+  "name": "Olympic Basketball Teams",
+  "subcategories": [
+    "teams-dynasties"
+  ],
+  "items": [
+    {
+      "name": "1992 USA Dream Team",
+      "imageUrl": "",
+      "meta": {
+        "games": "Barcelona",
+        "result": "Gold, +43.8 margin"
+      }
+    },
+    {
+      "name": "2008 USA Redeem Team",
+      "imageUrl": "",
+      "meta": {
+        "games": "Beijing",
+        "result": "Gold"
+      }
+    },
+    {
+      "name": "2012 USA",
+      "imageUrl": "",
+      "meta": {
+        "games": "London",
+        "result": "Gold"
+      }
+    },
+    {
+      "name": "1996 USA Dream Team III",
+      "imageUrl": "",
+      "meta": {
+        "games": "Atlanta",
+        "result": "Gold"
+      }
+    },
+    {
+      "name": "2024 USA",
+      "imageUrl": "",
+      "meta": {
+        "games": "Paris",
+        "result": "Gold"
+      }
+    },
+    {
+      "name": "1960 USA",
+      "imageUrl": "",
+      "meta": {
+        "games": "Rome",
+        "result": "Gold, Robertson / West"
+      }
+    },
+    {
+      "name": "2004 USA",
+      "imageUrl": "",
+      "meta": {
+        "games": "Athens",
+        "result": "Bronze"
+      }
+    },
+    {
+      "name": "1972 Soviet Union",
+      "imageUrl": "",
+      "meta": {
+        "games": "Munich",
+        "result": "Gold, disputed finish"
+      }
+    },
+    {
+      "name": "1988 Soviet Union",
+      "imageUrl": "",
+      "meta": {
+        "games": "Seoul",
+        "result": "Gold"
+      }
+    },
+    {
+      "name": "2016 USA",
+      "imageUrl": "",
+      "meta": {
+        "games": "Rio",
+        "result": "Gold"
+      }
+    },
+    {
+      "name": "2000 USA",
+      "imageUrl": "",
+      "meta": {
+        "games": "Sydney",
+        "result": "Gold"
+      }
+    },
+    {
+      "name": "2004 Argentina",
+      "imageUrl": "",
+      "meta": {
+        "games": "Athens",
+        "result": "Gold, Ginobili"
+      }
+    }
+  ]
+}

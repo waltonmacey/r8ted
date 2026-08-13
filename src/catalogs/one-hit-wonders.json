@@ -1,0 +1,105 @@
+{
+  "id": "one-hit-wonders",
+  "name": "One-Hit Wonders",
+  "subcategories": [
+    "music-audio"
+  ],
+  "items": [
+    {
+      "name": "Take On Me",
+      "imageUrl": "",
+      "meta": {
+        "artist": "a-ha",
+        "year": "1985"
+      }
+    },
+    {
+      "name": "Tainted Love",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Soft Cell",
+        "year": "1981"
+      }
+    },
+    {
+      "name": "Come On Eileen",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Dexys Midnight Runners",
+        "year": "1982"
+      }
+    },
+    {
+      "name": "Ice Ice Baby",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Vanilla Ice",
+        "year": "1990"
+      }
+    },
+    {
+      "name": "Macarena",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Los del Rio",
+        "year": "1995"
+      }
+    },
+    {
+      "name": "Mambo No. 5",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Lou Bega",
+        "year": "1999"
+      }
+    },
+    {
+      "name": "Who Let the Dogs Out",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Baha Men",
+        "year": "2000"
+      }
+    },
+    {
+      "name": "Bitter Sweet Symphony",
+      "imageUrl": "",
+      "meta": {
+        "artist": "The Verve",
+        "year": "1997"
+      }
+    },
+    {
+      "name": "Somebody That I Used to Know",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Gotye",
+        "year": "2011"
+      }
+    },
+    {
+      "name": "Closing Time",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Semisonic",
+        "year": "1998"
+      }
+    },
+    {
+      "name": "Blue (Da Ba Dee)",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Eiffel 65",
+        "year": "1998"
+      }
+    },
+    {
+      "name": "Kiss Me",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Sixpence None the Richer",
+        "year": "1997"
+      }
+    }
+  ]
+}

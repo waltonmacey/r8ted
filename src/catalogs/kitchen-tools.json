@@ -1,0 +1,105 @@
+{
+  "id": "kitchen-tools",
+  "name": "Kitchen Tools",
+  "subcategories": [
+    "gear-tech"
+  ],
+  "items": [
+    {
+      "name": "Cast Iron Skillet",
+      "imageUrl": "",
+      "meta": {
+        "type": "Cookware",
+        "note": "Lasts generations"
+      }
+    },
+    {
+      "name": "Chef's Knife",
+      "imageUrl": "",
+      "meta": {
+        "type": "Cutlery",
+        "note": "The one tool to buy well"
+      }
+    },
+    {
+      "name": "Instant Pot",
+      "imageUrl": "",
+      "meta": {
+        "type": "Appliance",
+        "note": "Pressure cooker"
+      }
+    },
+    {
+      "name": "Dutch Oven",
+      "imageUrl": "",
+      "meta": {
+        "type": "Cookware",
+        "note": "Braises and bread"
+      }
+    },
+    {
+      "name": "Stand Mixer",
+      "imageUrl": "",
+      "meta": {
+        "type": "Appliance",
+        "note": "KitchenAid standard"
+      }
+    },
+    {
+      "name": "Immersion Blender",
+      "imageUrl": "",
+      "meta": {
+        "type": "Appliance",
+        "note": "Blends in the pot"
+      }
+    },
+    {
+      "name": "Digital Thermometer",
+      "imageUrl": "",
+      "meta": {
+        "type": "Measurement",
+        "note": "Thermapen class"
+      }
+    },
+    {
+      "name": "Sheet Pan",
+      "imageUrl": "",
+      "meta": {
+        "type": "Bakeware",
+        "note": "Half sheet workhorse"
+      }
+    },
+    {
+      "name": "Microplane",
+      "imageUrl": "",
+      "meta": {
+        "type": "Prep",
+        "note": "Zest and hard cheese"
+      }
+    },
+    {
+      "name": "Food Processor",
+      "imageUrl": "",
+      "meta": {
+        "type": "Appliance",
+        "note": "Doughs and purees"
+      }
+    },
+    {
+      "name": "Kitchen Scale",
+      "imageUrl": "",
+      "meta": {
+        "type": "Measurement",
+        "note": "Baking by weight"
+      }
+    },
+    {
+      "name": "Wooden Spoon",
+      "imageUrl": "",
+      "meta": {
+        "type": "Prep",
+        "note": "Never scratches"
+      }
+    }
+  ]
+}

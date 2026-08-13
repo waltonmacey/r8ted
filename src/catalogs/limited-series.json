@@ -1,0 +1,105 @@
+{
+  "id": "limited-series",
+  "name": "Limited Series",
+  "subcategories": [
+    "tv-anime"
+  ],
+  "items": [
+    {
+      "name": "Chernobyl",
+      "imageUrl": "",
+      "meta": {
+        "year": "2019",
+        "network": "HBO"
+      }
+    },
+    {
+      "name": "Band of Brothers",
+      "imageUrl": "",
+      "meta": {
+        "year": "2001",
+        "network": "HBO"
+      }
+    },
+    {
+      "name": "True Detective: Season 1",
+      "imageUrl": "",
+      "meta": {
+        "year": "2014",
+        "network": "HBO"
+      }
+    },
+    {
+      "name": "The Night Of",
+      "imageUrl": "",
+      "meta": {
+        "year": "2016",
+        "network": "HBO"
+      }
+    },
+    {
+      "name": "Task",
+      "imageUrl": "",
+      "meta": {
+        "year": "2025",
+        "network": "HBO"
+      }
+    },
+    {
+      "name": "Mare of Easttown",
+      "imageUrl": "",
+      "meta": {
+        "year": "2021",
+        "network": "HBO"
+      }
+    },
+    {
+      "name": "The Queen's Gambit",
+      "imageUrl": "",
+      "meta": {
+        "year": "2020",
+        "network": "Netflix"
+      }
+    },
+    {
+      "name": "Sharp Objects",
+      "imageUrl": "",
+      "meta": {
+        "year": "2018",
+        "network": "HBO"
+      }
+    },
+    {
+      "name": "Fargo: Season 1",
+      "imageUrl": "",
+      "meta": {
+        "year": "2014",
+        "network": "FX"
+      }
+    },
+    {
+      "name": "The Jinx",
+      "imageUrl": "",
+      "meta": {
+        "year": "2015",
+        "network": "HBO"
+      }
+    },
+    {
+      "name": "When They See Us",
+      "imageUrl": "",
+      "meta": {
+        "year": "2019",
+        "network": "Netflix"
+      }
+    },
+    {
+      "name": "Godless",
+      "imageUrl": "",
+      "meta": {
+        "year": "2017",
+        "network": "Netflix"
+      }
+    }
+  ]
+}

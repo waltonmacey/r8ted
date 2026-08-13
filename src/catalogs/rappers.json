@@ -1,0 +1,105 @@
+{
+  "id": "rappers",
+  "name": "Rappers",
+  "subcategories": [
+    "music-audio"
+  ],
+  "items": [
+    {
+      "name": "Jay-Z",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Brooklyn, NY",
+        "era": "1996-"
+      }
+    },
+    {
+      "name": "Nas",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Queens, NY",
+        "era": "1994-"
+      }
+    },
+    {
+      "name": "The Notorious B.I.G.",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Brooklyn, NY",
+        "era": "1994-1997"
+      }
+    },
+    {
+      "name": "2Pac",
+      "imageUrl": "",
+      "meta": {
+        "origin": "East Harlem / Oakland",
+        "era": "1991-1996"
+      }
+    },
+    {
+      "name": "Eminem",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Detroit, MI",
+        "era": "1996-"
+      }
+    },
+    {
+      "name": "Kendrick Lamar",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Compton, CA",
+        "era": "2011-"
+      }
+    },
+    {
+      "name": "Andre 3000",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Atlanta, GA",
+        "era": "1994-"
+      }
+    },
+    {
+      "name": "Lil Wayne",
+      "imageUrl": "",
+      "meta": {
+        "origin": "New Orleans, LA",
+        "era": "1999-"
+      }
+    },
+    {
+      "name": "Kanye West",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Chicago, IL",
+        "era": "2004-"
+      }
+    },
+    {
+      "name": "Rakim",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Long Island, NY",
+        "era": "1986-"
+      }
+    },
+    {
+      "name": "Drake",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Toronto, ON",
+        "era": "2009-"
+      }
+    },
+    {
+      "name": "Scarface",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Houston, TX",
+        "era": "1991-"
+      }
+    }
+  ]
+}

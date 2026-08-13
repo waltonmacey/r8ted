@@ -1,0 +1,105 @@
+{
+  "id": "tennessee-state-parks",
+  "name": "Tennessee State Parks",
+  "subcategories": [
+    "outdoors-parks"
+  ],
+  "items": [
+    {
+      "name": "Fall Creek Falls",
+      "imageUrl": "",
+      "meta": {
+        "region": "Cumberland Plateau",
+        "known for": "256-foot waterfall"
+      }
+    },
+    {
+      "name": "Radnor Lake",
+      "imageUrl": "",
+      "meta": {
+        "region": "Middle TN",
+        "known for": "Wildlife, no-wake lake"
+      }
+    },
+    {
+      "name": "Cummins Falls",
+      "imageUrl": "",
+      "meta": {
+        "region": "Middle TN",
+        "known for": "Gorge swimming hole"
+      }
+    },
+    {
+      "name": "Rock Island",
+      "imageUrl": "",
+      "meta": {
+        "region": "Middle TN",
+        "known for": "Twin Falls, kayaking"
+      }
+    },
+    {
+      "name": "Burgess Falls",
+      "imageUrl": "",
+      "meta": {
+        "region": "Middle TN",
+        "known for": "Four-waterfall trail"
+      }
+    },
+    {
+      "name": "Roan Mountain",
+      "imageUrl": "",
+      "meta": {
+        "region": "East TN",
+        "known for": "Rhododendron balds"
+      }
+    },
+    {
+      "name": "Cedars of Lebanon",
+      "imageUrl": "",
+      "meta": {
+        "region": "Middle TN",
+        "known for": "Cedar glades"
+      }
+    },
+    {
+      "name": "Reelfoot Lake",
+      "imageUrl": "",
+      "meta": {
+        "region": "West TN",
+        "known for": "Earthquake lake, eagles"
+      }
+    },
+    {
+      "name": "Pickwick Landing",
+      "imageUrl": "",
+      "meta": {
+        "region": "West TN",
+        "known for": "Tennessee River"
+      }
+    },
+    {
+      "name": "Meeman-Shelby Forest",
+      "imageUrl": "",
+      "meta": {
+        "region": "West TN",
+        "known for": "Bottomland near Memphis"
+      }
+    },
+    {
+      "name": "Savage Gulf",
+      "imageUrl": "",
+      "meta": {
+        "region": "Cumberland Plateau",
+        "known for": "Backcountry gorges"
+      }
+    },
+    {
+      "name": "Big Ridge",
+      "imageUrl": "",
+      "meta": {
+        "region": "East TN",
+        "known for": "Norris Lake, cabins"
+      }
+    }
+  ]
+}

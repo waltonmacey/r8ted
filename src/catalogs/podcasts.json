@@ -1,0 +1,105 @@
+{
+  "id": "podcasts",
+  "name": "Podcasts",
+  "subcategories": [
+    "music-audio"
+  ],
+  "items": [
+    {
+      "name": "The Joe Rogan Experience",
+      "imageUrl": "",
+      "meta": {
+        "host": "Joe Rogan",
+        "started": "2009"
+      }
+    },
+    {
+      "name": "Serial",
+      "imageUrl": "",
+      "meta": {
+        "host": "Sarah Koenig",
+        "started": "2014"
+      }
+    },
+    {
+      "name": "This American Life",
+      "imageUrl": "",
+      "meta": {
+        "host": "Ira Glass",
+        "started": "1995"
+      }
+    },
+    {
+      "name": "Radiolab",
+      "imageUrl": "",
+      "meta": {
+        "host": "Latif Nasser / Lulu Miller",
+        "started": "2002"
+      }
+    },
+    {
+      "name": "Hardcore History",
+      "imageUrl": "",
+      "meta": {
+        "host": "Dan Carlin",
+        "started": "2006"
+      }
+    },
+    {
+      "name": "The Bill Simmons Podcast",
+      "imageUrl": "",
+      "meta": {
+        "host": "Bill Simmons",
+        "started": "2007"
+      }
+    },
+    {
+      "name": "Planet Money",
+      "imageUrl": "",
+      "meta": {
+        "host": "NPR",
+        "started": "2008"
+      }
+    },
+    {
+      "name": "SmartLess",
+      "imageUrl": "",
+      "meta": {
+        "host": "Bateman / Arnett / Hayes",
+        "started": "2020"
+      }
+    },
+    {
+      "name": "Pardon My Take",
+      "imageUrl": "",
+      "meta": {
+        "host": "Big Cat / PFT Commenter",
+        "started": "2016"
+      }
+    },
+    {
+      "name": "Lex Fridman Podcast",
+      "imageUrl": "",
+      "meta": {
+        "host": "Lex Fridman",
+        "started": "2018"
+      }
+    },
+    {
+      "name": "My Favorite Murder",
+      "imageUrl": "",
+      "meta": {
+        "host": "Kilgariff / Hardstark",
+        "started": "2016"
+      }
+    },
+    {
+      "name": "Acquired",
+      "imageUrl": "",
+      "meta": {
+        "host": "Gilbert / Rosenthal",
+        "started": "2015"
+      }
+    }
+  ]
+}

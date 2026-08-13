@@ -1,0 +1,105 @@
+{
+  "id": "party-games",
+  "name": "Party Games",
+  "subcategories": [
+    "hobbies-activities"
+  ],
+  "items": [
+    {
+      "name": "Charades",
+      "imageUrl": "",
+      "meta": {
+        "players": "6+",
+        "format": "Acting"
+      }
+    },
+    {
+      "name": "Beer Pong",
+      "imageUrl": "",
+      "meta": {
+        "players": "4",
+        "format": "Table"
+      }
+    },
+    {
+      "name": "Cornhole",
+      "imageUrl": "",
+      "meta": {
+        "players": "4",
+        "format": "Yard"
+      }
+    },
+    {
+      "name": "Codenames",
+      "imageUrl": "",
+      "meta": {
+        "players": "4-8",
+        "format": "Word association"
+      }
+    },
+    {
+      "name": "Jackbox Party Pack",
+      "imageUrl": "",
+      "meta": {
+        "players": "3-8",
+        "format": "Phones + screen"
+      }
+    },
+    {
+      "name": "Werewolf / Mafia",
+      "imageUrl": "",
+      "meta": {
+        "players": "7+",
+        "format": "Social deduction"
+      }
+    },
+    {
+      "name": "Heads Up!",
+      "imageUrl": "",
+      "meta": {
+        "players": "4+",
+        "format": "Phone"
+      }
+    },
+    {
+      "name": "Never Have I Ever",
+      "imageUrl": "",
+      "meta": {
+        "players": "4+",
+        "format": "Conversation"
+      }
+    },
+    {
+      "name": "Karaoke",
+      "imageUrl": "",
+      "meta": {
+        "players": "Any",
+        "format": "Performance"
+      }
+    },
+    {
+      "name": "Two Truths and a Lie",
+      "imageUrl": "",
+      "meta": {
+        "players": "4+",
+        "format": "Icebreaker"
+      }
+    },
+    {
+      "name": "Catchphrase",
+      "imageUrl": "",
+      "meta": {
+        "players": "6+",
+        "format": "Word guessing"
+      }
+    },
+    {
+      "name": "Pictionary",
+      "imageUrl": "",
+      "meta": {
+        "players": "6+",
+        "format": "Drawing"
+      }
+    }
+  ]
+}

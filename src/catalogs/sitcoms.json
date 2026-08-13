@@ -7,63 +7,123 @@
   "items": [
     {
       "name": "Friends",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/2koX1xLkpTQM4IZebYvKysFW1Nh.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/2koX1xLkpTQM4IZebYvKysFW1Nh.jpg",
+      "meta": {
+        "years": "1994-2004",
+        "network": "NBC"
+      }
     },
     {
       "name": "Modern Family",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/k5Qg5rgPoKdh3yTJJrLtyoyYGwC.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/k5Qg5rgPoKdh3yTJJrLtyoyYGwC.jpg",
+      "meta": {
+        "years": "2009-2020",
+        "network": "ABC"
+      }
     },
     {
       "name": "The Office",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/7DJKHzAi83BmQrWLrYYOqcoKfhR.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/7DJKHzAi83BmQrWLrYYOqcoKfhR.jpg",
+      "meta": {
+        "years": "2005-2013",
+        "network": "NBC"
+      }
     },
     {
       "name": "Seinfeld",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/aCw8ONfyz3AhngVQa1E2Ss4KSUQ.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/aCw8ONfyz3AhngVQa1E2Ss4KSUQ.jpg",
+      "meta": {
+        "years": "1989-1998",
+        "network": "NBC"
+      }
     },
     {
       "name": "How I Met Your Mother",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/b34jPzmB0wZy7EjUZoleXOl2RRI.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/b34jPzmB0wZy7EjUZoleXOl2RRI.jpg",
+      "meta": {
+        "years": "2005-2014",
+        "network": "CBS"
+      }
     },
     {
-      "name": "Brooklyn Nine Nine",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/mpjlDzVjp7oyHUe2LaF9ltKe6f1.jpg"
+      "name": "Brooklyn Nine-Nine",
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/mpjlDzVjp7oyHUe2LaF9ltKe6f1.jpg",
+      "meta": {
+        "years": "2013-2021",
+        "network": "Fox / NBC"
+      }
     },
     {
       "name": "It's Always Sunny in Philadelphia",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/o0tMMK33JqmtpcWw0H41cEr9xQB.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/o0tMMK33JqmtpcWw0H41cEr9xQB.jpg",
+      "meta": {
+        "years": "2005-",
+        "network": "FX / FXX"
+      }
     },
     {
       "name": "New Girl",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/8oCqMlKKomCArVtyOjRzMN6g40Z.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/8oCqMlKKomCArVtyOjRzMN6g40Z.jpg",
+      "meta": {
+        "years": "2011-2018",
+        "network": "Fox"
+      }
     },
     {
-      "name": "Abbot Elementary",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/nBe1e3JJEZ6veGrVXNF0fRoLu56.jpg"
+      "name": "Abbott Elementary",
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/nBe1e3JJEZ6veGrVXNF0fRoLu56.jpg",
+      "meta": {
+        "years": "2021-",
+        "network": "ABC"
+      }
     },
     {
       "name": "Arrested Development",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/p4r4RD7RsNcJVoz0H6z3dBoTBtW.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/p4r4RD7RsNcJVoz0H6z3dBoTBtW.jpg",
+      "meta": {
+        "years": "2003-2019",
+        "network": "Fox / Netflix"
+      }
     },
     {
       "name": "Parks and Recreation",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/5IOj62y2Eb2ngyYmEn1IJ7bFhzH.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/5IOj62y2Eb2ngyYmEn1IJ7bFhzH.jpg",
+      "meta": {
+        "years": "2009-2015",
+        "network": "NBC"
+      }
     },
     {
       "name": "The Goldbergs",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/3aQipkhSCHUmaHjImqEqT80k6GP.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/3aQipkhSCHUmaHjImqEqT80k6GP.jpg",
+      "meta": {
+        "years": "2013-2023",
+        "network": "ABC"
+      }
     },
     {
       "name": "Community",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/3KUjDt8XY7w2Ku70UE0SECmv1zP.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/3KUjDt8XY7w2Ku70UE0SECmv1zP.jpg",
+      "meta": {
+        "years": "2009-2015",
+        "network": "NBC / Yahoo"
+      }
     },
     {
-      "name": "Malcom in the Middle",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/uftxEWbn3OSykTy4DX4BrdVeiuv.jpg"
+      "name": "Malcolm in the Middle",
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/uftxEWbn3OSykTy4DX4BrdVeiuv.jpg",
+      "meta": {
+        "years": "2000-2006",
+        "network": "Fox"
+      }
     },
     {
       "name": "30 Rock",
-      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/eYYQWACx7ttUzRwTNYuo6zveqpE.jpg"
+      "imageUrl": "https://media.themoviedb.org/t/p/w600_and_h900_face/eYYQWACx7ttUzRwTNYuo6zveqpE.jpg",
+      "meta": {
+        "years": "2006-2013",
+        "network": "NBC"
+      }
     }
   ]
 }

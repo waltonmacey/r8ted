@@ -1,0 +1,105 @@
+{
+  "id": "gaming-handhelds",
+  "name": "Gaming Handhelds",
+  "subcategories": [
+    "gear-tech"
+  ],
+  "items": [
+    {
+      "name": "Nintendo Switch",
+      "imageUrl": "",
+      "meta": {
+        "released": "2017",
+        "maker": "Nintendo"
+      }
+    },
+    {
+      "name": "Steam Deck",
+      "imageUrl": "",
+      "meta": {
+        "released": "2022",
+        "maker": "Valve"
+      }
+    },
+    {
+      "name": "Nintendo Switch 2",
+      "imageUrl": "",
+      "meta": {
+        "released": "2025",
+        "maker": "Nintendo"
+      }
+    },
+    {
+      "name": "Nintendo 3DS",
+      "imageUrl": "",
+      "meta": {
+        "released": "2011",
+        "maker": "Nintendo"
+      }
+    },
+    {
+      "name": "PlayStation Vita",
+      "imageUrl": "",
+      "meta": {
+        "released": "2011",
+        "maker": "Sony"
+      }
+    },
+    {
+      "name": "ASUS ROG Ally",
+      "imageUrl": "",
+      "meta": {
+        "released": "2023",
+        "maker": "ASUS"
+      }
+    },
+    {
+      "name": "Nintendo DS",
+      "imageUrl": "",
+      "meta": {
+        "released": "2004",
+        "maker": "Nintendo"
+      }
+    },
+    {
+      "name": "PlayStation Portable",
+      "imageUrl": "",
+      "meta": {
+        "released": "2004",
+        "maker": "Sony"
+      }
+    },
+    {
+      "name": "Analogue Pocket",
+      "imageUrl": "",
+      "meta": {
+        "released": "2021",
+        "maker": "Analogue"
+      }
+    },
+    {
+      "name": "Lenovo Legion Go",
+      "imageUrl": "",
+      "meta": {
+        "released": "2023",
+        "maker": "Lenovo"
+      }
+    },
+    {
+      "name": "Game Boy Advance SP",
+      "imageUrl": "",
+      "meta": {
+        "released": "2003",
+        "maker": "Nintendo"
+      }
+    },
+    {
+      "name": "Playdate",
+      "imageUrl": "",
+      "meta": {
+        "released": "2022",
+        "maker": "Panic"
+      }
+    }
+  ]
+}

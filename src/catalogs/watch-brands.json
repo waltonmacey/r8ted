@@ -1,0 +1,105 @@
+{
+  "id": "watch-brands",
+  "name": "Watch Brands",
+  "subcategories": [
+    "style-brands"
+  ],
+  "items": [
+    {
+      "name": "Rolex",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1905",
+        "country": "Switzerland"
+      }
+    },
+    {
+      "name": "Omega",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1848",
+        "country": "Switzerland"
+      }
+    },
+    {
+      "name": "Seiko",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1881",
+        "country": "Japan"
+      }
+    },
+    {
+      "name": "Patek Philippe",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1839",
+        "country": "Switzerland"
+      }
+    },
+    {
+      "name": "Audemars Piguet",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1875",
+        "country": "Switzerland"
+      }
+    },
+    {
+      "name": "Tudor",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1926",
+        "country": "Switzerland"
+      }
+    },
+    {
+      "name": "Grand Seiko",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1960",
+        "country": "Japan"
+      }
+    },
+    {
+      "name": "Cartier",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1847",
+        "country": "France"
+      }
+    },
+    {
+      "name": "Casio",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1946",
+        "country": "Japan"
+      }
+    },
+    {
+      "name": "Tag Heuer",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1860",
+        "country": "Switzerland"
+      }
+    },
+    {
+      "name": "IWC",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1868",
+        "country": "Switzerland"
+      }
+    },
+    {
+      "name": "Timex",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1854",
+        "country": "United States"
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "fast-food-chains",
+  "name": "Fast Food Chains",
+  "subcategories": [
+    "restaurants"
+  ],
+  "items": [
+    {
+      "name": "Chick-fil-A",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1946",
+        "home": "Atlanta, GA"
+      }
+    },
+    {
+      "name": "McDonald's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1940",
+        "home": "San Bernardino, CA"
+      }
+    },
+    {
+      "name": "Taco Bell",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1962",
+        "home": "Downey, CA"
+      }
+    },
+    {
+      "name": "Wendy's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1969",
+        "home": "Columbus, OH"
+      }
+    },
+    {
+      "name": "Chipotle",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1993",
+        "home": "Denver, CO"
+      }
+    },
+    {
+      "name": "Popeyes",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1972",
+        "home": "New Orleans, LA"
+      }
+    },
+    {
+      "name": "Raising Cane's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1996",
+        "home": "Baton Rouge, LA"
+      }
+    },
+    {
+      "name": "In-N-Out Burger",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1948",
+        "home": "Baldwin Park, CA"
+      }
+    },
+    {
+      "name": "Zaxby's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1990",
+        "home": "Statesboro, GA"
+      }
+    },
+    {
+      "name": "Culver's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1984",
+        "home": "Sauk City, WI"
+      }
+    },
+    {
+      "name": "Arby's",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1964",
+        "home": "Boardman, OH"
+      }
+    },
+    {
+      "name": "Whataburger",
+      "imageUrl": "",
+      "meta": {
+        "founded": "1950",
+        "home": "Corpus Christi, TX"
+      }
+    }
+  ]
+}

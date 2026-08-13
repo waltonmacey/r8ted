@@ -1,0 +1,105 @@
+{
+  "id": "board-games",
+  "name": "Board Games",
+  "subcategories": [
+    "hobbies-activities"
+  ],
+  "items": [
+    {
+      "name": "Settlers of Catan",
+      "imageUrl": "",
+      "meta": {
+        "released": "1995",
+        "players": "3-4"
+      }
+    },
+    {
+      "name": "Ticket to Ride",
+      "imageUrl": "",
+      "meta": {
+        "released": "2004",
+        "players": "2-5"
+      }
+    },
+    {
+      "name": "Monopoly",
+      "imageUrl": "",
+      "meta": {
+        "released": "1935",
+        "players": "2-8"
+      }
+    },
+    {
+      "name": "Risk",
+      "imageUrl": "",
+      "meta": {
+        "released": "1959",
+        "players": "2-6"
+      }
+    },
+    {
+      "name": "Scrabble",
+      "imageUrl": "",
+      "meta": {
+        "released": "1948",
+        "players": "2-4"
+      }
+    },
+    {
+      "name": "Clue",
+      "imageUrl": "",
+      "meta": {
+        "released": "1949",
+        "players": "3-6"
+      }
+    },
+    {
+      "name": "Chess",
+      "imageUrl": "",
+      "meta": {
+        "released": "c. 1475",
+        "players": "2"
+      }
+    },
+    {
+      "name": "Carcassonne",
+      "imageUrl": "",
+      "meta": {
+        "released": "2000",
+        "players": "2-5"
+      }
+    },
+    {
+      "name": "Pandemic",
+      "imageUrl": "",
+      "meta": {
+        "released": "2008",
+        "players": "2-4"
+      }
+    },
+    {
+      "name": "Wingspan",
+      "imageUrl": "",
+      "meta": {
+        "released": "2019",
+        "players": "1-5"
+      }
+    },
+    {
+      "name": "Axis & Allies",
+      "imageUrl": "",
+      "meta": {
+        "released": "1981",
+        "players": "2-5"
+      }
+    },
+    {
+      "name": "Codenames",
+      "imageUrl": "",
+      "meta": {
+        "released": "2015",
+        "players": "2-8+"
+      }
+    }
+  ]
+}

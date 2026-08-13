@@ -1,0 +1,105 @@
+{
+  "id": "iconic-memes",
+  "name": "Iconic Memes",
+  "subcategories": [
+    "internet-apps"
+  ],
+  "items": [
+    {
+      "name": "Distracted Boyfriend",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Stock photo",
+        "era": "2017"
+      }
+    },
+    {
+      "name": "Rickroll",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Rick Astley video",
+        "era": "2007"
+      }
+    },
+    {
+      "name": "Doge",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Shiba Inu photo",
+        "era": "2013"
+      }
+    },
+    {
+      "name": "This Is Fine",
+      "imageUrl": "",
+      "meta": {
+        "origin": "KC Green comic",
+        "era": "2013"
+      }
+    },
+    {
+      "name": "Success Kid",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Family photo",
+        "era": "2007"
+      }
+    },
+    {
+      "name": "Grumpy Cat",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Tardar Sauce",
+        "era": "2012"
+      }
+    },
+    {
+      "name": "Drakeposting",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Hotline Bling",
+        "era": "2015"
+      }
+    },
+    {
+      "name": "Woman Yelling at a Cat",
+      "imageUrl": "",
+      "meta": {
+        "origin": "RHOBH / Smudge",
+        "era": "2019"
+      }
+    },
+    {
+      "name": "Nyan Cat",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Animated GIF",
+        "era": "2011"
+      }
+    },
+    {
+      "name": "Bad Luck Brian",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Yearbook photo",
+        "era": "2012"
+      }
+    },
+    {
+      "name": "Y U NO Guy",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Rage comics",
+        "era": "2010"
+      }
+    },
+    {
+      "name": "Wojak / Feels Guy",
+      "imageUrl": "",
+      "meta": {
+        "origin": "Imageboards",
+        "era": "2010"
+      }
+    }
+  ]
+}

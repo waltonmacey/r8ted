@@ -1,0 +1,105 @@
+{
+  "id": "websites-all-time",
+  "name": "Websites of All Time",
+  "subcategories": [
+    "internet-apps"
+  ],
+  "items": [
+    {
+      "name": "Wikipedia",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2001",
+        "what it did": "Free encyclopedia"
+      }
+    },
+    {
+      "name": "Google",
+      "imageUrl": "",
+      "meta": {
+        "launched": "1998",
+        "what it did": "Search"
+      }
+    },
+    {
+      "name": "Craigslist",
+      "imageUrl": "",
+      "meta": {
+        "launched": "1995",
+        "what it did": "Classifieds"
+      }
+    },
+    {
+      "name": "eBay",
+      "imageUrl": "",
+      "meta": {
+        "launched": "1995",
+        "what it did": "Auctions"
+      }
+    },
+    {
+      "name": "Amazon",
+      "imageUrl": "",
+      "meta": {
+        "launched": "1994",
+        "what it did": "Storefront"
+      }
+    },
+    {
+      "name": "Reddit",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2005",
+        "what it did": "Link aggregation"
+      }
+    },
+    {
+      "name": "YouTube",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2005",
+        "what it did": "Video hosting"
+      }
+    },
+    {
+      "name": "Napster",
+      "imageUrl": "",
+      "meta": {
+        "launched": "1999",
+        "what it did": "File sharing"
+      }
+    },
+    {
+      "name": "IMDb",
+      "imageUrl": "",
+      "meta": {
+        "launched": "1990",
+        "what it did": "Film database"
+      }
+    },
+    {
+      "name": "Stack Overflow",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2008",
+        "what it did": "Developer Q&A"
+      }
+    },
+    {
+      "name": "Google Maps",
+      "imageUrl": "",
+      "meta": {
+        "launched": "2005",
+        "what it did": "Slippy maps"
+      }
+    },
+    {
+      "name": "Archive.org",
+      "imageUrl": "",
+      "meta": {
+        "launched": "1996",
+        "what it did": "Web archive"
+      }
+    }
+  ]
+}

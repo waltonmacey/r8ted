@@ -1,0 +1,105 @@
+{
+  "id": "zelda-games",
+  "name": "Zelda Games",
+  "subcategories": [
+    "gaming-nostalgia"
+  ],
+  "items": [
+    {
+      "name": "The Legend of Zelda",
+      "imageUrl": "",
+      "meta": {
+        "year": "1986",
+        "platform": "NES"
+      }
+    },
+    {
+      "name": "Zelda II: The Adventure of Link",
+      "imageUrl": "",
+      "meta": {
+        "year": "1987",
+        "platform": "NES"
+      }
+    },
+    {
+      "name": "A Link to the Past",
+      "imageUrl": "",
+      "meta": {
+        "year": "1991",
+        "platform": "SNES"
+      }
+    },
+    {
+      "name": "Link's Awakening",
+      "imageUrl": "",
+      "meta": {
+        "year": "1993",
+        "platform": "Game Boy"
+      }
+    },
+    {
+      "name": "Ocarina of Time",
+      "imageUrl": "",
+      "meta": {
+        "year": "1998",
+        "platform": "Nintendo 64"
+      }
+    },
+    {
+      "name": "Majora's Mask",
+      "imageUrl": "",
+      "meta": {
+        "year": "2000",
+        "platform": "Nintendo 64"
+      }
+    },
+    {
+      "name": "The Wind Waker",
+      "imageUrl": "",
+      "meta": {
+        "year": "2002",
+        "platform": "GameCube"
+      }
+    },
+    {
+      "name": "Twilight Princess",
+      "imageUrl": "",
+      "meta": {
+        "year": "2006",
+        "platform": "GameCube / Wii"
+      }
+    },
+    {
+      "name": "Skyward Sword",
+      "imageUrl": "",
+      "meta": {
+        "year": "2011",
+        "platform": "Wii"
+      }
+    },
+    {
+      "name": "A Link Between Worlds",
+      "imageUrl": "",
+      "meta": {
+        "year": "2013",
+        "platform": "Nintendo 3DS"
+      }
+    },
+    {
+      "name": "Breath of the Wild",
+      "imageUrl": "",
+      "meta": {
+        "year": "2017",
+        "platform": "Switch / Wii U"
+      }
+    },
+    {
+      "name": "Tears of the Kingdom",
+      "imageUrl": "",
+      "meta": {
+        "year": "2023",
+        "platform": "Switch"
+      }
+    }
+  ]
+}

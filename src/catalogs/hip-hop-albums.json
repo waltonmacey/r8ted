@@ -1,0 +1,105 @@
+{
+  "id": "hip-hop-albums",
+  "name": "Hip-Hop Albums",
+  "subcategories": [
+    "music-audio"
+  ],
+  "items": [
+    {
+      "name": "Illmatic",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Nas",
+        "year": "1994"
+      }
+    },
+    {
+      "name": "The Chronic",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Dr. Dre",
+        "year": "1992"
+      }
+    },
+    {
+      "name": "Ready to Die",
+      "imageUrl": "",
+      "meta": {
+        "artist": "The Notorious B.I.G.",
+        "year": "1994"
+      }
+    },
+    {
+      "name": "good kid, m.A.A.d city",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Kendrick Lamar",
+        "year": "2012"
+      }
+    },
+    {
+      "name": "The Blueprint",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Jay-Z",
+        "year": "2001"
+      }
+    },
+    {
+      "name": "Enter the Wu-Tang (36 Chambers)",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Wu-Tang Clan",
+        "year": "1993"
+      }
+    },
+    {
+      "name": "The Marshall Mathers LP",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Eminem",
+        "year": "2000"
+      }
+    },
+    {
+      "name": "Aquemini",
+      "imageUrl": "",
+      "meta": {
+        "artist": "OutKast",
+        "year": "1998"
+      }
+    },
+    {
+      "name": "My Beautiful Dark Twisted Fantasy",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Kanye West",
+        "year": "2010"
+      }
+    },
+    {
+      "name": "Paid in Full",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Eric B. & Rakim",
+        "year": "1987"
+      }
+    },
+    {
+      "name": "All Eyez on Me",
+      "imageUrl": "",
+      "meta": {
+        "artist": "2Pac",
+        "year": "1996"
+      }
+    },
+    {
+      "name": "To Pimp a Butterfly",
+      "imageUrl": "",
+      "meta": {
+        "artist": "Kendrick Lamar",
+        "year": "2015"
+      }
+    }
+  ]
+}
