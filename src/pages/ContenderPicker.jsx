@@ -5,8 +5,12 @@
 // WHY. The list page is built around ranks 1 to 8. Selecting the contenders is
 // selecting the Power of Eight, so creation starts producing the thing the
 // podium displays instead of a long tail that has to be sorted before the
-// interesting part exists. The bounded range is 8 to 15 items, which measures
-// at 17 to 46 picks, a 2.7x spread the user now controls.
+// interesting part exists. The bounded range is 8 to 15 items, which measures at
+// 17 to 46 picks on the engine. In the shipped catalog library the reachable
+// range is narrower: 69 of 73 catalogs hold exactly 12 items and none holds more
+// than 15, so the real choice is 8 to 12 of 12, which is 17 to 32 picks. Cutting
+// a median catalog to the floor still halves the session, from 32.5 picks to
+// 16.9.
 //
 // WHAT HAPPENS TO THE REST. Nothing new. Every catalog item is still created as
 // an entry; the unpicked ones stay on the Bench unscored, exactly where they
@@ -34,9 +38,10 @@
 // Nothing here numbers the tiles as they are tapped, for the same reason: a
 // visible ordinal invites the user to believe the order means something.
 //
-// IMAGERY. 61 of 865 catalog items carry an image, so this grid renders mostly
-// placeholder initials today. Names plus meta carry it, but this is the surface
-// that will change most when the image pass lands.
+// IMAGERY. 61 of 879 catalog items carry an image, and only 6 of 73 catalogs
+// carry any at all, so this grid renders mostly placeholder initials today. Names
+// plus meta carry it, but this is the surface that will change most when the
+// image pass lands.
 
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useMemo, useState } from 'react'
@@ -140,12 +145,17 @@ export default function ContenderPicker() {
         / Pick your contenders
       </p>
       <h1 className="mt-3 font-display text-headline-lg-mobile sm:text-headline-lg">Pick your contenders</h1>
-      <p className="mt-3 max-w-2xl font-body text-sm text-on-surface-variant sm:text-base">
-        Tap the ones worth ranking. {MIN_CONTENDERS} to {MAX_CONTENDERS}, in no particular order. Everything
-        you leave stays on the Bench and can be placed in a later session.
+      <p className="mt-2.5 max-w-2xl font-body text-[0.8125rem] leading-snug text-on-surface-variant sm:mt-3 sm:text-base sm:leading-normal">
+        Tap the ones worth ranking, {MIN_CONTENDERS} to {MAX_CONTENDERS}, in no particular order. The rest stay
+        on the Bench for a later session.
       </p>
 
-      <div className="mt-8 grid grid-cols-3 gap-2.5 sm:grid-cols-5 lg:grid-cols-7 lg:gap-3">
+      {/* Four columns at 390, owner decision 2026-08-13. Three columns put
+          only 6 of a 15 item catalog on screen before scrolling; four puts most
+          of it there, at the cost of an 83px tile where the longest titles clamp
+          harder. The 4:5 portrait is kept, so this is a density change and not a
+          crop change. */}
+      <div className="mt-8 grid grid-cols-4 gap-2 sm:grid-cols-5 sm:gap-2.5 lg:grid-cols-7 lg:gap-3">
         {bench.map((entry) => (
           <Tile
             key={entry.id}
@@ -212,16 +222,26 @@ function Tile({ entry, picked, dimmed, onToggle }) {
           </svg>
         </span>
       )}
-      <div className="shrink-0 px-2 pb-1.5 pt-1.5">
+      <div className="shrink-0 px-1.5 pb-1.5 pt-1.5 sm:px-2">
+        {/* break-words is load bearing at 84px. line-clamp only adds its
+            ellipsis when it truncates a LINE, so a name like "Arrested
+            Development" that fits on two lines but whose second word is wider
+            than the tile was clipped mid word with no ellipsis, which reads as a
+            rendering fault rather than as a truncation. Breaking the word makes
+            it a third line, which the clamp then truncates properly. */}
         <p
-          className={`line-clamp-2 h-[2.1rem] font-display text-[0.8rem] font-semibold leading-[1.05rem] ${
+          className={`line-clamp-2 h-[1.9rem] break-words font-display text-[0.72rem] font-semibold leading-[0.95rem] sm:h-[2.1rem] sm:text-[0.8rem] sm:leading-[1.05rem] ${
             picked ? 'text-on-surface' : 'text-on-surface-variant'
           }`}
         >
           {entry.name}
         </p>
+        {/* The key stat is a " | " join of the catalog's two meta fields. At
+            84px only the first field fits, and a truncated separator reads as
+            broken text, so mobile shows the first field alone. */}
         <p className="mt-0.5 h-[0.75rem] truncate font-mono text-[8px] uppercase leading-[0.75rem] tracking-[0.1em] text-outline">
-          {entry.keyStat || ''}
+          <span className="sm:hidden">{(entry.keyStat || '').split(' | ')[0]}</span>
+          <span className="hidden sm:inline">{entry.keyStat || ''}</span>
         </p>
       </div>
     </button>
@@ -230,23 +250,30 @@ function Tile({ entry, picked, dimmed, onToggle }) {
 
 // Sticky, because a 30 item grid is several screens on a phone and the confirm
 // has to stay reachable from anywhere in it.
+//
+// PHASE 9: trimmed from 114px to fit the four column change. Four columns alone
+// only took the tiles visible without scrolling from 6 of 15 to 8, because the
+// bar was taking 114px of an 844px viewport and its counter wrapped to two
+// lines. One line of counter, a tighter button and less vertical padding on
+// mobile buy back the third row. The bench total drops below 640, where it is
+// the least useful of the three numbers.
 function ConfirmBar({ count, atCap, ready, shortBy, total, onConfirm }) {
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-outline-variant bg-background/95 backdrop-blur-md">
-      <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-3 px-4 py-3.5 lg:px-16">
-        <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-on-surface-variant">
+      <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-3 px-4 py-2 sm:py-3.5 lg:px-16">
+        <p className="min-w-0 font-mono text-[10px] uppercase leading-tight tracking-[0.08em] text-on-surface-variant sm:text-[11px] sm:tracking-[0.1em]">
           <span className="text-on-surface">{String(count).padStart(2, '0')} selected</span>
           {!ready && <span> / {shortBy} more to unlock</span>}
           {ready && !atCap && <span> / room for {MAX_CONTENDERS - count} more</span>}
           {atCap && <span className="text-secondary-container"> / that is the ceiling</span>}
-          <span className="block text-outline sm:ml-2 sm:inline">{total} on the bench</span>
+          <span className="hidden text-outline sm:ml-2 sm:inline">{total} on the bench</span>
         </p>
         <button
           onClick={onConfirm}
           disabled={!ready}
-          className="focus-ring btn-primary whitespace-nowrap disabled:cursor-not-allowed disabled:opacity-30"
+          className="focus-ring shrink-0 rounded bg-secondary-container px-3 py-2 font-mono text-[10px] uppercase leading-tight tracking-[0.06em] text-primary-container transition-colors hover:bg-secondary disabled:cursor-not-allowed disabled:opacity-30 sm:px-6 sm:py-3 sm:text-label-caps sm:tracking-[0.1em]"
         >
-          {ready ? `Rank ${count} items, about ${sessionEstimate(count)} picks` : `Pick ${MIN_CONTENDERS} to start`}
+          {ready ? `Rank ${count}, about ${sessionEstimate(count)} picks` : `Pick ${MIN_CONTENDERS} to start`}
         </button>
       </div>
     </div>

@@ -57,7 +57,12 @@ export default function Home() {
                 src={entryImage(leader)}
                 alt=""
                 className="h-full w-full object-cover opacity-50 brightness-95 saturate-[.55]"
-                style={{ objectPosition: 'center 22%' }}
+                // PHASE 9, owner decision: was 'center 22%', which anchored the
+                // crop near the top of the frame. A 4:5 portrait covering a wide
+                // hero overflows vertically by a large margin, so 22% showed the
+                // upper fifth and cut everything below it. Centred is the honest
+                // default until entries can carry their own focal point.
+                style={{ objectPosition: 'center center' }}
               />
             </div>
           )

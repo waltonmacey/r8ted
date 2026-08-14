@@ -5,8 +5,9 @@
 // mockup's era column; composite is the right-aligned mono accent value.
 
 import { compositeText } from '../lib/entries'
+import RankNudge from './RankNudge'
 
-export default function BeyondTable({ entries, startRank, scoreLabels, accent, canEdit, onEdit, dragPropsFor }) {
+export default function BeyondTable({ entries, startRank, scoreLabels, accent, canEdit, onEdit, dragPropsFor, moveFor }) {
   if (entries.length === 0) return null
   return (
     <section className="mt-14">
@@ -37,7 +38,13 @@ export default function BeyondTable({ entries, startRank, scoreLabels, accent, c
                 {...(dragPropsFor ? dragPropsFor(i) : {})}
               >
                 <td className="px-3 py-4 font-mono text-label-mono text-on-surface-variant">
-                  {String(startRank + i).padStart(2, '0')}
+                  <span className="flex items-center gap-2">
+                    {String(startRank + i).padStart(2, '0')}
+                    {/* PHASE 9: the rank cell carries the nudge on this surface,
+                        because the Edit cell is already at the far right and a
+                        second control there would be a long thumb reach. */}
+                    <RankNudge move={moveFor ? moveFor(i) : null} accent={accent} layout="row" />
+                  </span>
                 </td>
                 <td className="px-3 py-4 font-display text-body-md font-medium text-on-background transition-colors group-hover:text-[color:var(--accent)]">
                   {e.name}

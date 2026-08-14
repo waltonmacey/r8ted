@@ -16,6 +16,7 @@ import { getStorage } from '../lib/storage'
 import { rankedEntries, benchEntries, makeId, entryImage, moveAndRefit } from '../lib/entries'
 import { useEditMode } from '../lib/EditMode'
 import { QuadCard, CompactCard } from '../components/Podium'
+import RankNudge from '../components/RankNudge'
 import BeyondTable from '../components/BeyondTable'
 import EntryEditor from '../components/EntryEditor'
 import { NotFound } from './Domain'
@@ -83,6 +84,29 @@ export default function ListDetail() {
     setList(next)
   }
 
+  // PHASE 9: one rank step per tap, the touch path drag never had. HTML5 drag
+  // and drop does not fire on touch devices, so on a phone reorder was absent
+  // rather than awkward. Both paths now go through moveAndRefit, so the chain
+  // repaint and the composite sort invariant behave identically either way.
+  async function nudge(index, delta) {
+    const target = index + delta
+    if (target < 0 || target >= ranked.length) return
+    const entries = moveAndRefit(list.entries, ranked, index, target)
+    const next = { ...list, entries }
+    await getStorage().saveList(next)
+    setList(next)
+  }
+
+  // Absent when not in edit mode, which is what makes RankNudge render nothing.
+  function moveProps(index) {
+    if (!canEdit || ranked.length < 2) return null
+    return {
+      canUp: index > 0,
+      canDown: index < ranked.length - 1,
+      onMove: (delta) => nudge(index, delta),
+    }
+  }
+
   function dragProps(index) {
     if (!canEdit) return {}
     return {
@@ -107,7 +131,13 @@ export default function ListDetail() {
           under a background gradient until lists carry dedicated hero art. */}
       <section className="relative -mx-4 flex min-h-[400px] flex-col justify-end border-b border-outline-variant px-4 pb-10 pt-24 lg:-mx-16 lg:px-16 lg:min-h-[60vh]">
         {heroImage && (
-          <img src={heroImage} alt="" className="absolute inset-0 h-full w-full object-cover object-top opacity-60" />
+          // PHASE 9, owner decision: object-top became object-center. The
+          // number one entry's portrait is 400x500 and this hero is 1280x839 at
+          // desktop, so cover scales by 3.2 to 1280x1600 and 761px overflows.
+          // Anchored at the top you saw source rows 0 to 262 of 500, the top
+          // 52%; centred you see rows 119 to 381, the middle 52%. At 390 the box
+          // is 390x399, so the old crop showed the top 82%.
+          <img src={heroImage} alt="" className="absolute inset-0 h-full w-full object-cover object-center opacity-60" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" aria-hidden="true" />
         <div className="relative">
@@ -181,7 +211,8 @@ export default function ListDetail() {
         <h2 className="font-display text-headline-md">The Power of Eight</h2>
         {canEdit && ranked.length > 1 && (
           <p className="mt-1 font-mono text-[11px] text-on-surface-variant">
-            Drag any ranked slot onto another to reorder; the moved item's rating regenerates to fit.
+            Tap the chevrons to move a slot one rank, or drag any slot onto another to take its place. Either
+            way the moved item's rating regenerates to fit.
           </p>
         )}
         {eight.length === 0 ? (
@@ -203,6 +234,7 @@ export default function ListDetail() {
                   canEdit={canEdit}
                   onEdit={() => setEditing(e)}
                   dragProps={dragProps(i)}
+                  move={moveProps(i)}
                 />
               ))}
             </div>
@@ -219,6 +251,7 @@ export default function ListDetail() {
                       canEdit={canEdit}
                       onEdit={() => setEditing(e)}
                       dragProps={dragProps(i + 4)}
+                      move={moveProps(i + 4)}
                     />
                   ))}
                 </div>
@@ -236,6 +269,7 @@ export default function ListDetail() {
         canEdit={canEdit}
         onEdit={setEditing}
         dragPropsFor={(i) => dragProps(8 + i)}
+        moveFor={(i) => moveProps(8 + i)}
       />
 
       {bench.length > 0 && (

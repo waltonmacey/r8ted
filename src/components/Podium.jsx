@@ -14,6 +14,7 @@
 
 import { compositeText, entryImage } from '../lib/entries'
 import BarcodeRow from './BarcodeRow'
+import RankNudge from './RankNudge'
 
 // Ranks 1 to 4, POC variant 03. Geometry straight off the POC .qcard: 76px
 // portrait, 42px rank column, 12px padding, so the whole row lands near 120px
@@ -22,7 +23,7 @@ import BarcodeRow from './BarcodeRow'
 // rows are otherwise identical. The POC hardcodes cyan for the wash because it
 // demos Story & Screen; here it generalises to the domain accent, the same way
 // Phase 5 generalised the cyan in every other card.
-export function QuadCard({ entry, rank, accent, canEdit, onEdit, dragProps = {} }) {
+export function QuadCard({ entry, rank, accent, canEdit, onEdit, dragProps = {}, move = null }) {
   const lead = rank === 1
   return (
     <article
@@ -74,6 +75,7 @@ export function QuadCard({ entry, rank, accent, canEdit, onEdit, dragProps = {} 
           </button>
         )}
       </div>
+      <RankNudge move={move} accent={accent} />
     </article>
   )
 }
@@ -130,10 +132,10 @@ export function TheOneCard({ entry, scoreLabels, accent, canEdit, onEdit, dragPr
 }
 
 // Tier 3: ranks 5-8, compact rows. Composite and keyStat only, no barcode rows.
-export function CompactCard({ entry, rank, accent, canEdit, onEdit, dragProps = {} }) {
+export function CompactCard({ entry, rank, accent, canEdit, onEdit, dragProps = {}, move = null }) {
   return (
     <article
-      className="group flex items-center gap-3 rounded-lg border border-outline-variant bg-surface-container-low p-2.5 transition-colors hover:border-[color:var(--accent)]"
+      className="group flex items-center gap-2.5 rounded-lg border border-outline-variant bg-surface-container-low p-2.5 transition-colors hover:border-[color:var(--accent)]"
       style={{ '--accent': accent }}
       {...dragProps}
     >
@@ -143,7 +145,7 @@ export function CompactCard({ entry, rank, accent, canEdit, onEdit, dragProps = 
       <div className="aspect-[4/5] w-16 shrink-0 overflow-hidden rounded-sm bg-surface-variant">
         <img src={entryImage(entry)} alt={entry.name} className="img-muted h-full w-full object-cover" loading="lazy" />
       </div>
-      <div className="min-w-0">
+      <div className="min-w-0 flex-1">
         <h3 className="truncate font-display text-[1.05rem] font-semibold leading-tight">{entry.name}</h3>
         <p className="mt-0.5 font-mono text-[0.95rem] font-bold leading-none" style={{ color: accent }}>
           {compositeText(entry.scores)}
@@ -162,6 +164,7 @@ export function CompactCard({ entry, rank, accent, canEdit, onEdit, dragProps = 
           </button>
         )}
       </div>
+      <RankNudge move={move} accent={accent} />
     </article>
   )
 }

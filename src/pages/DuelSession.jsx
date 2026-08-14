@@ -35,19 +35,24 @@
 // ceiling the session refuses to auto start and offers the picker instead,
 // rather than silently opening a 46 pick session the user did not ask for.
 //
-// FOUR MOBILE DUEL LAYOUTS SHIP BEHIND ?duel=N. This is deliberate temporary
-// scaffolding for an owner taste call, not a permanent feature: the mobile duel
-// at 390 is cramped and the four candidates need to be compared on a real phone
-// with real type before one wins. 0 is the shipped layout and the default.
+// THE MOBILE DUEL IS NOW TWO COLUMNS AT EVERY WIDTH. Phase 8 shipped five
+// layouts behind ?duel=N for an owner taste call; the owner picked the shrunk
+// side by side, and Phase 9 deleted the other four along with DUEL_LAYOUTS,
+// LayoutSwitch, FULL_BLEED and the ?duel param.
 //
-//   0  side by side, full width portrait   the layout being replaced
-//   1  side by side, shrunk portrait       both options visible, no scroll
-//   2  full bleed vertical split           two halves, image and name only
-//   3  full bleed horizontal split         same, rotated
-//   4  compact rows                        QuadCard geometry, whole row taps
+// The problem it solves, measured on the layout it replaces at 390 width: the
+// content column is 358px, the card's 4:5 portrait is 324x405, and each card is
+// 533px tall. Two of those plus a status line put the second option at y=823 in
+// an 844px viewport, so 21 pixels of it were visible at rest and the user
+// scrolled roughly 980px between the two things being compared. After the nav,
+// breadcrumb, title and status line the first screen offers 574px, and two full
+// width portraits alone need 810px, so side by side at full column width could
+// not fit under any card treatment. Shrinking the portrait to half the column
+// puts both options in one 277px row with no scroll.
 //
-// Once a layout wins, delete the other four branches, DUEL_LAYOUTS, the
-// LayoutSwitch component, and the ?duel param. Nothing else depends on them.
+// The chip strip collapses on mobile in the same change, from 321px to 33px: a
+// progress bar plus an uncertain count, expanding to the full strip on tap.
+// That is where most of the vertical budget comes from. Desktop is unchanged.
 
 import { Link, useLocation, useParams, useSearchParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
@@ -58,7 +63,6 @@ import {
   benchEntries,
   entryImage,
   onImageError,
-  initials,
   regenerateFromOrder,
   regeneratePlaceholders,
 } from '../lib/entries'
@@ -86,16 +90,6 @@ import {
 import { useEditMode } from '../lib/EditMode'
 import { NotFound } from './Domain'
 
-// Temporary. See the Phase 8 note in the file header.
-const DUEL_LAYOUTS = [
-  { id: 0, label: 'Side by side' },
-  { id: 1, label: 'Shrunk' },
-  { id: 2, label: 'Split V' },
-  { id: 3, label: 'Split H' },
-  { id: 4, label: 'Rows' },
-]
-const FULL_BLEED = new Set([2, 3])
-
 // Paint a run of placements. Each index is a position in the order as it stands
 // after the previous insertions, so the running order is rebuilt alongside, then
 // the whole chain is repainted from that order.
@@ -121,8 +115,6 @@ export default function DuelSession() {
   const [session, setSession] = useState(null)
   const [stripOpen, setStripOpen] = useState(false)
 
-  const layout = clampLayout(params.get('duel'))
-
   useEffect(() => {
     getStorage().getList(listId).then(setList)
   }, [listId])
@@ -133,7 +125,7 @@ export default function DuelSession() {
     if (!list || session || !canEdit) return
     const reduel = params.get('reduel') === '1'
     if (reduel) {
-      setParams(layout ? { duel: String(layout) } : {}, { replace: true })
+      setParams({}, { replace: true })
       startPlacement(list, list.entries.map((e) => e.id), [], true)
       return
     }
@@ -303,7 +295,6 @@ export default function DuelSession() {
   const pair = raw
     ? { a: { ...raw.a, onPick: () => onPick(true) }, b: { ...raw.b, onPick: () => onPick(false) } }
     : null
-  const fullBleed = duelling && FULL_BLEED.has(layout) && pair
 
   const stripEl = (
     <ChipStrip
@@ -321,7 +312,7 @@ export default function DuelSession() {
             : `End session appears once every open item has dueled ${EARLY_EXIT_MIN_DUELS} times and at least ${EARLY_EXIT_MIN_SAVING} picks are left to save.`
           : null
       }
-      collapsible={duelling && layout !== 0}
+      collapsible={duelling}
       open={stripOpen}
       onToggle={() => setStripOpen((v) => !v)}
     />
@@ -345,16 +336,12 @@ export default function DuelSession() {
               : 'Place the Bench'}
       </h1>
 
-      {duelling && <LayoutSwitch current={layout} accent={accent} />}
-
-      {!fullBleed && <StatusLine session={session} byId={byId} accent={accent} />}
+      <StatusLine session={session} byId={byId} accent={accent} />
 
       {session.mode === 'oversized' && <Oversized list={list} count={session.count} />}
 
-      {duelling && !fullBleed && pair && (
-        <InlineDuel layout={layout} accent={accent} a={pair.a} b={pair.b} />
-      )}
-      {showEnd && !fullBleed && (
+      {duelling && pair && <Duel accent={accent} a={pair.a} b={pair.b} />}
+      {showEnd && (
         <EndSession
           count={session.state.open.length}
           picksLeft={estimatedPicksLeft(session.state)}
@@ -364,37 +351,9 @@ export default function DuelSession() {
       )}
       {session.mode === 'hub' && <Hub list={list} summary={session.summary} rankedCount={strip.length} />}
 
-      {!fullBleed && stripEl}
-
-      {fullBleed && (
-        <FullBleedDuel
-          layout={layout}
-          accent={accent}
-          a={pair.a}
-          b={pair.b}
-          status={<StatusLine session={session} byId={byId} accent={accent} compact />}
-          switcher={<LayoutSwitch current={layout} accent={accent} compact />}
-          strip={stripEl}
-          end={
-            showEnd ? (
-              <EndSession
-                count={session.state.open.length}
-                picksLeft={estimatedPicksLeft(session.state)}
-                accent={accent}
-                onEnd={endSessionEarly}
-                compact
-              />
-            ) : null
-          }
-        />
-      )}
+      {stripEl}
     </div>
   )
-}
-
-function clampLayout(raw) {
-  const n = Number(raw)
-  return Number.isInteger(n) && n >= 0 && n < DUEL_LAYOUTS.length ? n : 0
 }
 
 // The two sides of whatever duel is running, normalised so every layout takes
@@ -443,40 +402,6 @@ function opponentId(session) {
   return null
 }
 
-// ---- temporary layout switch ----
-
-// Scaffolding for the Phase 8 taste call. Renders only while a duel is on
-// screen so it does not clutter the hub. Delete with the losing layouts.
-function LayoutSwitch({ current, accent, compact = false }) {
-  const [params] = useSearchParams()
-  const here = new URLSearchParams(params)
-  return (
-    <div className={`flex flex-wrap items-center gap-1.5 ${compact ? '' : 'mt-4'}`}>
-      <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-outline">Layout</span>
-      {DUEL_LAYOUTS.map((l) => {
-        const next = new URLSearchParams(here)
-        next.set('duel', String(l.id))
-        const on = l.id === current
-        return (
-          <Link
-            key={l.id}
-            to={{ search: `?${next.toString()}` }}
-            replace
-            className={`focus-ring rounded-sm border py-1 font-mono text-[10px] uppercase tracking-[0.1em] ${
-              compact ? 'px-1.5' : 'px-2'
-            } ${
-              on ? 'border-[color:var(--accent)] text-on-surface' : 'border-outline-variant text-outline hover:text-on-surface-variant'
-            }`}
-            style={{ '--accent': accent }}
-          >
-            {compact ? l.id : `${l.id} ${l.label}`}
-          </Link>
-        )
-      })}
-    </div>
-  )
-}
-
 // ---- oversized bench guard ----
 
 // Reached when the session is opened without a contender selection on a Bench
@@ -504,7 +429,7 @@ function Oversized({ list, count }) {
 
 // ---- status line ----
 
-function StatusLine({ session, byId, accent, compact = false }) {
+function StatusLine({ session, byId, accent }) {
   const b = (text) => (
     <span style={{ color: accent }} className="normal-case">
       {text}
@@ -520,12 +445,7 @@ function StatusLine({ session, byId, accent, compact = false }) {
     const size = zoneSize(zone)
     const remaining = worstRemaining(size)
     const others = s.open.length - 1
-    content = compact ? (
-      <>
-        Pass {rank(currentPass(s))} / pick {s.picks + 1} / {b(item.name)} vs rank{' '}
-        {rank(s.current.pivot + 1)}
-      </>
-    ) : (
+    content = (
       <>
         Pass {rank(currentPass(s))} / pick {s.picks + 1} / placing {b(item.name)} / zone ranks{' '}
         {rank(zone.lo + 1)} to {rank(zone.hi + 1)} / at most {remaining} more pick
@@ -535,12 +455,7 @@ function StatusLine({ session, byId, accent, compact = false }) {
     )
   } else if (session.mode === 'ladder') {
     const item = byId(session.itemId)
-    content = compact ? (
-      <>
-        {b(item.name)} / pick {session.picks + 1} / holding {rank(session.pos + 1)}, challenging{' '}
-        {rank(session.pos)}
-      </>
-    ) : (
+    content = (
       <>
         Re-ranking {b(item.name)} / pick {session.picks + 1} / holding rank {rank(session.pos + 1)},
         challenging rank {rank(session.pos)} / a loss locks the slot
@@ -578,60 +493,37 @@ function StatusLine({ session, byId, accent, compact = false }) {
     )
   }
   if (!content) return null
-  if (compact)
-    return (
-      <p className="truncate font-mono text-[10px] uppercase tracking-[0.08em] text-on-surface-variant">{content}</p>
-    )
   return <p className="mt-4 font-mono text-xs uppercase tracking-[0.08em] text-on-surface-variant">{content}</p>
 }
 
 // ---- duel layouts ----
 
-// Layouts 0, 1 and 4 sit in the page flow like every other surface. 2 and 3
-// take the viewport and are handled by FullBleedDuel below.
-function InlineDuel({ layout, accent, a, b }) {
-  if (layout === 4) {
-    return (
-      <div className="mx-auto mt-7 max-w-[720px] space-y-2.5">
-        <DuelRow entry={a.entry} tag={a.tag} accent={accent} onPick={a.onPick} />
-        <DuelRow entry={b.entry} tag={b.tag} accent={accent} onPick={b.onPick} />
-      </div>
-    )
-  }
-  // 0 stacks on mobile because sm:grid-cols-2 only kicks in at 640. 1 is two
-  // columns at every width, which is the whole idea.
-  const compact = layout === 1
+// Two columns at every width. The portrait takes whatever half the column
+// allows, which at 390 is a 153px image inside a 173px card, so both options sit
+// in one row above the fold.
+function Duel({ accent, a, b }) {
   return (
-    <div
-      className={`mx-auto max-w-[720px] ${
-        compact ? 'mt-7 grid grid-cols-2 gap-3 sm:gap-5' : 'mt-8 grid gap-5 sm:grid-cols-2'
-      }`}
-    >
-      <DuelCard entry={a.entry} tag={a.tag} accent={accent} onPick={a.onPick} compact={compact} />
-      <DuelCard entry={b.entry} tag={b.tag} accent={accent} onPick={b.onPick} compact={compact} />
+    <div className="mx-auto mt-7 grid max-w-[720px] grid-cols-2 gap-3 sm:gap-5">
+      <DuelCard entry={a.entry} tag={a.tag} accent={accent} onPick={a.onPick} />
+      <DuelCard entry={b.entry} tag={b.tag} accent={accent} onPick={b.onPick} />
     </div>
   )
 }
 
-// Duel card per POC tab 02: tag, image, name, "Tap if better". The whole card
-// is the button. `compact` is layout 1: same card, portrait shrunk to whatever
-// half the column allows, so both options fit one screen at 390.
-function DuelCard({ entry, tag, accent, onPick, compact = false }) {
+// Duel card per POC tab 02: tag, image, name, "Tap if better". The whole card is
+// the button. The portrait shrinks to whatever half the column allows, which is
+// what puts both options on one screen at 390.
+function DuelCard({ entry, tag, accent, onPick }) {
   return (
     <button
       onClick={onPick}
-      className={`focus-ring group rounded-lg border border-outline-variant bg-surface-container text-center transition-all hover:-translate-y-0.5 hover:border-[color:var(--accent)] ${
-        compact ? 'p-2.5' : 'p-4'
-      }`}
+      className="focus-ring group rounded-lg border border-outline-variant bg-surface-container p-2.5 text-center transition-all hover:-translate-y-0.5 hover:border-[color:var(--accent)]"
       style={{ '--accent': accent }}
     >
-      <p
-        className={`font-mono uppercase tracking-[0.15em] ${compact ? 'text-[9px]' : 'text-[10px]'}`}
-        style={{ color: accent }}
-      >
+      <p className="font-mono text-[9px] uppercase tracking-[0.15em]" style={{ color: accent }}>
         {tag}
       </p>
-      <div className={`aspect-[4/5] overflow-hidden rounded-sm bg-surface-variant ${compact ? 'mt-1.5' : 'mt-2.5'}`}>
+      <div className="mt-1.5 aspect-[4/5] overflow-hidden rounded-sm bg-surface-variant">
         <img
           src={entryImage(entry)}
           onError={onImageError(entry)}
@@ -639,129 +531,8 @@ function DuelCard({ entry, tag, accent, onPick, compact = false }) {
           className="img-muted h-full w-full object-cover"
         />
       </div>
-      <h3
-        className={`font-display font-semibold ${
-          compact ? 'mt-2 text-[1.05rem] leading-[1.15]' : 'mt-3.5 text-headline-md'
-        }`}
-      >
-        {entry.name}
-      </h3>
-      <p
-        className={`font-mono uppercase tracking-[0.15em] text-on-surface-variant ${
-          compact ? 'mt-1.5 text-[9px]' : 'mt-2 text-[10px]'
-        }`}
-      >
-        Tap if better
-      </p>
-    </button>
-  )
-}
-
-// Layout 4. QuadCard geometry from the list page: 76px portrait, name, meta.
-// The whole row is the tap target, so the two rows stack in about the height
-// one current duel card takes.
-function DuelRow({ entry, tag, accent, onPick }) {
-  return (
-    <button
-      onClick={onPick}
-      className="focus-ring group flex w-full items-stretch gap-[14px] rounded-lg border border-outline-variant bg-surface-container-low p-3 text-left transition-colors hover:border-[color:var(--accent)]"
-      style={{ '--accent': accent }}
-    >
-      <div className="aspect-[4/5] w-[76px] shrink-0 overflow-hidden rounded-sm bg-surface-container-highest">
-        <img
-          src={entryImage(entry)}
-          onError={onImageError(entry)}
-          alt=""
-          className="img-muted h-full w-full object-cover"
-        />
-      </div>
-      <div className="flex min-w-0 flex-1 flex-col justify-center gap-1">
-        <p className="font-mono text-[9px] uppercase tracking-[0.15em]" style={{ color: accent }}>
-          {tag}
-        </p>
-        <h3 className="font-display text-[1.15rem] font-semibold leading-[1.15]">{entry.name}</h3>
-        {entry.keyStat && (
-          <p className="truncate font-mono text-[9px] uppercase tracking-[0.12em] text-on-surface-variant">
-            {entry.keyStat}
-          </p>
-        )}
-      </div>
-      <span className="self-center pr-1 font-mono text-[9px] uppercase tracking-[0.12em] text-outline">Tap</span>
-    </button>
-  )
-}
-
-// Layouts 2 and 3. The duel takes the viewport below the fixed nav: no cards,
-// no borders, no page furniture. Each half is an image with the name overlaid
-// and the whole half is the tap target.
-//
-// The design spec's muted to full colour treatment becomes the selected state.
-// FLAGGED: on a touch screen there is no hover, so the full colour state only
-// shows on press. Judging this layout properly needs the image pass; a split
-// screen of two placeholder initials is worse than a card, which is the honest
-// caveat on alternative 2.
-function FullBleedDuel({ layout, accent, a, b, status, strip, end, switcher }) {
-  const vertical = layout === 2
-  return (
-    <div className="fixed inset-x-0 bottom-0 top-16 z-30 flex flex-col bg-background">
-      {/* The overlay covers the page, including the layout switch, so the
-          switch is repeated here. It leaves with the losing layouts. */}
-      <div className="flex items-center justify-between gap-3 border-b border-outline-variant px-4 py-2">
-        <div className="min-w-0 flex-1">{status}</div>
-        <div className="shrink-0">{switcher}</div>
-      </div>
-      <div className={`flex min-h-0 flex-1 ${vertical ? 'flex-row' : 'flex-col'}`}>
-        <BleedHalf entry={a.entry} tag={a.tag} accent={accent} onPick={a.onPick} vertical={vertical} />
-        <div className={vertical ? 'w-px bg-outline-variant' : 'h-px bg-outline-variant'} />
-        <BleedHalf entry={b.entry} tag={b.tag} accent={accent} onPick={b.onPick} vertical={vertical} />
-      </div>
-      <div className="border-t border-outline-variant bg-background px-4 pb-3 pt-2">
-        {end}
-        {strip}
-      </div>
-    </div>
-  )
-}
-
-function BleedHalf({ entry, tag, accent, onPick, vertical }) {
-  // The placeholder SVG is 400x500. object-cover into a 195x696 half crops it
-  // to a slice of two giant letters, which reads as a broken image and would
-  // lose this layout the comparison on a rendering artefact rather than on
-  // merit. With no usable image the half draws the initials itself, at its own
-  // aspect ratio. 804 of 865 catalog items are in this state today.
-  const [broken, setBroken] = useState(false)
-  const hasImage = Boolean(entry.imageUrl) && !broken
-  return (
-    <button
-      onClick={onPick}
-      className="group relative min-h-0 flex-1 overflow-hidden focus-visible:outline focus-visible:-outline-offset-4 focus-visible:outline-2 focus-visible:outline-secondary-container"
-    >
-      {hasImage ? (
-        <img
-          src={entry.imageUrl}
-          onError={() => setBroken(true)}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover saturate-[0.45] brightness-[0.7] transition-[filter] duration-300 group-hover:saturate-100 group-hover:brightness-100 group-active:saturate-100 group-active:brightness-100"
-        />
-      ) : (
-        <span className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-surface-container-low to-surface-container-high">
-          <span className="font-ui text-[18vmin] font-black leading-none text-outline/40">
-            {initials(entry.name)}
-          </span>
-        </span>
-      )}
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/70 to-transparent p-4 pt-12 text-left">
-        <p className="font-mono text-[10px] uppercase tracking-[0.18em]" style={{ color: accent }}>
-          {tag}
-        </p>
-        <h3
-          className={`mt-1 font-display font-semibold leading-[1.05] ${
-            vertical ? 'text-[1.5rem] sm:text-[2.5rem]' : 'text-[2rem] sm:text-[3rem]'
-          }`}
-        >
-          {entry.name}
-        </h3>
-      </div>
+      <h3 className="mt-2 font-display text-[1.05rem] font-semibold leading-[1.15]">{entry.name}</h3>
+      <p className="mt-1.5 font-mono text-[9px] uppercase tracking-[0.15em] text-on-surface-variant">Tap if better</p>
     </button>
   )
 }
@@ -771,22 +542,7 @@ function BleedHalf({ entry, tag, accent, onPick, vertical }) {
 // Appears once every still open item has dueled EARLY_EXIT_MIN_DUELS times AND
 // at least EARLY_EXIT_MIN_SAVING picks are estimated to remain. See canEndEarly
 // and EARLY_EXIT_MIN_SAVING for why the second clause exists.
-function EndSession({ count, picksLeft, accent, onEnd, compact = false }) {
-  if (compact)
-    return (
-      <div className="mb-2 flex items-center justify-between gap-3">
-        <button
-          onClick={onEnd}
-          className="focus-ring rounded border border-outline-variant px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.1em] hover:border-[color:var(--accent)]"
-          style={{ '--accent': accent }}
-        >
-          End session
-        </button>
-        <p className="font-mono text-[10px] uppercase tracking-[0.1em] text-outline">
-          skips about {picksLeft} picks / {count} placed by estimate
-        </p>
-      </div>
-    )
+function EndSession({ count, picksLeft, accent, onEnd }) {
   return (
     <div className="mt-7 text-center">
       <button onClick={onEnd} className="focus-ring btn-ghost hover:border-[color:var(--accent)]" style={{ '--accent': accent }}>
