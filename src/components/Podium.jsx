@@ -12,7 +12,7 @@
 // editable in EntryEditor. The Edit affordance is retained app chrome the
 // static POCs did not carry.
 
-import { compositeText, entryImage } from '../lib/entries'
+import { compositeText, entryImage, onImageError } from '../lib/entries'
 import BarcodeRow from './BarcodeRow'
 import RankNudge from './RankNudge'
 
@@ -56,7 +56,13 @@ export function QuadCard({ entry, rank, accent, canEdit, onEdit, dragProps = {},
         {String(rank).padStart(2, '0')}
       </span>
       <div className="aspect-[4/5] w-[76px] shrink-0 overflow-hidden rounded-sm bg-surface-container-highest">
-        <img src={entryImage(entry)} alt={entry.name} className="img-muted h-full w-full object-cover" loading="lazy" />
+        <img
+          src={entryImage(entry)}
+          onError={onImageError(entry)}
+          alt={entry.name}
+          className="img-muted h-full w-full object-cover"
+          loading="lazy"
+        />
       </div>
       <div className="flex min-w-0 flex-1 flex-col justify-center gap-[3px]">
         <h3 className="font-display text-[1.15rem] font-semibold leading-[1.15]">{entry.name}</h3>
@@ -90,7 +96,13 @@ export function TheOneCard({ entry, scoreLabels, accent, canEdit, onEdit, dragPr
       {...dragProps}
     >
       <div className="relative aspect-[4/5] max-w-[300px] overflow-hidden rounded-sm bg-surface-variant">
-        <img src={entryImage(entry)} alt={entry.name} className="img-muted h-full w-full object-cover" loading="lazy" />
+        <img
+          src={entryImage(entry)}
+          onError={onImageError(entry)}
+          alt={entry.name}
+          className="img-muted h-full w-full object-cover"
+          loading="lazy"
+        />
         <span
           className="absolute left-2.5 top-1.5 font-ui text-[4rem] font-black leading-none drop-shadow-md"
           style={{ color: accent }}
@@ -143,7 +155,13 @@ export function CompactCard({ entry, rank, accent, canEdit, onEdit, dragProps = 
         {String(rank).padStart(2, '0')}
       </span>
       <div className="aspect-[4/5] w-16 shrink-0 overflow-hidden rounded-sm bg-surface-variant">
-        <img src={entryImage(entry)} alt={entry.name} className="img-muted h-full w-full object-cover" loading="lazy" />
+        <img
+          src={entryImage(entry)}
+          onError={onImageError(entry)}
+          alt={entry.name}
+          className="img-muted h-full w-full object-cover"
+          loading="lazy"
+        />
       </div>
       <div className="min-w-0 flex-1">
         <h3 className="truncate font-display text-[1.05rem] font-semibold leading-tight">{entry.name}</h3>

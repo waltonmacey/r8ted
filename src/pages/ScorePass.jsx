@@ -33,12 +33,53 @@ import { Link, useParams } from 'react-router-dom'
 import { useEffect, useMemo, useState } from 'react'
 import { getDomain } from '../lib/taxonomy'
 import { getStorage } from '../lib/storage'
-import { rankedEntries, compositeText, entryImage } from '../lib/entries'
+import { rankedEntries, compositeText, entryImage, onImageError } from '../lib/entries'
 import { useEditMode } from '../lib/EditMode'
 import { NotFound } from './Domain'
 
-// 5.0 to 10.0 in half points, per the POC.
-export const TAP_SCALE = Array.from({ length: 11 }, (_, i) => 5 + i * 0.5)
+// 4.0 to 10.0 in half points, 13 chips.
+//
+// DEPARTURE FROM THE POC, FLAGGED. The POC scale was 5.0 to 10.0, 11 chips.
+// Measured over 20,000 freshly painted sessions per list size, using the real
+// regenerateFromOrder so the step distribution is the shipped one:
+//
+//   items   sessions with an unsettable row   lowest subscore seen
+//       8               0.00%                        6.0
+//      10               0.00%                        5.5
+//      12               0.00%                        5.0
+//      15               3.06%                        4.0
+//
+// At 15 items the affected rows are only ever ranks 13, 14 and 15, at 0.0%,
+// 0.5% and 3.0% of sessions, and the worst single session had three of them.
+// No row ever had all four subscores below the floor. The hole is real but
+// small, and it lives entirely at the bottom of the longest list.
+//
+// Why 4.0 rather than 3.5. 4.0 is the lowest subscore in 1.2 million generated
+// subscores, and re-run at the 4.0 floor the same 20,000 session sweep reports
+// 0.00% unsettable rows at every size from 8 to 15. But 4.0 is not a hard bound
+// and this comment should not pretend it is. The true worst case for 15 items
+// is all 14 steps landing on 3 eighths, a bottom composite of
+// 9.5 - 14 * 0.375 = 4.25. scoresFromComposite turns 4.25 into half units
+// [9, 9, 8, 8], and the offsetting move can take one row to 7, a subscore of
+// 3.5. That chain has probability (1/3)^14, about 7 in ten million sessions,
+// which is why 1.2 million generated subscores never produced it.
+//
+// Going to 3.5 would need a 14th chip: 14 * 22 + 13 * 3 = 347px, which does not
+// fit a 375px viewport once the 32px of page padding comes off. So 4.0 is the
+// lowest floor that fits, and the residual case falls to the outlined chip
+// state below, which shows the nearest chip as an approximation rather than
+// pretending the value sits on the scale. A hand edit can go below any floor
+// and is handled the same way.
+//
+// What it costs: two more chips on every row of every list. At the old 24px
+// minimum the strip needed 11 * 24 + 10 * 3 = 294px and the new one would need
+// 13 * 24 + 12 * 3 = 348px, which overflows a 375px viewport once page padding
+// is taken off. The chip minimum drops to 22px to absorb that, giving
+// 13 * 22 + 12 * 3 = 322px. Chips stay flex-1, so the minimum only binds on the
+// narrowest phones.
+//
+// Reverting is this one line plus the min-w below.
+export const TAP_SCALE = Array.from({ length: 13 }, (_, i) => 4 + i * 0.5)
 
 // The chip a value sits on, or null when it falls off the scale. Since Phase 7
 // stored subscores are already multiples of 0.5, so the rounding is a guard for
@@ -199,6 +240,7 @@ function ScoreRow({ entry, dim, accent, rank, sweepRank, onTap }) {
       </span>
       <img
         src={entryImage(entry)}
+        onError={onImageError(entry)}
         alt=""
         className="aspect-[4/5] w-11 shrink-0 rounded-sm object-cover"
         style={{ filter: 'saturate(0.45)' }}
@@ -225,7 +267,7 @@ function ScoreRow({ entry, dim, accent, rank, sweepRank, onTap }) {
               key={v}
               onClick={() => onTap(v)}
               title={v.toFixed(1)}
-              className={`focus-ring h-[34px] min-w-[24px] flex-1 rounded-sm border font-mono text-[10px] transition-colors sm:h-[30px] ${
+              className={`focus-ring h-[34px] min-w-[22px] flex-1 rounded-sm border font-mono text-[10px] transition-colors sm:h-[30px] ${
                 solid
                   ? 'font-bold text-primary-container'
                   : outline

@@ -96,10 +96,10 @@ export function entryImage(entry) {
 // the same initials placeholder an item with no URL gets. The data attribute
 // guards against a loop if the placeholder itself somehow fails.
 //
-// Phase 8 applies this on the surfaces it touches: the contender grid and every
-// duel layout. QuadCard, TheOneCard, EntryCard, BeyondTable and the home hero
-// still show the broken icon and should pick this up in a follow up; 61 of 865
-// items carry a URL today, so the exposure is small but real.
+// Now applied at every img in the app: the contender grid, the duel, QuadCard,
+// TheOneCard, CompactCard, EntryCard, the score pass row thumbnail, the home
+// hero, the list header hero, and the bench row. BeyondTable was on the follow
+// up list but renders no image at all, so there was nothing to fix there.
 export function onImageError(entry) {
   return (ev) => {
     const img = ev.currentTarget

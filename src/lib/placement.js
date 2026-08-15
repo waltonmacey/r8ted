@@ -186,12 +186,29 @@ export const EARLY_EXIT_MIN_SAVING = 5
 // continue until every zone closes. 'passes-then-depth' runs the same passes up
 // to the early exit gate, then finishes one item at a time.
 //
-// Measured over 20,000 random orders per case (see the handover): both are
-// identical up to the gate, so the early exit is unaffected. Past the gate,
-// 12 items from scratch cost mean 32.7 picks worst 64 under 'passes' against
-// mean 32.0 worst 46 under 'passes-then-depth'; 20 items cost mean 71.0 worst
-// 123 against mean 68.1 worst 94. The spec default ships; the alternative is
-// recommended in the handover and is a one word change here.
+// CLOSED. Re-measured over the bounded 8 to 15 contender range, which is the
+// only range that occurs now, at 20,000 paired sessions per size. Both variants
+// are the real module with only this string changed, so the Phase 7 pivot rule
+// and the Phase 8 opponent spreading are in force in both:
+//
+//    n   passes mean   depth mean   delta    p95 p/d    p99 p/d   worst p/d
+//    8      16.91         16.90     -0.01     21/21      22/22      26/25
+//   10      24.40         24.36     -0.04     29/29      31/31      39/35
+//   12      32.53         32.43     -0.10     39/38      42/41      52/45
+//   15      45.84         45.60     -0.24     54/54      58/57      68/64
+//
+// Averaged over 8 to 15 the alternative saves 0.098 picks per session, one
+// tenth of one pick. p95 is identical at six of the eight sizes and one pick
+// better at the other two; p99 is identical or one pick better. The only
+// visible gain is in the extreme tail, which is a single sample out of 20,000.
+//
+// This is much smaller than the 0.7 pick gain the Phase 6 measurement reported
+// for 12 items. That measurement predates the Phase 7 window pivot and the
+// Phase 8 opponent spreading in pivotIndex, both of which flatten the pass
+// structure's worst case on their own. The alternative was fixing something
+// that has since been fixed elsewhere.
+//
+// Staying on the spec default and not carrying the item forward again.
 export const COMPLETION_POLICY = 'passes'
 
 // ---- zones ----

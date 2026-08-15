@@ -13,7 +13,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useCallback, useEffect, useState } from 'react'
 import { getDomain, getSubcategory } from '../lib/taxonomy'
 import { getStorage } from '../lib/storage'
-import { rankedEntries, benchEntries, makeId, entryImage, moveAndRefit } from '../lib/entries'
+import { rankedEntries, benchEntries, makeId, entryImage, moveAndRefit, onImageError } from '../lib/entries'
 import { useEditMode } from '../lib/EditMode'
 import { QuadCard, CompactCard } from '../components/Podium'
 import RankNudge from '../components/RankNudge'
@@ -137,7 +137,12 @@ export default function ListDetail() {
           // Anchored at the top you saw source rows 0 to 262 of 500, the top
           // 52%; centred you see rows 119 to 381, the middle 52%. At 390 the box
           // is 390x399, so the old crop showed the top 82%.
-          <img src={heroImage} alt="" className="absolute inset-0 h-full w-full object-cover object-center opacity-60" />
+          <img
+            src={heroImage}
+            onError={onImageError(eight[0])}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover object-center opacity-60"
+          />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" aria-hidden="true" />
         <div className="relative">
@@ -286,7 +291,13 @@ export default function ListDetail() {
                 onClick={() => setEditing(e)}
                 className="focus-ring group flex items-center gap-3 rounded border border-dashed border-outline-variant bg-surface-container-lowest py-2 pl-2 pr-4 text-left hover:border-secondary-container disabled:cursor-default"
               >
-                <img src={entryImage(e)} alt="" className="img-muted h-10 w-8 rounded-sm object-cover" loading="lazy" />
+                <img
+                  src={entryImage(e)}
+                  onError={onImageError(e)}
+                  alt=""
+                  className="img-muted h-10 w-8 rounded-sm object-cover"
+                  loading="lazy"
+                />
                 <span className="font-ui text-sm">{e.name}</span>
               </button>
             ))}

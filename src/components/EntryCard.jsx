@@ -5,7 +5,7 @@
 // hover, and image treatment per design spec sections 6 and 7, with the
 // cyan generalized to the domain accent as before.
 
-import { compositeText, entryImage } from '../lib/entries'
+import { compositeText, entryImage, onImageError } from '../lib/entries'
 import BarcodeRow from './BarcodeRow'
 
 export default function EntryCard({ entry, rank, scoreLabels, accent, onEdit, canEdit, dragProps = {} }) {
@@ -18,6 +18,7 @@ export default function EntryCard({ entry, rank, scoreLabels, accent, onEdit, ca
       <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-surface-variant">
         <img
           src={entryImage(entry)}
+          onError={onImageError(entry)}
           alt={entry.name}
           className="img-muted h-full w-full object-cover"
           loading="lazy"

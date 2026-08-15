@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { DOMAINS } from '../lib/taxonomy'
 import { getStorage } from '../lib/storage'
-import { rankedEntries, compositeText, entryImage } from '../lib/entries'
+import { rankedEntries, compositeText, entryImage, onImageError } from '../lib/entries'
 import { migrationCandidates, migrateLocalToFirestore } from '../lib/migrate'
 import { useEditMode } from '../lib/EditMode'
 
@@ -55,6 +55,7 @@ export default function Home() {
             >
               <img
                 src={entryImage(leader)}
+                onError={onImageError(leader)}
                 alt=""
                 className="h-full w-full object-cover opacity-50 brightness-95 saturate-[.55]"
                 // PHASE 9, owner decision: was 'center 22%', which anchored the
